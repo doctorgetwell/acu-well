@@ -1,442 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/menu_lo_crest.gif" />
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body { margin: 0; padding: 0; font-family: Garamond,serif;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title_color {
+  background-color: #002C32;
+  background: linear-gradient(90deg, #D8D6BA 50%, #002C32 50%);
+}
+.card-att {
+  background-color: #feffdf;
+  overflow: hidden;
+  display:inline-block;
+}
+.shadow_menu {
+  box-shadow: 0 10px 4px 0 rgba(0,0,0,.2);
+}
+.button-menu {
+  height: 0; 
+  padding-bottom: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #D8D6BA;
+}
+.button-image {
+  width: 80%;
+}
+.side-width {
+  width: 10%; 
+}
+.fit_button {
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  border:none;
+  display:inline-block;
+  vertical-align:middle;
+  overflow: hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+}
+.card-settings {
+  width: 97.5%;
+}
+.global-header {
+  background-image: url("DoctorGetWell_files/background_view.png");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%; 
+    background-size: 100% 100% ;
+}
+.button-image-rot {
+  display: none;
+  width: 80%;
+}
+.fit_button:hover {
+  background-color: gray;
+}
+.fit_button:hover > .button-image {
+  display: none;
+}
+.fit_button:hover > .button-image-rot {
+  display:inline-block;
+  visibility: visible;
+  width: 80%;
+}
+@keyframes fadeFromRight{
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromLeft{
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.fadeFromRight-animation {
+  animation: 1.5s fadeFromRight;
+}
+.fadeFromLeft-animation {
+  animation: 1.5s fadeFromLeft;
+}
+.sidebar-custom{height:100%;position:fixed!important;z-index:1; }
+@media (min-width: 728px) {
+  .adjust {
+  margin-top:8%
+ }
+  .top_title {
+    height: 45%;
+    width: 45%;
+  }
+  .right_col {
+    width: 87.5%;
+    float: right;
+  }
+  .title-img {
+  float: right; width: 40%; padding: 30px;
+}
+.profile-img {
+  float: right; width: 25%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 152.5%;
+}
+.quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 30%,
+    #2c7648 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+}
 
-<!-- saved from url=(0051)http://localhost/doctorgetwell/MissionStatement.asp -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <title> DoctorGetWell</title>
-  <meta name="DESCRIPTION" content="Acupuncture Site for Patients and Medical Professionals">
-  <meta name="KEYWORDS" content="acupuncture, RI, Rhode Island, health, Providence, Warwick, acupuncturist, Alex Tatevian, traditional Chinese, medicine, yin, yang, meridians, points, meridian, practitioner, practitioners, traditional medicine, oriental medicine, healing, Qi, five element, accupuncture, acupunture, TCM, regulation, alternative, health, moxa, moxibustion, needles, needle, chi, channels, asian healing, medical acupuncture, acupuncture clinic, clinic, society, journal, doctor, training, education, accreditation, scientific, professional, acupuncturist, research, alternative medicine, tuina, oriental, massage, guide to oriental medicine, certification, degree, diploma, cupping, guasha, acupunture, herbology, pratitioner referral, publications, books, therapy, associations, articles, acupuncture links, education, patients, needle, doctor, pain, blue cross, blue shield">
-  <meta name="author" content="Vlad Shabalin">
-  <style>
-    body { margin: 0; padding: 0; }
-    @media (min-width: 728px) and (max-width: 1150px) {
-    /* enter large tablet style overrides here */
-    }
-    @media (min-width: 420px) and (max-width: 727px) {
-    /* enter medium tablet and large phone style overrides here */
-    }
-    @media (min-width: 1px) and (max-width: 419px) {
-    /* enter small devices and phone style overrides here */
-    }
-    </style>
 
-<script language="JavaScript" src="./DoctorGetWell_files/scrmenu.js.download"></script>
-<script language="JavaScript">
-<!--
-  var NullImg=new Image();
-  NullImg.src="/images/null_1025.gif";
-  var DotImg=new Image();
-  DotImg.src="/images/dot.gif";
+@media (min-width: 1px) and (max-width: 728px) {
+ /* enter small devices and phone style overrides here */
+ .adjust {
+  margin-top:20%
+ }
+  .top_title {
+    height: 100%;
+    width: 100%;
+  }
+  .right_col {
+    width: 97.5%;
+    float: left;
+  }
+  .menu-bar-hide {
+    display:none!important
+  }
+  .title-img {
+  width: 90%; padding: 30px;
+}
+.profile-img {
+  display: block;
+  margin: 0 auto;
+  width: 55%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 130.5%;
+}
+}
+</style>
+</head>
+<body class="w3-theme-l5 global-header">
 
-  function AttentionOn(CurId) {
-   if  (document.all) {
-     document["mImg"+CurId].src=DotImg.src;
-     document.all["mTxt"+CurId].style.color="#008000";
-   }
-  } //AttentionOn
-  function AttentionOff(CurId) {
-   if  (document.all) {
-     document["mImg"+CurId].src=NullImg.src;
-     document.all["mTxt"+CurId].style.color="#000000";
-   }
-  } //AttentionOff
-  function AttentionImgOn(CurId) {
-   if  (document.all) {
-     document["mImg"+CurId].src=DotImg.src;
-   }
-  } //AttentionImgOn
-  function AttentionImgOff(CurId) {
-   if  (document.all) {
-     document["mImg"+CurId].src=NullImg.src;
-   }
-  } //AttentionImgOff
-  function SubAttentionOn(CurId,CurSubId) {
-   if  (document.all) {
-     document.all["smTxt"+CurId+CurSubId].style.color="#008000";
-   }
-  } //SubAttentionOn
-  function SubAttentionOff(CurId,CurSubId) {
-   if  (document.all) {
-     document.all["smTxt"+CurId+CurSubId].style.color="#000000";
-   }
-  } //SubAttentionOff
-// -->
+<!-- Navbar -->
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-large shadow_menu title_color fadeFromRight-animation">
+    <img src="./DoctorGetWell_files/doctor_getwell_title_hd.jpg" class="center top_title">
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-hide-large" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25%">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25%">ACUPUNCTURE</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25%">RESOURCES</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25%">ABOUT US</a>
+  </div>
+</div>
+  </div>
+ </div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content adjust" style="max-width:100%">    
+  <!-- The Grid -->
+  <div class="margin:auto">
+    <!-- Left Column -->
+    <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
+      <div class="w3-card w3-round w3-center button-menu">
+        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
+          <span>ㅤ</span>
+          <br>
+          <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
+          <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
+          <br>
+          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Home</span>
+          <br>
+          <span>ㅤ</span>
+          <br>
+        </a>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-center button-menu">
+        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
+          <span>ㅤ</span>
+          <br>
+          <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
+          <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
+          <br>
+          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Acupuncture</span>
+          <br>
+          <span>ㅤ</span>
+          <br>
+        </a>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-center button-menu">
+        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
+          <span>ㅤ</span>
+          <br>
+          <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
+          <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
+          <br>
+          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Resources</span>
+          <br>
+          <span>ㅤ</span>
+          <br>
+        </a>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-center button-menu">
+        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
+          <span>ㅤ</span>
+          <br>
+          <img src="./DoctorGetWell_files/about_logo.png" class="button-image img-touch">
+          <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
+          <br>
+          <span style="font-weight: bold;font-size: 130%; color: #002C32;">About Us</span>
+          <br>
+          <span>ㅤ</span>
+          <br>
+        </a>
+      </div>
+      <br>
+      
+    <!-- End Left Column -->
+    </div>
+
+    
+    <!-- Middle Column -->
+    <div class="right_col">
+    
+      <div class="w3-margin">
+        <span style="margin-left: 0.2em; font-size: 350%; color: #fefbd5; font-weight: bold; text-shadow: #FC0 1px 0 10px ;">Welcome! </span>
+        <img src="DoctorGetWell_files/title-page-image.JPG" class="title-img">
+        <div style="margin-left: 25px; margin-bottom: 20px;">
+          <span style="font-weight: bold; font-size: 250%; color:#07543e; text-shadow:-1px -1px 0 rgb(130, 177, 141), 1px -1px 0 rgb(130, 177, 141), -1px 1px 0 rgb(130, 177, 141), 1px 1px 0 rgb(130, 177, 141), #fffef4 0px 4px 10px; ">Mission Statement:ㅤ</span>
+        <br>
+        <span style="font-weight:bold; font-size: 150%; color: #fffde8; text-align: justify;">The primary focus of this website is acupuncture, one of the most fascinating healing traditions in the world. However, this website is not intended to advocate acupuncture or promote an acupuncture practice. The rationale of the information that we offer here is to give you accurate data about the basics of acupuncture, dispel myths, and provide you with new up-to-date developments in the field, without promotional or commercial bias. We hope that it will be of interest to medical professionals and useful for patients.</span> 
+        <br>
+      </div>
+      
+      <div class="w3-card w3-round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+            text-decoration: underline; 
+        ">Greetings from the Editor</span>
+        <img src="DoctorGetWell_files/alex3.png" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+          Hello, <br>
+          I am Dr. <a href="https://www.linkedin.com/in/alex-tatevian-da-2803b87/">Alex Tatevian</a>. I am lucky. I like what I do.  <br>
+          Acupuncture is my profession, specialty and life-long passion. 
+          I have practiced acupuncture for more than 20 years and I am still challenged by it. 
+          Acupuncture is much more complex than needles.
+          Acupuncture blends ancient wisdom with new
+          scientific paradigms, leading to a more complete knowledge base. 
+          <br><br>
+          I will be happy to guide you and
+          share my experience. <br>
+          Welcome! <br></span>
+      </div>
+
+      <div class="w3-margin quote">
+        <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 200%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #e3ffee;
+        ">
+         “The natural healing force within each of us is the greatest force in getting well.” ~ Hippocrates.
+      </span>
+      </div>
+      
+      <div class="w3-card w3-round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#013916;
+        ">Copyright Policy</span>
+        <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Please, feel free to copy and use this material with the proper reference. This courtesy is expected. Thank you.
+      </span>
+      <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+            color: gray;
+        ">
+        This page last updated: 19-May-2024
+      </span>
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<script>
+// Accordion
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme-d1";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+  }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
 
- </head>
- <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#ffffff" onload="javascript:InitVars();">
-<a name="p_top"></a>  <table border="0" cellspacing="0" cellpadding="0" width="100%">
-   <tbody><tr>
-    <td align="LEFT" valign="TOP" width="32" height="100" background="./DoctorGetWell_files/top_left_bg.gif"><img src="./DoctorGetWell_files/top_left.gif" width="32" height="100"></td>
-    <td align="LEFT" valign="TOP" height="100" background="./DoctorGetWell_files/top_left_bg.gif"><img src="./DoctorGetWell_files/top_left_bg.gif" width="20" height="100"></td>
-    <td align="RIGHT" valign="TOP" height="100" background="./DoctorGetWell_files/top_left_bg.gif"><img src="./DoctorGetWell_files/top_logo_left.gif" width="20" height="100"></td>
-    <td align="LEFT" valign="TOP" width="36" height="100" background="./DoctorGetWell_files/top_right_bg.gif"><a href="http://localhost/index.asp"><img src="./DoctorGetWell_files/top_logo_center.gif" width="36" height="100" border="NONE"></a></td>
-    <td align="LEFT" valign="TOP">
-      <!-- header -->
-      <table border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tbody><tr>
-          <td align="LEFT" valign="TOP" width="12" height="100" background="./DoctorGetWell_files/top_right_bg.gif"><img src="./DoctorGetWell_files/top_logo_right.gif" width="12" height="100"></td>
-          <td align="LEFT" valign="TOP" height="100" background="./DoctorGetWell_files/top_right_bg.gif"><img src="./DoctorGetWell_files/top_title.gif" width="531" height="100"></td>
-          <td align="RIGHT" valign="TOP" width="42" height="100" background="./DoctorGetWell_files/top_right_bg.gif"><img src="./DoctorGetWell_files/top_right.gif" width="42" height="100"></td>
-        </tr>
-      </tbody></table>
-      <!-- end header -->
-    </td>
-
-   </tr>
-   <tr>
-    <td colspan="3" align="LEFT" valign="TOP" bgcolor="#CCD3B3">
-<!-- menu null -->
-<table border="0" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-    <td><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_120.gif" width="120" height="1"></td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Home </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Mission statement </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Acupuncture </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Resources </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Links </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">About Us </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">The Practice </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">Contact Us </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3">&nbsp;</td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_null">For Your Amusement </span>
-    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_120.gif" width="120" height="1"></td>
-  </tr>
-</tbody></table>
-<!-- menu div -->
-<div id="MainMenuDiv" style="position:absolute;left:5;top:100;">
-<table border="0" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-    <td><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_120.gif" width="120" height="1"></td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg0" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://localhost/index.asp" onmouseover="AttentionOn(0)" onmouseout="AttentionOff(0)"><span id="mTxt0" class="mmenu_link">Home </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg1" src="./DoctorGetWell_files/dot.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<span class="mmenu_a">Mission statement </span>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg2" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://localhost/Acupuncture.asp" onmouseover="AttentionOn(2)" onmouseout="AttentionOff(2)"><span id="mTxt2" class="mmenu_link">Acupuncture </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg3" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://localhost/Resources.asp" onmouseover="AttentionOn(3)" onmouseout="AttentionOff(3)"><span id="mTxt3" class="mmenu_link">Resources </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg4" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://localhost/Links.asp" onmouseover="AttentionOn(4)" onmouseout="AttentionOff(4)"><span id="mTxt4" class="mmenu_link">Links </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg5" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://acu-well.com/acuwell/aboutus.asp" onmouseover="AttentionOn(5)" onmouseout="AttentionOff(5)" target="_blank"><span id="mTxt5" class="mmenu_link">About Us </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg6" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://acu-well.com/acuwell" onmouseover="AttentionOn(6)" onmouseout="AttentionOff(6)" target="_blank"><span id="mTxt6" class="mmenu_link">The Practice </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg7" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://acu-well.com/acuwell/schedule.asp" onmouseover="AttentionOn(7)" onmouseout="AttentionOff(7)" target="_blank"><span id="mTxt7" class="mmenu_link">Contact Us </span></a>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3">&nbsp;</td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCD3B3"><img name="mImg9" src="./DoctorGetWell_files/null_1025.gif" width="10" height="25" border="NONE"></td>
-    <td bgcolor="#CCD3B3" align="LEFT" valign="CENTER">
-<a href="http://localhost/humor/index.asp" onmouseover="AttentionOn(9)" onmouseout="AttentionOff(9)"><span id="mTxt9" class="mmenu_link">For Your Amusement </span></a>
-    </td>
-  </tr>
-</tbody></table>
-</div>
-    </td>
-    <td rowspan="2" align="CENTER" valign="TOP" bgcolor="#DDE2CD">
-<!-- menu -->
-<table border="0" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/index.asp"><img src="./DoctorGetWell_files/menu_lo_home.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/MissionStatement.asp"><img src="./DoctorGetWell_files/menu_lo_crest.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/Acupuncture.asp"><img src="./DoctorGetWell_files/menu_lo_acup.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/Resources.asp"><img src="./DoctorGetWell_files/menu_lo_res.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/Links.asp"><img src="./DoctorGetWell_files/menu_lo_link.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/http://acu-well.com/acuwell/aboutus.asp"><img src="./DoctorGetWell_files/menu_lo_dr.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/http://acu-well.com/acuwell"><img src="./DoctorGetWell_files/menu_lo_pract.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/http://acu-well.com/acuwell/schedule.asp"><img src="./DoctorGetWell_files/menu_lo_cont.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-  </tr>
-  <tr>
-    <td><img src="./DoctorGetWell_files/null_025.gif" width="1" height="25"></td>
-    <td align="LEFT" valign="TOP">
-<a href="http://localhost/humor/index.asp"><img src="./DoctorGetWell_files/menu_lo_hum.gif" width="16" height="16" border="NONE"></a>    </td>
-  </tr>
-</tbody></table>
-    </td>
-    <td rowspan="2" align="LEFT" valign="TOP">
-      <!-- content of the page -->
-      <table border="0" cellspacing="0" cellpadding="0" width="100%">
-       <tbody><tr>
-        <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_40.gif" width="40" height="1"></td>
-        <td align="LEFT" valign="TOP">
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
- <tbody><tr><td>&nbsp;</td></tr>
- <tr bgcolor="#EAEBCE"><td align="LEFT" valign="TOP" width="100%">
-  &nbsp;&nbsp;<font class="title">Mission statement: </font>
- </td></tr>
-</tbody></table>
-
-
-
-<table border="0" cellspacing="5" cellpadding="2" width="100%">
-  <tbody><tr>
-    <td valign="top" align="left" colspan="2">
-      <font class="text"><font class="bold"> <br>
-The primary focus of this website is acupuncture, one of the most 
-fascinating healing traditions in the world. However, this website 
-is not intended to advocate acupuncture or promote an acupuncture practice. 
-<br><br>
-The rationale of the information that we offer here is to give you 
-accurate data about the basics of acupuncture, dispel myths, and 
-provide you with new up-to-date developments in the field, without 
-promotional or commercial bias. 
-<br>
-We hope that it will be of interest to medical professionals and useful 
-for patients.<br>
-<br>
-This web site is 'a work in progress'.  Enhancements and 
-changes are forthcoming. 
-<a href="http://localhost/OnlineQuestions.asp"><font class="high">Suggestions and comments are appreciated.</font></a>
-
- <br>
-</font></font>
-   </td>
-  </tr>
-
-  <tr>
-    <td valign="top" align="left" colspan="2">
-     <a name="first"></a><table border="0" cellspacing="0" cellpadding="0" width="100%">
- <tbody><tr><td>&nbsp;</td></tr>
- <tr bgcolor="#EAEBCE"><td align="LEFT" valign="TOP" width="100%">
-  &nbsp;&nbsp;<font class="title">Greetings from the editor </font>
- </td></tr>
-</tbody></table>
-
-    </td>
-  </tr>
-
-
-  <tr>
-    <td valign="top" align="left">
-
-<font class="text"><br>
-Hello, <br>
-I am Dr. Alex Tatevian. I am lucky. I like what I do.  <br>
-Acupuncture is my profession, specialty and life-long passion. 
-I have practiced acupuncture for more than 20 years and I am still challenged by it. 
-Acupuncture is much more complex than needles.
-Acupuncture blends ancient wisdom with new
-scientific paradigms, leading to a more complete knowledge base. 
-<br><br>
-I will be happy to guide you and
-share my experience. <br>
-Welcome! <br>
-</font>
-    </td>
-    <td width="200" valign="top">
-      <img height="175" src="./DoctorGetWell_files/alex2.jpg" width="200" border="NONE">
-    </td>
-  </tr>
-
-  <tr>
-    <td valign="top" align="left" colspan="2">
-     <a name="first"></a><table border="0" cellspacing="0" cellpadding="0" width="100%">
- <tbody><tr><td>&nbsp;</td></tr>
- <tr bgcolor="#EAEBCE"><td align="LEFT" valign="TOP" width="100%">
-  &nbsp;&nbsp;<font class="title">Acknowledgment </font>
- </td></tr>
-</tbody></table>
-
-    </td>
-  </tr>
-
-
-  <tr>
-    <td valign="top" align="left" colspan="2">
-      <font class="text"><br>
-I want to extend sincere gratitude to my patients for inspiring me to contribute 
-time and effort to put together this site and to the staff for their dedication 
-and support. 
-Special thanks to Lisa Dean for her assistance in editing and 
-to our web developer <a class="dslink" href="http://acu-well.com/acuwell/doctor_and_staff/VladimirShabalin.asp" target="_blank">Vlad Shabalin</a> for his technical expertise 
-<br><br>
-</font></td></tr><tr>
-    <td valign="top" align="left" colspan="2">
-     <a name="first"></a><table border="0" cellspacing="0" cellpadding="0" width="100%">
- <tbody><tr><td>&nbsp;</td></tr>
- <tr bgcolor="#EAEBCE"><td align="LEFT" valign="TOP" width="100%">
-  &nbsp;&nbsp;<font class="title">Copyright policy </font>
- </td></tr>
-</tbody></table>
-
-    </td>
-  </tr>
-
-
-  <tr>
-    <td valign="top" align="left" colspan="2">
-      <font class="text"><br>
- 
-Please, feel free to copy and use this material with the proper reference. 
-This courtesy is expected. <br>
-Thank you. 
-<br><br>
-      <font>
-    </font></font></td>
-  </tr>
-
-</tbody></table>
-
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
- <tbody><tr>
-  <td align="LEFT" valign="BOTTOM" width="50%">
-   <font class="contact">This page last updated: 7-Jan-2004 </font>
-  </td>
-  <td align="RIGHT" valign="BOTTOM" width="50%">
-   &nbsp;
-  </td>
- </tr>
-</tbody></table>
-        </td>
-        <td align="LEFT" valign="TOP"><img src="./DoctorGetWell_files/null_40.gif" width="40" height="1"></td>
-       </tr>
-      </tbody></table>
-      <!-- end content of the page -->
-    </td>
-   </tr>
-
-   <tr>
-    <td colspan="3" align="CENTER" valign="BOTTOM" bgcolor="#CCD3B3">
-<table border="0" width="100%" heigth="52" cellpadding="0" cellspacing="0">
- <tbody><tr>
-   <td align="LEFT" valign="BOTTOM" bgcolor="#CCD3B3"><img src="./DoctorGetWell_files/bot_left.gif" width="9" height="52" border="NONE"></td>
-   <td colspan="3" align="CENTER" valign="BOTTOM" bgcolor="#CCD3B3">
-<font class="counter">Wednesday 15-May-2024</font><br>An error occurred on the server when processing the URL. Please contact the system administrator. <p> If you are the system administrator please click <a href="https://go.microsoft.com/fwlink/?LinkID=82731">here</a> to find out more about this error.</p></td></tr></tbody></table></td></tr></tbody></table></body></html>
+</body>
+</html> 
