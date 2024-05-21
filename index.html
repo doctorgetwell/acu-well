@@ -12,6 +12,11 @@
 <style>
 body { margin: 0; padding: 0; font-family: Garamond,serif;
 }
+.top{
+  top:0;
+  height: 200px;
+  position: fixed;
+}
 .center {
   display: block;
   margin-left: auto;
@@ -37,16 +42,14 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   background-color: #D8D6BA;
 }
 .button-image {
-  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  width: 85%;
 }
 .side-width {
   width: 10%; 
 }
 .fit_button {
-  white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  display: block;
   width: 100%;
   border:none;
   display:inline-block;
@@ -68,7 +71,9 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 }
 .button-image-rot {
   display: none;
-  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 75%;
 }
 .fit_button:hover {
   background-color: gray;
@@ -107,7 +112,11 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 .fadeFromLeft-animation {
   animation: 1.5s fadeFromLeft;
 }
-.sidebar-custom{height:100%;position:fixed!important;z-index:1; }
+.sidebar-custom{height: 100%;position:fixed!important;z-index:1; margin-top: 1%; margin-left: 1%; overflow-y: scroll;}
+.sidebar-custom::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 @media (min-width: 728px) {
   .adjust {
   margin-top:8%
@@ -175,24 +184,100 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   font-size: 130.5%;
 }
 }
+.outer-wrapper {
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin: 0.1em;
+  margin-bottom: 10em;
+}
+.outer-wrapper::before {
+  content: '';
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;font-size: 0.9vw; color: #002C32;
+}
 </style>
 </head>
 <body class="w3-theme-l5 global-header">
 
 <!-- Navbar -->
 <!-- Navbar -->
-<div class="w3-top">
+<div class="top">
   <div class="w3-bar w3-large shadow_menu title_color fadeFromRight-animation">
     <img src="./DoctorGetWell_files/doctor_getwell_title_hd.jpg" class="center top_title">
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-hide-large" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
   </div>
 </div>
+  </div>
+  <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
+    <div class="w3-card w3-round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper">
+          <div class="inner-wrapper">
+            ㅤHomeㅤ
+          </div>
+        </div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card w3-round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper">
+          <div class="inner-wrapper">
+            Acupuncture
+          </div>
+        </div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card w3-round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper">
+          <div class="inner-wrapper">
+            Resources
+          </div>
+        </div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card w3-round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper">
+          <div class="inner-wrapper">
+            About Us
+          </div>
+        </div>
+      </a>
+    </div>
+    <div style="height: 75%;"></div>
+    <br>
+    
+  <!-- End Left Column -->
   </div>
  </div>
 
@@ -200,82 +285,20 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 <div class="w3-container w3-content adjust" style="max-width:100%">    
   <!-- The Grid -->
   <div class="margin:auto">
-    <!-- Left Column -->
-    <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
-      <div class="w3-card w3-round w3-center button-menu">
-        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
-          <span>ㅤ</span>
-          <br>
-          <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
-          <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
-          <br>
-          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Home</span>
-          <br>
-          <span>ㅤ</span>
-          <br>
-        </a>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-center button-menu">
-        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
-          <span>ㅤ</span>
-          <br>
-          <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
-          <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
-          <br>
-          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Acupuncture</span>
-          <br>
-          <span>ㅤ</span>
-          <br>
-        </a>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-center button-menu">
-        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
-          <span>ㅤ</span>
-          <br>
-          <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
-          <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
-          <br>
-          <span style="font-weight: bold;font-size: 130%; color: #002C32;">Resources</span>
-          <br>
-          <span>ㅤ</span>
-          <br>
-        </a>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-center button-menu">
-        <a href="W3_CSS_Template.html" class="w3-bar-item w3-padding-large fit_button">
-          <span>ㅤ</span>
-          <br>
-          <img src="./DoctorGetWell_files/about_logo.png" class="button-image img-touch">
-          <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
-          <br>
-          <span style="font-weight: bold;font-size: 130%; color: #002C32;">About Us</span>
-          <br>
-          <span>ㅤ</span>
-          <br>
-        </a>
-      </div>
-      <br>
-      
-    <!-- End Left Column -->
-    </div>
+    <!-- Left space -->
+    <div class="side-width"></div>
 
     
     <!-- Middle Column -->
     <div class="right_col">
     
       <div class="w3-margin">
-        <span style="margin-left: 0.2em; font-size: 350%; color: #fefbd5; font-weight: bold; text-shadow: #FC0 1px 0 10px ;">Welcome! </span>
+        <span style="margin-top:0.5em; margin-left: 0.2em; font-size: 3.25em; color: #fefbd5; font-weight: bold; text-shadow: #FC0 1px 0 10px ;">Welcome! </span>
         <img src="DoctorGetWell_files/title-page-image.JPG" class="title-img">
         <div style="margin-left: 25px; margin-bottom: 20px;">
-          <span style="font-weight: bold; font-size: 250%; color:#07543e; text-shadow:-1px -1px 0 rgb(130, 177, 141), 1px -1px 0 rgb(130, 177, 141), -1px 1px 0 rgb(130, 177, 141), 1px 1px 0 rgb(130, 177, 141), #fffef4 0px 4px 10px; ">Mission Statement:ㅤ</span>
+          <span style="font-weight: bold; font-size: 2.5em; color:#07543e; text-shadow:-1px -1px 0 rgb(130, 177, 141), 1px -1px 0 rgb(159, 224, 174), -1px 1px 0 rgb(130, 177, 141), 1px 1px 0 rgb(130, 177, 141), #fffef4 0px 4px 10px; ">Mission Statement: </span>
         <br>
-        <span style="font-weight:bold; font-size: 150%; color: #fffde8; text-align: justify;">The primary focus of this website is acupuncture, one of the most fascinating healing traditions in the world. However, this website is not intended to advocate acupuncture or promote an acupuncture practice. The rationale of the information that we offer here is to give you accurate data about the basics of acupuncture, dispel myths, and provide you with new up-to-date developments in the field, without promotional or commercial bias. We hope that it will be of interest to medical professionals and useful for patients.</span> 
+        <span style="font-weight:bold; font-size: 1.5em; color: #fffde8; text-align: justify;">The primary focus of this website is acupuncture, one of the most fascinating healing traditions in the world. However, this website is not intended to advocate acupuncture or promote an acupuncture practice. The rationale of the information that we offer here is to give you accurate data about the basics of acupuncture, dispel myths, and provide you with new up-to-date developments in the field, without promotional or commercial bias. We hope that it will be of interest to medical professionals and useful for patients.</span> 
         <br>
       </div>
       
@@ -288,7 +311,6 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
             padding-left: 0.5em;
             margin-bottom: 10px;
             font-weight: bold; font-size: 175%; color:#07543e;
-            text-decoration: underline; 
         ">Greetings from the Editor</span>
         <img src="DoctorGetWell_files/alex3.png" class="profile-img">
         <span class="intro"  style="
@@ -302,7 +324,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
             margin-bottom: 15px;
         ">
           Hello, <br>
-          I am Dr. <a href="https://www.linkedin.com/in/alex-tatevian-da-2803b87/">Alex Tatevian</a>. I am lucky. I like what I do.  <br>
+          I am Dr. <a href="https://www.linkedin.com/in/alex-tatevian-da-2803b87/" style="color: #2c7648;">Alex Tatevian</a>. I am lucky. I like what I do.  <br>
           Acupuncture is my profession, specialty and life-long passion. 
           I have practiced acupuncture for more than 20 years and I am still challenged by it. 
           Acupuncture is much more complex than needles.
