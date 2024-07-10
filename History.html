@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/menu_lo_link.gif" />
+<title>History</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body { margin: 0; padding: 0; font-family: Garamond,serif; 
+}
+.top{
+  top:0;
+  height: 200px;
+  position: fixed;
+}
+.round {
+  border-radius:10px
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title_color {
+  background-color: #002C32;
+  background: linear-gradient(90deg, #D8D6BA 50%, #002C32 50%);
+}
+.card-att {
+  background-color: #feffdf;
+  overflow: hidden;
+  display:inline-block;
+}
+.shadow_menu {
+  box-shadow: 0 10px 4px 0 rgba(0,0,0,.2);
+}
+.button-menu {
+  height: 0; 
+  padding-bottom: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #f1eece;
+  box-shadow: 0 0 15px #646464 inset;
+}
+.button-image {
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 85%;
+}
+.side-width {
+  width: 10%; 
+}
+.fit_button {
+  width: 100%;
+  border:none;
+  display:inline-block;
+  vertical-align:middle;
+  overflow: hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+}
+.card-settings {
+  width: 97.5%;
+}
+.global-header {
+  background-image: url("DoctorGetWell_files/history_background_view.png");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%; 
+    background-size: 100% 100% ;
+}
+.button-image-rot {
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 75%;
+}
+.fit_button:hover {
+  background-color: #e7e184;
+  box-shadow: 0 0 15px #c06f2d inset;
+} 
+.fit_button:hover > .button-image {
+  display: none;
+}
+.fit_button:hover > .button-image-rot {
+  display:inline-block;
+  visibility: visible;
+  width: 80%;
+}
+@keyframes fadeFromRight{
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromLeft{
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fade{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeFromRight-animation {
+  animation: 1.5s fadeFromRight;
+}
+.fadeFromLeft-animation {
+  animation: 1.5s fadeFromLeft;
+}
+.fade-animation {
+  animation: 2s fade;
+}
+.sidebar-custom{height: 100%;position:fixed!important;z-index:1; margin-top: 2%; margin-left: 2%; overflow-y: scroll;}
+.sidebar-custom::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+@media (min-width: 728px) {
+  .adjust {
+    margin-top:9%
+ }
+  .top_title {
+    height: 45%;
+    width: 45%;
+  }
+  .right_col {
+    width: 87.5%;
+    float: right;
+  }
+  .title-img {
+  float: right; width: 40%; margin: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.profile-img {
+  float: right; width: 20%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 152.5%;
+}
+.quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 15%,
+    #2c7648 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+}
+
+
+@media (min-width: 1px) and (max-width: 728px) {
+ /* enter small devices and phone style overrides here */
+ .adjust {
+  margin-top:23%
+ }
+  .top_title {
+    height: 100%;
+    width: 100%;
+  }
+  .right_col {
+    width: 100%;
+    float: left;
+  }
+  .menu-bar-hide {
+    display:none!important
+  }
+  .title-img {
+  width: 90%; padding: 30px;
+}
+.profile-img {
+  display: block;
+  margin: 3px auto;
+  width: 45%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 130.5%;
+}
+}
+.outer-wrapper {
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 10em;
+}
+.outer-wrapper::before {
+  content: "";
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;font-size: 0.9vw; color: #002C32;
+}
+</style>
+</head>
+<body class="w3-theme-l5 global-header fade-animation">
+
+<!-- Navbar -->
+<!-- Navbar -->
+<div class="top">
+  <div class="w3-bar w3-large shadow_menu title_color fadeFromRight-animation">
+    <img src="./DoctorGetWell_files/doctor_getwell_title_hd.jpg" class="center top_title">
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-hide-large" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="Acupuncture.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+  </div>
+</div>
+  </div>
+  <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Home</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="Acupuncture.html" class="w3-bar-item w3-padding-large fit_button" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">
+        <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Acupuncture</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Resources</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">About Us</div></div>
+      </a>
+    </div>
+    <div style="height: 75%;"></div>
+    <br>
+    
+  <!-- End Left Column -->
+  </div>
+ </div>
+
+<!-- Page Container -->
+<div class=" w3-content adjust" style="max-width:100%">    
+  <!-- The Grid -->
+  <div>
+    <!-- Left space -->
+    <div class="side-width"></div>
+
+    
+    <!-- Middle Column -->
+    <div class="right_col">
+
+      <div class="w3-margin">
+        <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em;  color:#ffb285; font-weight: bold; text-shadow: -1px -1px 0 rgb(65, 73, 37), 1px -1px 0 rgb(65, 73, 37), -1px 1px 0 rgb(65, 73, 37), 1px 1px 0 rgb(65, 73, 37), rgb(86, 236, 86) 1px 0 10px ">Acupuncture History</span>
+        <div style="margin-left: 25px; margin-bottom: 20px; margin-right: 30px;">
+          <span style="font-weight: bold; font-size: 2.5em; color:#07543e; text-shadow:-1px -1px 0 rgb(130, 177, 141), 1px -1px 0 rgb(159, 224, 174), -1px 1px 0 rgb(130, 177, 141), 1px 1px 0 rgb(130, 177, 141), #fffef4 0px 4px 10px; ">Introduction:</span>
+            <br>
+            <span style="font-weight:bold; font-size: 1.5em; color: #f1eb8c; text-align: justify;  text-shadow:-1px -1px 0 rgb(125, 125, 125)">
+              The history of acupuncture is often presented as a composite of legends, myths, personal interpretations and political biases. Perhaps the intention is to keep it simple and convincing.
+              <br><br>
+              On this page, we present the history based only on the factual material and physical evidence that illustrates the more interesting, intriguing and controversial evolutionary aspects that acupuncture has made through the centuries.
+        </span> 
+        <br>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        ">Philosophical Background</span>
+        <img src="DoctorGetWell_files/QinShiHuang.jpg" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+          Practical applications of acupuncture techniques can be traced back to the dawn of civilization. Apparently, acupuncture was practiced in many ancient cultures around the world, as you will see on this page.
+          The Chinese formalized it and presented it into modern times. Acupuncture as a system of knowledge is deeply rooted in Chinese philosophy.
+          <br><br>
+          However, the notion of "unified" Chinese philosophy is inaccurate. In fact, it is a mixture of various ideologies and beliefs.
+          Confucianism, Taoism (Daoism), and Buddhism form the three main pillars of Chinese thought, keeping in mind that they are not monolithic but multifaceted traditions with complex internal divisions.
+          Confucianism, Taoism of all trends, different branches of Buddhism, all represent Chinese philosophy and heavily influenced Traditional Chinese Medicine and acupuncture.
+          <br><br>
+          These teachings have determined Chinese society for thousands of years. Acupuncture, as a medical system, was an integral part of this social environment. Without this social background, it would have been inconceivable.
+          The evolutions of the official policy would lift certain ideology while the other would fall out of favor. For instance, Confucianism was dominant philosophy when Buddhism entered China in the first century AD.
+          But two centuries earlier, the Chinese Emperor Qin Shi Huang burned most of the Confucian literature in the country and sentenced thousands of intellectuals to years of forced labor on the Great Wall as political prisoners, where most of them perished.
+          <br><br>
+          Traditional schools of acupuncture, with their diversity, sometimes appear inconsistent or contradictory. In reality, they bear influence of different philosophies and reflect different theoretical backgrounds.
+          This explains differences that we see in various acupuncture schools, their terminology, clinical interpretations and emphasis on different basic concepts.
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        ">First Physical Evidence</span>
+        <img src="DoctorGetWell_files/Ricostruzione_di_Ötzi.jpg" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+          Ironically, the first physical evidence of acupuncture was found not in China but in central Europe.
+          <br><br>
+          In 1991 the scientific world was rocked by the discovery of "The Ice Man", a 5,300-year-old mummified man found in the Italian Alps along the border with Austria. The frozen body was remarkably well preserved.
+          <br><br>
+          One of the most remarkable discoveries was a complicated system of bluish-black tattoos running along his back, right knee and left ankle. The locations of the "tattoos" corresponded precisely to acupuncture points and meridians, including the 'master point for back pain'.
+          <br><br>
+          Apparently he suffered from back pain that was confirmed by a series of X-rays of his body, with evidence of acute arthritis in the lumbar spine. Otherwise he was in good health, he had all his teeth with no cavities. He was approximately 45 years old at the moment of sudden death...
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        ">China & East Asia</span>
+        <img src="DoctorGetWell_files/HuangdiNeijing.jpg" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Acupuncture's beginnings lie in China but there is a lot of contradictory information concerning the date of its genesis. What is certain is that acupuncture was used around 2000 BC in China.
+        <br><br>
+        Drawings dating from around 1600 BC reveal that sharpened bamboo and bronze needles were used in treatment. Excavations have uncovered sharpened stones dating from around 3000 BC which may indicate the beginnings of acupuncture.
+        <br><br>
+        The first medical account of acupuncture was NEI CHING SU WEN "The Yellow Emperor's Classic of Internal Medicine" which dates from about 200 BC.
+        <br><br>
+        Throughout the centuries, acupuncture flourished in China despite the periods when it was suppressed (from the Qing Dynasty to the Opium Wars: 1644-1840).
+        In the 20-th century, following the Revolution of 1911 Western Medicine was introduced in China. Acupuncture and herbs remained the only option in rural communities, and the term "barefoot doctor" emerged. In 1932 when Chang Khi Chek seized power in China, acupuncture was banned in the cities.
+        Chairman Mao took over in 1945 and Chang Khi Chek escaped to the island of Formosa (now Taiwan).
+        <br><br>
+        China was closed to the West and acupuncture was restored as the method of healing in a country deprived of antibiotics and western medical equipment.
+        From the 1970-s China's policy became more open, and its medical system benefits from modern technologies while remains loyal to the time-honored tradition.
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        "> Europe</span>
+        <img src="DoctorGetWell_files/Jacob_de_Bondt.jpg" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Traditionally associated with China, Japan, and Korea, acupuncture is incorporated into medical practice in Europe. Acupuncture was introduced in Europe by European physicians who brought it from Far Eastern colonies. That mode of introduction made it credible.
+        <br><br>
+        The first known European acupuncture publication was dated 1658 and was published in Holland. The Dutch doctor Jakob de Bondt published an extensive, six volume work about the history of nature and medicine in East India.
+        <br><br>
+        Modern medicine as we know it today did not exist yet, and there were 300 years of parallel development, interaction, and scientific scrutiny.
+        <br><br>
+        There are similarities and differences in the contexts of European and Chinese acupuncture. The similarity is that there is close communication and contribution between acupuncturists practicing in Europe and China. European professional's practice based on the principles of Traditional Chinese Medicine. Chinese practitioners promptly accommodate and incorporate new European techniques such as electropuncture and concepts like auriculopuncture.
+        <br><br>
+        The difference is that European acupuncture coexists with highly advanced, state-of-the-art modern medicine, and Chinese acupuncture does not. Acupuncture in China quite often aims to replace conventional medicine to fill the gaps and deficits in healthcare.
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        "> Europe</span>
+        <img src="DoctorGetWell_files/Benjamin_Bache_Franklin.jpeg" class="profile-img">
+        <span class="intro"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        In the United states, the first publication on acupuncture in 1826 belongs to Bache Franklin M.D., great grandson of Benjamin Franklin.
+        <br><br>
+        In 1892, Sir William Osler B.T., M.D., FBS in his fundamental work "the Principles and Practice of Medicine" featured acupuncture as recommended treatment for lumbago.
+        <br><br>
+        Rapid advance of Western medicine and biological science in the beginning of twentieth century marginalized acupuncture practice, and after the 1920's acupuncture was rarely ever used with the exception of Chinatowns.
+        <br><br>
+        It was not until 1971, when interest to acupuncture revived.
+        <br><br>
+        James Reston reporter for the New York Times with Nixon's Chinese trip had an emergency appendectomy with acupuncture anesthesia His post operative pain was relieved by acupuncture at the Anti-Imperialist Hospital in Peking, China. This brought great publicity to acupuncture and renewed interest in this form of treatment.
+        <br><br>
+        In 1996 in America, needles were removed from the "investigative" category to accepted medical instruments
+        <br><br>
+        In 1997 The National Institute of Health issued the Consensus Statement that recognized that "Acupuncture as a therapeutic intervention is widely practiced in the United States" and "may be useful as an adjunct treatment or an acceptable alternative or be included in a comprehensive management program." NIH has formed a department of Alternative Health care to provide needed research funding in alternative avenues of medical care.
+      </div>
+      
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#013916;
+        ">Copyright Policy</span>
+        <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Please, feel free to copy and use this material with the proper reference. This courtesy is expected. Thank you.
+      </span>
+      <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+            color: gray;
+        ">
+        This page last updated: 10-July-2024
+      </span>
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <div style="position: relative; height: 200px;">
+      <div style="width: 150%; bottom: 0; z-index: -1; position: absolute;margin-left: -50%;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px;"></div>
+      </div>
+      <div style="width: 100%; bottom: 0;z-index: 0; position: absolute;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px; padding-left: 50px;">
+          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | getwell@doctor.comㅤㅤ</span>
+          <span style="font-size: 150%;text-align: right;color: white; float: right; padding-right: 4%; width:50%">141 Airport Road, Warwick, RI 02889</span>
+        </div>
+      </div>
+    </div>
+  <!-- End Grid --->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+</body>
+</html> 
