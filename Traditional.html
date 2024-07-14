@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/menu_lo_home.gif" />
+<title>Traditional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body { margin: 0; padding: 0; font-family: Garamond,serif; 
+}
+.top{
+  top:0;
+  height: 200px;
+  position: fixed;
+}
+.round {
+  border-radius:10px
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title_color {
+  background-color: #002C32;
+  background: linear-gradient(90deg, #D8D6BA 50%, #002C32 50%);
+}
+.card-att {
+  background-color: #feffdf;
+  overflow: hidden;
+  display:inline-block;
+}
+.shadow_menu {
+  box-shadow: 0 10px 4px 0 rgba(0,0,0,.2);
+}
+.button-menu {
+  height: 0; 
+  padding-bottom: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #f1eece;
+  box-shadow: 0 0 15px #646464 inset;
+}
+.button-image {
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 85%;
+}
+.side-width {
+  width: 10%; 
+}
+.fit_button {
+  width: 100%;
+  border:none;
+  display:inline-block;
+  vertical-align:middle;
+  overflow: hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+}
+.card-settings {
+  width: 97.5%;
+}
+.global-header {
+  background-image: url("DoctorGetWell_files/trad_background_view.png");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%; 
+    background-size: 100% 100% ;
+}
+.button-image-rot {
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 75%;
+}
+.fit_button:hover {
+  background-color: #e7e184;
+  box-shadow: 0 0 15px #c06f2d inset;
+} 
+.fit_button:hover > .button-image {
+  display: none;
+}
+.fit_button:hover > .button-image-rot {
+  display:inline-block;
+  visibility: visible;
+  width: 80%;
+}
+.block-info {
+  display: block;
+  background-color: #EAEBCE;
+  width: 100%;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  margin-bottom: 10px;
+  font-weight: bold; font-size: 175%; color:#07543e;
+}
+.button-info {
+  background-color: #EAEBCE;
+  margin: 4px;
+  margin-bottom: 10px;
+  font-weight: bold; 
+  font-size: 175%; 
+  color:#07543e;
+}
+.button-info:hover {
+  background-color: gray
+}
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@keyframes fadeFromRight{
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromLeft{
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fade{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeFromRight-animation {
+  animation: 1.5s fadeFromRight;
+}
+.fadeFromLeft-animation {
+  animation: 1.5s fadeFromLeft;
+}
+.fade-animation {
+  animation: 2s fade;
+}
+.sidebar-custom{height: 100%;position:fixed!important;z-index:1; margin-top: 2%; margin-left: 2%; overflow-y: scroll;}
+.sidebar-custom::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+table, th, td {
+  border:1px solid black;
+}
+@media (min-width: 728px) {
+  .adjust {
+    margin-top:9%
+ }
+  .top_title {
+    height: 45%;
+    width: 45%;
+  }
+  .right_col {
+    width: 87.5%;
+    float: right;
+  }
+  .title-img {
+  float: right; width: 40%; margin: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.profile-img {
+  float: right; width: 20%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.flex-img {
+  width: 20%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 152.5%;
+  display: block;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  font-weight: bolder;
+  margin-left: 2.5px;
+  margin-right: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+.quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 15%,
+    #2c7648 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+}
+
+
+@media (min-width: 1px) and (max-width: 728px) {
+ /* enter small devices and phone style overrides here */
+ .adjust {
+  margin-top:23%
+ }
+  .top_title {
+    height: 100%;
+    width: 100%;
+  }
+  .right_col {
+    width: 100%;
+    float: left;
+  }
+  .menu-bar-hide {
+    display:none!important
+  }
+  .title-img {
+  width: 90%; padding: 30px;
+}
+.profile-img {
+  display: block;
+  margin: 3px auto;
+  width: 45%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.flex-img {
+  display: block;
+  margin: 3px auto;
+  width: 45%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 130.5%;
+  display: block;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  font-weight: bolder;
+  margin-left: 2.5px;
+  margin-right: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+}
+.outer-wrapper {
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 10em;
+}
+.outer-wrapper::before {
+  content: "";
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;font-size: 0.9vw; color: #002C32;
+}
+</style>
+<script>
+  function block_display(num) {
+    document.getElementById("block" + num.toString()).style.display = "block"
+    document.getElementById("display" + num.toString()).style.display = "none"
+  }
+</script>
+</head>
+<body class="w3-theme-l5 global-header fade-animation">
+
+<!-- Navbar -->
+<!-- Navbar -->
+<div class="top">
+  <div class="w3-bar w3-large shadow_menu title_color fadeFromRight-animation">
+    <img src="./DoctorGetWell_files/doctor_getwell_title_hd.jpg" class="center top_title">
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-hide-large" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="Acupuncture.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+  </div>
+</div>
+  </div>
+  <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Home</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="Acupuncture.html" class="w3-bar-item w3-padding-large fit_button" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">
+        <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Acupuncture</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Resources</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">About Us</div></div>
+      </a>
+    </div>
+    <div style="height: 75%;"></div>
+    <br>
+    
+  <!-- End Left Column -->
+  </div>
+ </div>
+
+<!-- Page Container -->
+<div class=" w3-content adjust" style="max-width:100%">    
+  <!-- The Grid -->
+  <div>
+    <!-- Left space -->
+    <div class="side-width"></div>
+
+    
+    <!-- Middle Column -->
+    <div class="right_col">
+
+    <div class="w3-margin">
+      <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em;  color:#19604c; font-weight: bold; text-shadow: -1px -1px 0 rgb(232, 242, 200), 1px -1px 0 rgb(176, 184, 149), -1px 1px 0 rgb(176, 184, 149), 1px 1px 0 rgb(176, 184, 149), rgb(86, 236, 86) 1px 0 10px ">Traditional Acupuncture</span>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">The Concept of Qi（氣）</span>
+        <img src="DoctorGetWell_files/qi_fig.jpg" class="profile-img">
+        <span class="intro">
+          The concept of Qi (sometimes spelled "Chi", pronounced "chee") is fundamental to traditional Chinese medical thought. Qi is the vital energy that gives life to all living matter. There is nothing comparable in allopathic (conventional Western) medicine. While human physiology in allopathic medicine is organized according to specialized function, Chinese medicine is more concerned with the dynamics of the interrelationships, especially the patterns of vital energy.
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(1)" id="display1">Read More</button>
+
+        <div style="display:none" id="block1"> 
+          <br>
+          <span class="block-info">More about Qi</span>
+          <br>
+          <span class="intro">
+            <i>"There is no place that Qi is not."</i>
+            <br>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://efg.brasilia.fiocruz.br/ava/external/fitoterapicos/aulas/unidade_7/telas/tela_5/Un7-Tela_5-_Script_5_-_Dorfer_1999.pdf"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
+            <br><br>
+            The meaning of Qi (Chee) in Chinese medicine is very difficult to translate. In the West, it is often interpreted in simplified form as "life-force" and associated with such definitions as energy.
+            <br>
+            One of the reasons it is so difficult to translate correctly lies in the fact that Qi can mean and be different things in different circumstances at different times.
+            <br><br>
+            This is best explained by understanding the Chinese character for the word Qi:	
+            <br>
+            The symbol for Qi（氣）is made up of two characters:
+            <br>
+            气： symbolizes 'steam' or 'vapor' and
+            <br>
+            米： represents 'rice'.
+            <br><br>
+            This brings the image of "a steam raising over the bowl of rise" so frequently used by Tai Chi instructors and Chi Gong masters, which they ask their students to visualize. (It is surprisingly close to "a pie from the oven": the commonly used metaphor adopted in western professional sport to describe an athlete's peak of the psycho-physical condition and performance.)
+            <br><br>
+            This illustrates that Qi can be both ethereal like vapor and dense or solid like rice.
+            <br><br>
+            Thus in Chinese medicine Qi often refers to the functional activity of the internal organs as well as such definitions as life-force or energy (these are symbolised by the "steam" aspect of the Chinese character for Qi).
+            It can also refer to the more material aspects of the body such as the nutrition we receive from food and the oxygen we receive from air (these in comparison are more symbolized by the "uncooked rice" aspect of the Chinese character for Qi).
+            <br><br>
+            <span style="text-decoration: underline; margin-bottom: 5px;">The functions of Qi</span>
+            <br>
+            The main functions of Qi are generally defined as:
+            - Impulsing: the growth and development of the body,
+            <br>
+            - Warming: the maintaining of appropriate body heat,
+            <br>
+            - Defending: against stresses and pathogens,
+            <br>
+            - Controlling: the Blood and Body fluids,
+            <br>
+            - Transforming: metabolizing Qi, Blood and Body fluids.
+            <br><br>
+            <span style="text-decoration: underline; margin-bottom: 5px;">The forms of Qi</span>
+            <br>
+            Although the Western medical model does not recognize Qi concept, it is possible to view this ancient Chinese tradition through contemporary eyes.
+            <br><br>
+            For example, consider the three principal Forms of Qi:
+            <br>
+            - Yuan Qi = Original Energy
+            <br>
+            - It is one's inherited vitality or constitutional charge.
+            <br>
+            - The precursor of all other Qi activity in the body expressed through growth, development, reproduction, transformation and senescence
+            <br>
+            - It is the genetic component, what we know today as the DNA
+            <br><br>
+            - Wei Qi = Defensive Energy
+            <br>
+            - It is the energy that protects the body from pathogens (viral, bacterial or toxins) and from harmful environment
+            <br>
+            - It is what we call today the immune system
+            <br><br>
+            - Zhon Qi = Nourishing Energy
+            <br>
+            - It refers to the circulatory system where the heart is pumping the blood to the rest of the body to deliver nourishment
+            <br>
+            - It refers to the respiratory system where the blood absorbs oxygen from the lungs
+            <br>
+            - It elude to the digestive system, where foods are converted to basic nutrients that can be absorbed into the blood stream
+            <br><br>
+            <br>
+            There is terminological inconsistency in the description of the forms of Qi that reflects discrepancy in the teachings of different schools of TCM (Traditional Chinese Medicine).
+            <br><br>
+            According to some sources, TCM defines the
+            <br>
+            Five Main Forms of Qi Energy:
+            <br><br>
+            - Qi (Matter-Energy): The vital energy of every living organism and the source of all movement and change in the universe.
+            <br>
+            - Xue (Blood): Not only the fluid that circulates in the vascular system, but also the Qi within that fluid that vitalizes its nourishing function as well as its flow. Qi and Xue have mutually interdependent functions.
+            <br>
+            - Jing (Essence): The Essential energy of all living organisms which is derived both from the energy we inherit from our parents and from the energy we acquire in our daily lives, principally from air and food.
+            <br>
+            - Shen (Spirit): The material/non-material mental-emotional-motivational aspect of consciousness that is stored in the Heart. (Heart is capitalized to remind that we are referring to the Chinese concept of Heart, not the Western, which views the organ as simply a pump. The Chinese Heart has many other functions including the seat of the Shen. Other organs and organ systems are capitalized to further illustrate this distinction.
+            <br>
+            - Jin Ye (Body Fluids): The functional secretions of the body, including tears, sweat, saliva, milk, mucus, hydrochloric acid and genital secretions. Jin are the lighter, purer and more yang fluids which, via the Lung, moisten and nourish the skin and muscles; Ye are the denser, more yin fluids which are processed in the Spleen and Stomach to moisten and nourish the Zang Fu (internal organs), bones, brain and orifices (mucus for sensory orifices and others).
+            <br><br>
+            Some other sources utilize different terminology:
+            <br><br>
+            - Yuan Qi (Original Qi)
+            <br>
+            - Gu Qi (Food Qi)
+            <br>
+            - Zong Qi (Gathering Qi)
+            <br>
+            - Zhen Qi (True Qi) that consists of
+            <br><br>
+            Ying Qi (Nutritive Qi) and Wei Qi (Protective Qi)
+            <br>
+            - Zhong Qi (Central Qi)
+            <br>
+            - Zheng Qi (Upright Qi)
+            <br><br>
+            Despite the terminological complexity, the fundamental concept of Qi presents the system that looks at the totality of our being in all aspects; the model of disease or illness is viewed as multi-factorial phenomenon.
+            <br>
+            This is an advanced system of thinking, given that this concept originated more than 2000 years ago.
+            <br><br>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 14-July-2024</span>
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Yin & Yang（陰陽）</span>
+        <img src="DoctorGetWell_files/ying_and_yang.png" class="profile-img">
+        <span class="intro">
+          Yin and Yang are counter poles; they are each other's opposite in which life is searching for harmony and balance. 
+          <br><br>
+          Health in this philosophy means balance between Yin and Yang. Illness means that one of the two is too strong or too weak.
+        </span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="w3-margin button-info" onclick="block_display(2)" id="display2">Read More</button>
+
+        <div style="display:none" id="block2"> 
+          <br>
+          <span class="block-info">More about Qi</span>
+          <br>
+          <span class="intro">
+            <i>"The principle of Yin and Yang is the foundation of the entire universe."</i>
+            <br>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://efg.brasilia.fiocruz.br/ava/external/fitoterapicos/aulas/unidade_7/telas/tela_5/Un7-Tela_5-_Script_5_-_Dorfer_1999.pdf"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
+            <br><br>
+            The meaning of Qi (Chee) in Chinese medicine is very difficult to translate. In the West, it is often interpreted in simplified form as "life-force" and associated with such definitions as energy.
+            <br><br>
+            Yin（陰）can alternatively mean shady side of a hill,
+            <br>
+            and sunny side of a hill for Yang（陽）. 
+            <br><br>
+            These meanings demonstrate that they are two sides or aspects of the same entity.
+            <br><br>
+            Graphically this concept is expressed through the symbol "☯︎". (<a rel="noopener noreferrer" target="_blank" href="http://www.chinesefortunecalendar.com/yinyang.htm"  style="color: #405ca8;">Read related article</a>)
+            <br><br>
+            Yin represents everything that's descending, going inside, is dark and cool; it takes care of rest, nourishment, night, winter, water etc.
+            <br>
+            Yang ascends, goes from the inside towards the outside; it's warm, light, active, protecting, day, summer, fire etc.
+            <br><br>
+            Mathematical or digital expression of Yin and Yang can be presented as
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/yinyangbar.gif" class="flex-img">
+            </div>
+            <br>
+            Combining the two, we can split it into the four stages of Yin and Yang:
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/yinyang_stages.gif" class="flex-img">
+            </div>
+            <br>
+            With addition of an extra line, the Eight Trigrams (八卦, pronounced "Ba Gua") are formed, illustrating transition and dynamic interrelation of Yin and Yang.
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/trigrams.gif" class="flex-img">
+            </div>
+            <br>
+            This brings us to the more accurate symbolic expression of Yin and Yang:
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/monadaex.gif" class="flex-img">
+            </div>
+            <br>
+            The Eight Trigrams are combined to form 64 hexagrams, whose permutations represent the continuous process of change in every aspect of nature symbolizing all possible phenomena of the Universe.
+            <br>
+            The first book that contains diagrams of the Eight Trigrams and 64 hexagrams, is the Yi Jing, Classic of Changes, which is dated as early as the time of Emperor Fu Xi (circa 1100 B.C.; the author remains unknown).
+            <br><br>
+            These diagrams form the foundation of traditional Chinese medical thought and the basic theories of acupuncture, the Yin-Yang theory and the theory of the five elements.
+            <br><br>
+            The five laws of Yin & Yang:
+            <br><br>
+            - Opposition.
+            <br>
+            Everything has two opposite aspects. Yin & Yang struggle with and control each other.
+            <br><br>
+            - Inter-dependence.
+            <br>
+            Yin & Yang define each other and therefore one cannot exist without the other. (If there is no down, which way is up?)
+            <br><br>
+            - Mutual consumption & support.
+            <br>
+            Yin & Yang each give of themselves to nourish the other.
+            <br><br>
+            - Inter-transformation.
+            <br>
+            YIn can become Yang and Yang can become Yin. In fact, this is inevitable if the growth of one or the other is uncontrolled.
+            <br><br>
+            - Infinite subdivisibility.
+            <br>
+            There is always an element of one in the other. Anything can be subdivided again and again.
+            <br><br>
+            - Neither Yin nor Yang is good or bad (a common mistake!);
+            <br>
+            - they are 2 opposites that are supplemental;
+            <br>
+            - they are two aspects of the same entity;
+            <br>
+            - they transit into and are dependent on each other;
+            <br>
+            - disbalance between Yin and Yang is Illness, separation of them is death...
+            <br><br>
+            After a while Yin becomes Yang and Yang becomes Yin, like day becomes night, summer becomes winter and action becomes rest.
+            <br><br>
+            No matter what is the level of organization we refer to (from elementary particles to human beings and even up to galaxies), one of the fundamental laws of Nature is that of the permanent interaction between the two complementary forces, YIN(-) and YANG(+). 
+            <br><br>
+            <br>
+            All the processes and phenomenons of Nature are the expression of the interaction of these two principles:
+            <br><br>
+            <div style="overflow-x:auto;">
+            <table>
+              <tbody><tr> 
+                <td height="40"></td>
+                <td><span style="font-size: larger;">YIN（陰）</span> </td>
+                <td><span style="font-size: larger;">YANG（陽）</span></td>
+              </tr>
+              <tr > 
+                <td>Tendency </td>
+                <td>Extension, dilatation</td>
+                <td>Contraction</td>
+              </tr>
+              <tr > 
+                <td>Position</td>
+                <td>Exterior</td>
+                <td>Interior</td>
+              </tr>
+              <tr > 
+                <td>Direction</td>
+                <td>Downward</td>
+                <td>Upward</td>
+              </tr>
+              <tr > 
+                <td>Temperature </td>
+                <td>Cold</td>
+                <td>Hot</td>
+              </tr>
+              <tr > 
+                <td>Gender </td>
+                <td>Feminine</td>
+                <td>Masculine</td>
+              </tr>
+              <tr > 
+                <td>Element </td>
+                <td>Water</td>
+                <td>Fire</td>
+              </tr>
+              <tr > 
+                <td>Season </td>
+                <td>Cold, winter</td>
+                <td>Tropical, summer</td>
+              </tr>
+              <tr > 
+                <td>Structure </td>
+                <td>Space, mass</td>
+                <td>Time, energy</td>
+              </tr>
+              <tr > 
+                <td>Orientation </td>
+                <td>Centrifugal</td>
+                <td>Centripetal</td>
+              </tr>
+              <tr > 
+                <td>Color </td>
+                <td>Violet, mauve</td>
+                <td>Red</td>
+              </tr>
+              <tr > 
+                <td>Weight </td>
+                <td>Easy</td>
+                <td>Heavy</td>
+              </tr>
+              <tr > 
+                <td> Atom </td>
+                <td>Electrons</td>
+                <td>Protons (nucleus)</td>
+              </tr>
+              <tr > 
+                <td>Chemical element</td>
+                <td>Potassium, Calcium, Oxygen, Azoth, Sulfur, Phosphor, Silicon, Iron, 
+                  Strontium, Lead, Aluminum, Cobalt, Molybdenum, Tin, Silver, Chlorine
+            </td>
+                <td>Sodium, Hydrogen, Carbon, Magnesium, Arsenious, Lithium, Quicksilver, 
+                  Uranium, Neon, Chromium, Nickel, Copper, Palladium, Gold</td>
+              </tr>
+              <tr > 
+                <td>The living world </td>
+                <td>Vegetal</td>
+                <td>Animal</td>
+              </tr>
+              <tr > 
+                <td>Plants </td>
+                <td>Salads, legumes, fruits</td>
+                <td>Cereals</td>
+              </tr>
+              <tr > 
+                <td valign="top">Aliments</td>
+                <td>that contain much water;</td>
+                <td>that contain little water</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>rich in potassium;</td>
+                <td>rich in sodium;</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>rich in glucides</td>
+                <td>rich in proteins</td>
+              </tr>
+              <tr > 
+                <td>Taste </td>
+                <td>Sour, piquant, peppery, astringent, softly acid, sweet</td>
+                <td>Salty, bitter, alkaline</td>
+              </tr>
+              <tr > 
+                <td>Nerves </td>
+                <td>Ortho sympathetic</td>
+                <td>Para sympathetic</td>
+              </tr>
+              <tr > 
+                <td>Neurochemical Basis </td>
+                <td>Inhibition </td>
+                <td>Excitation </td>
+          
+          </tr>
+              <tr > 
+                <td>Vitamins </td>
+                <td>C,B2,B12,Pp,B1,B6</td>
+                <td>D,K,E,A</td>
+              </tr>
+              <tr > 
+                <td>Zodiacal signs </td>
+                <td>TAURUS, CANCER, VIRGO, SCORPIO, CAPRICORN, PISCES </td>
+                <td>ARIES, GEMINI, LEO, LIBRA, SAGITTARIUS, AQUARIUS </td>
+              </tr>
+              <tr > 
+                <td>Metabolism </td>
+                <td>Anabolism </td>
+                <td>Catabolism</td>
+              </tr><tr > 
+                <td>Pace </td>
+                <td>Slow</td>
+                <td>Fast</td>
+              </tr>
+              <tr > 
+                <td>State </td>
+                <td>Passivity, static, inertia </td>
+                <td>Activity, dynamic, movement</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td> Sleep </td>
+                <td>Wake</td>
+              </tr>
+              <tr > 
+                <td>Blood pressure </td>
+                <td>Hypotension </td>
+                <td>Hypertension</td>
+              </tr>
+              <tr > 
+                <td>PH</td>
+                <td>Acid </td>
+                <td>Alkaline</td>
+              </tr>
+              <tr > 
+                <td>Humidity </td>
+                <td>Wet</td>
+                <td>Dry</td>
+              </tr>
+              <tr > 
+                <td>Other attributes</td>
+                <td>Expansion </td>
+                <td>Pressure</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Quiet </td>
+                <td>Sound</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Low </td>
+                <td>High</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Bigger </td>
+                <td>Smaller</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Long </td>
+                <td>Short</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Horizontal </td>
+                <td>Vertical</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Soft, fragile </td>
+                <td>Hard</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Root </td>
+                <td>Top</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Down </td>
+                <td>Up</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Periphery </td>
+                <td>Center</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Plural </td>
+                <td>Singular</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Subordinated </td>
+                <td>Leading</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Inorganic </td>
+                <td>Organic</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Unruly, unrestrained</td>
+                <td>Retained, controlled</td>
+              </tr>
+              <tr > 
+                <td> </td>
+                <td>Earth </td>
+                <td>Sky</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Moon </td>
+                <td>Sun</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Night </td>
+                <td>Day</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Dark </td>
+                <td>Light</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Gas </td>
+                <td>Solid</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Extrovert </td>
+                <td>Introvert</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Woman </td>
+                <td>Man</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Magnetic </td>
+                <td>Electric</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Atomic energy </td>
+                <td>Nuclear energy</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Ultraviolet </td>
+                <td>Infrared</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Short waves</td>
+                <td> Long waves</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Negative </td>
+                <td>Positive</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Concrete </td>
+                <td>Abstract</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Sperm, Spermatozoon</td>
+                <td>Menstrual blood, Ovule</td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Bleu, indigo, violet</td>
+                <td>Red, orange, yellow </td>
+              </tr>
+              <tr > 
+                <td></td>
+                <td>Moon </td>
+                <td>Sun</td>
+              </tr>
+            </tbody></table>
+            </div>
+            <br><br>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 14-July-2024</span>
+              <br>
+            </span>
+          </span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#013916;
+        ">Copyright Policy</span>
+        <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Please, feel free to copy and use this material with the proper reference. This courtesy is expected. Thank you.
+      </span>
+      <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+            color: gray;
+        ">
+        This page last updated: 14-July-2024
+      </span>
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <div style="position: relative; height: 200px;">
+      <div style="width: 150%; bottom: 0; z-index: -1; position: absolute;margin-left: -50%;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px;"></div>
+      </div>
+      <div style="width: 100%; bottom: 0;z-index: 0; position: absolute;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px; padding-left: 50px;">
+          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | getwell@doctor.comㅤㅤ</span>
+          <span style="font-size: 150%;text-align: right;color: white; float: right; padding-right: 4%; width:50%">141 Airport Road, Warwick, RI 02889</span>
+        </div>
+      </div>
+    </div>
+  <!-- End Grid --->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+</body>
+</html> 
