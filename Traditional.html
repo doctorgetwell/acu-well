@@ -119,6 +119,10 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
     flex-wrap: wrap;
     justify-content: center;
 }
+.diagram-bar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 @keyframes fadeFromRight{
   0% {
     transform: translateX(100%);
@@ -165,6 +169,14 @@ table, th, td {
   border:1px solid black;
 }
 @media (min-width: 728px) {
+  .diagram-bar {
+  display: block; 
+  overflow: auto;
+  white-space: nowrap;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
   .adjust {
     margin-top:9%
  }
@@ -201,6 +213,16 @@ table, th, td {
   text-align: justify;
   margin-bottom: 15px;
 }
+.mail-letter {
+  display: block;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  font-weight: bolder;
+  margin-left: 2.5px;
+  margin-right: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
 .quote{
   text-align:center;
   position: relative;
@@ -212,11 +234,22 @@ table, th, td {
     rgba(255, 255, 255, 0) 100%
   );
 }
+.acup-diagram {
+    width: 35%;
+  }
 }
 
 
 @media (min-width: 1px) and (max-width: 728px) {
  /* enter small devices and phone style overrides here */
+ .diagram-bar {
+  display: block; 
+  overflow: auto;
+  white-space: nowrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
  .adjust {
   margin-top:23%
  }
@@ -259,6 +292,12 @@ table, th, td {
   text-align: justify;
   margin-bottom: 15px;
 }
+.acup-diagram {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
 }
 .outer-wrapper {
   overflow: hidden;
@@ -275,12 +314,274 @@ table, th, td {
   white-space: nowrap;
   font-weight: bold;font-size: 0.9vw; color: #002C32;
 }
+.acup-diagram-buttons{
+  background-color: #EAEBCE; width:fit-content; box-shadow: 0 0 40px #b9984d inset; font-size: 1.5em; 
+}
 </style>
 <script>
+
+  //basic functions
+
   function block_display(num) {
     document.getElementById("block" + num.toString()).style.display = "block"
     document.getElementById("display" + num.toString()).style.display = "none"
   }
+
+  //channels
+
+  function change1()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/1_lungs.gif";
+    document.getElementById("channel_name").textContent = "I - Lungs";
+    document.getElementById("yin_yang_type").textContent = "Greater Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#b9984d"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Metal (金)"
+    document.getElementById("element").style.color = "#fff200"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 11"
+    return false;
+  }
+
+  function change2()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/2_largeint.gif";
+    document.getElementById("channel_name").textContent = "II - Large Intestine";
+    document.getElementById("yin_yang_type").textContent = "Yang Brightness (陽)";
+    document.getElementById("yin_yang_type").style.color = "#ffb285"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Metal (金)"
+    document.getElementById("element").style.color = "#fff200"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 20"
+    return false;
+  }
+
+  function change3()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/3_stom.gif";
+    document.getElementById("channel_name").textContent = "III - Stomach";
+    document.getElementById("yin_yang_type").textContent = "Yang Brightness (陽)";
+    document.getElementById("yin_yang_type").style.color = "#ffb285"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Earth (土)"
+    document.getElementById("element").style.color = "#b36b00"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 45"
+    return false;
+  }
+
+  function change4()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/4_spleen.gif";
+    document.getElementById("channel_name").textContent = "IV - Spleen &  Pancreas";
+    document.getElementById("yin_yang_type").textContent = "Greater Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#b9984d"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Earth (土)"
+    document.getElementById("element").style.color = "#b36b00"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 21"
+    return false;
+  }
+
+  function change5()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/5_heart.gif";
+    document.getElementById("channel_name").textContent = "V - Heart";
+    document.getElementById("yin_yang_type").textContent = "Lesser Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#39989d"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Fire (火)"
+    document.getElementById("element").style.color = "#ff0000"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 9"
+    return false;
+  }
+  function change6()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/6_smallint.gif";
+    document.getElementById("channel_name").textContent = "VI - Small Intestine";
+    document.getElementById("yin_yang_type").textContent = "Greater Yang (陽)";
+    document.getElementById("yin_yang_type").style.color = "#37c762"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Fire (火)"
+    document.getElementById("element").style.color = "#ff0000"
+    document.getElementById("part_type").textContent = "Dorsal"
+    document.getElementById("part_type").style.color = "#eb75e7"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 19"
+    return false;
+  }
+
+  function change7()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/7_urin.gif";
+    document.getElementById("channel_name").textContent = "VII - Urinary Bladder";
+    document.getElementById("yin_yang_type").textContent = "Greater Yang (陽)";
+    document.getElementById("yin_yang_type").style.color = "#37c762"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Water (水)"
+    document.getElementById("element").style.color = "#00b7ff"
+    document.getElementById("part_type").textContent = "Dorsal"
+    document.getElementById("part_type").style.color = "#eb75e7"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 67"
+    return false;
+  }
+
+  function change8()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/8_kidney.gif";
+    document.getElementById("channel_name").textContent = "VIII - Kidney";
+    document.getElementById("yin_yang_type").textContent = "Lesser Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#39989d"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Water (水)"
+    document.getElementById("element").style.color = "#00b7ff"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 27"
+    return false;
+  }
+
+  function change9()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/9_peric.gif";
+    document.getElementById("channel_name").textContent = "IX - Pericardium";
+    document.getElementById("yin_yang_type").textContent = "Absolute Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#2f980d"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Fire (火)"
+    document.getElementById("element").style.color = "#ff0000"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 9"
+    return false;
+  }
+
+  function change10()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/10_triple.gif";
+    document.getElementById("channel_name").textContent = "X - Triple Warmer";
+    document.getElementById("yin_yang_type").textContent = "Lesser Yang (陽)";
+    document.getElementById("yin_yang_type").style.color = "#309291"
+    document.getElementById("relation").textContent = "Related: Arm"
+    document.getElementById("relation").style.color = "#89dabd"
+    document.getElementById("element").textContent = "Element: Fire (火)"
+    document.getElementById("element").style.color = "#ff0000"
+    document.getElementById("part_type").textContent = "Dorsal"
+    document.getElementById("part_type").style.color = "#eb75e7"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 23"
+    return false;
+  }
+
+  function change11()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/11_gall.gif";
+    document.getElementById("channel_name").textContent = "XI - Gallibladder";
+    document.getElementById("yin_yang_type").textContent = "Lesser Yang (陽)";
+    document.getElementById("yin_yang_type").style.color = "#309291"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Wood (木)"
+    document.getElementById("element").style.color = "#4ac724"
+    document.getElementById("part_type").textContent = "Dorsal"
+    document.getElementById("part_type").style.color = "#eb75e7"
+    document.getElementById("ac_des").textContent = "Descending"
+    document.getElementById("ac_des").style.color = "#e6d373"
+    document.getElementById("points").textContent = "Acup Points: 44"
+    return false;
+  }
+
+  function change12()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/12_liver.gif";
+    document.getElementById("channel_name").textContent = "XII - Liver";
+    document.getElementById("yin_yang_type").textContent = "Absolute Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#2f980d"
+    document.getElementById("relation").textContent = "Related: Leg"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "Element: Wood (木)"
+    document.getElementById("element").style.color = "#4ac724"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 14"
+    return false;
+  }
+
+  function change13()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/13_du-mai.gif";
+    document.getElementById("channel_name").textContent = "XIII - Du-Mai Governing Vessel";
+    document.getElementById("yin_yang_type").textContent = "Yang (陽)";
+    document.getElementById("yin_yang_type").style.color = "#ffffff"
+    document.getElementById("relation").textContent = "--"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "--"
+    document.getElementById("element").style.color = "#4ac724"
+    document.getElementById("part_type").textContent = "Dorsal"
+    document.getElementById("part_type").style.color = "#eb75e7"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 28"
+    return false;
+  }
+
+  function change14()
+  {
+    document.getElementById("image").src="./DoctorGetWell_files/13_du-mai.gif";
+    document.getElementById("channel_name").textContent = "XIV - Ren Conventional Vessel";
+    document.getElementById("yin_yang_type").textContent = "Yin (陰)";
+    document.getElementById("yin_yang_type").style.color = "#c6bdb8"
+    document.getElementById("relation").textContent = "--"
+    document.getElementById("relation").style.color = "#83fa0d"
+    document.getElementById("element").textContent = "--"
+    document.getElementById("element").style.color = "#4ac724"
+    document.getElementById("part_type").textContent = "Ventral"
+    document.getElementById("part_type").style.color = "#b9984d"
+    document.getElementById("ac_des").textContent = "Ascending"
+    document.getElementById("ac_des").style.color = "#5c5cf0"
+    document.getElementById("points").textContent = "Acup Points: 24"
+    return false;
+  }
+
+  //...
+
 </script>
 </head>
 <body class="w3-theme-l5 global-header fade-animation">
@@ -376,7 +677,7 @@ table, th, td {
           <span class="intro">
             <i>"There is no place that Qi is not."</i>
             <br>
-            ~ <a rel="noopener noreferrer" target="_blank" href="https://efg.brasilia.fiocruz.br/ava/external/fitoterapicos/aulas/unidade_7/telas/tela_5/Un7-Tela_5-_Script_5_-_Dorfer_1999.pdf"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2287209/"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
             <br><br>
             The meaning of Qi (Chee) in Chinese medicine is very difficult to translate. In the West, it is often interpreted in simplified form as "life-force" and associated with such definitions as energy.
             <br>
@@ -506,7 +807,7 @@ table, th, td {
           <span class="intro">
             <i>"The principle of Yin and Yang is the foundation of the entire universe."</i>
             <br>
-            ~ <a rel="noopener noreferrer" target="_blank" href="https://efg.brasilia.fiocruz.br/ava/external/fitoterapicos/aulas/unidade_7/telas/tela_5/Un7-Tela_5-_Script_5_-_Dorfer_1999.pdf"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2287209/"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
             <br><br>
             The meaning of Qi (Chee) in Chinese medicine is very difficult to translate. In the West, it is often interpreted in simplified form as "life-force" and associated with such definitions as energy.
             <br><br>
@@ -913,6 +1214,3385 @@ table, th, td {
           </span>
         </div>
       </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Five Elements</span>
+        <img src="DoctorGetWell_files/five_elements.jpg" class="profile-img">
+        <span class="intro" >
+          Another basic concept of acupuncture is the Five Elements theory. 
+          <br><br>
+          According to the Five Elements philosophy, everything, including energy, passes through cycles. 
+          <br><br>
+          In Nature, this can be seen in the four seasons and in the body it is evidenced by the interactions between the main organs.
+          <br><br>
+          <br>
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(3)" id="display3">Read More</button>
+
+        <div style="display:none" id="block3"> 
+          <br>
+          <span class="block-info">More about Five Elements</span>
+          <br>
+          
+          <span class="intro">
+            <i>"Nature has four seasons and five elements..."</i>
+            <br>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2287209/"  style="color: #405ca8;">The Nei Jing - The Yellow Emperor's Classic of Internal Medicine; circa 200 BC</a>
+            <br><br>
+            <br>
+            The Five Element Theory is complementary to the Yin-Yang idea. It usually attracts a lot of attention in Western books on TCM, perhaps because it is complicated and allows plenty of opportunity for mathematical and systemic analysis as well as mystification. Modern Chinese books on TCM, at least in Western languages, usually say little or almost nothing about it. However, emphasis on Five Elements Theory in diagnosis and treatment strategy is a predominant feature of modern European school of acupuncture.
+            <br><br>
+            "Elements" is a misleading translation of the Chinese term, which as usual has a dynamic implication. "Five phases" would be better, because the so-called elements change into one another.
+            <br><br>
+            Their names are Wood, Fire, Earth, Metal and Water, and they are related to the various organs and to one another in a complicated manner. 
+            <br>
+            The interplay of the phases or elements has implications for treatment in the traditional system.
+            <br><br>
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="5" border="1">
+                <tbody><tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Element
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP" bgcolor="#aaffaa">
+                   <font style="font-family:Arial; color:#008040; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   WOOD
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP" bgcolor="#ffcccc">
+                   <font style="font-family:Arial; color:#FF0000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   FIRE
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP" bgcolor="#ffffcc">
+                   <font style="font-family:Arial; color:#FFDD00; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   EARTH
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP" bgcolor="#ffffff">
+                   <font style="font-family:Arial; color:#BBBBBB; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   METAL
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP" bgcolor="#ddddff">
+                   <font style="font-family:Arial; color:#0000ff; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   WATER
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Direction
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   East
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   South
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Center
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   West
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   North
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   &nbsp;
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Extends Out
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Raises
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Stabilizes
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Inward
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Downward
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Stage of Development
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Birth/Germination
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Growth
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Transformation
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Harvest
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Storage
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Yin - Yang
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Lesser Yang
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Utmost Yang
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Center
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Lesser Yin
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Utmost Yin
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Season
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Spring 
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Summer
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   None
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Autumn
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Winter
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Color
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Green
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Red
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Yellow / Brown
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   White / Black
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Black / Blue
+                   </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Zang Organs (Yin)
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Liver
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Heart
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Spleen
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Lungs
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Kidneys
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Fu Organs (Yang)
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Gall Bladder
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Small Intestine
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Stomach
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Large Intestine
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Urinary Bladder
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Tissue
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Tendons / Sinews
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Vessels
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Muscles
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Skin
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Bones
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Disease
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Nose Bleeding
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Chest Illness
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Diarrhea
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Malaria similar illness.
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Rheumatism or Palsy, cold type
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Body Part
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Head
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Chest
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Vertebrate
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Shoulder &amp; Back
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Waist Down
+                   </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Sense
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sight 
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Words
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Taste
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Smell
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Hearing
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Sense organs
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Eyes
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Tongue
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Mouth
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Nose
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Ears
+                   </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Nourishes
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Muscles
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Blood Vessels
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fat
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Skin
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Bone
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Liquid emitted
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Tears
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sweat
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Saliva
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Mucus
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Urine
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Body smell
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Rancid
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Scorched
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fragrant
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fleshy
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Putrid
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Emotion
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Anger; Depression
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Joy; Up/Down
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Pensiveness; Sympathy; Obsession
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sadness; Anguish; Grief
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fear
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Expands into
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Nails
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Colour
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Lips
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Body hair
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Hair
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Taste
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sour
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Bitter
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sweet
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Pungent
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Salty
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Climate
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Wind
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Heat
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Dampness
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Dryness
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Cold
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Number
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   8
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   7
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   5
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   9
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   6
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Planet
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Jupiter
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Mars
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Saturn
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Venus
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Mercury
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Animal
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fish
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Bird
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Human
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Mammals
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Shell-covered
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Domestic Animal
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Sheep
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Fowl
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Ox
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Dog
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Pig
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Grain
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Wheat
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Beans
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Rice
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Hemp
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Millet
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Spirit
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Hun
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Shen
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Yi
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Po
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Zhi
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Tone
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Jue
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Zhi
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Gong
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Shang
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Yu
+                   </font>
+                 </td>
+                </tr>
+                <tr>
+                 <td align="CENTER" valign="TOP" bgcolor="#f0f0f0">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                   Sound
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Shouting
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Laughing
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Singing
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Crying
+                   </font>
+                 </td>
+                 <td align="CENTER" valign="TOP">
+                   <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                   Groaning
+                   </font>
+                 </td>
+                </tr>
+               </tbody></table>
+            </div>
+            
+            <br><br>
+
+            <span style="text-decoration: underline;">The Five Shu Points of Yin Channels:</span>
+
+            <br>
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="5" border="1">
+        
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  CHANNEL / POINT
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-Well (<font class="bold">Wood</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Rong-Spring (<font class="bold">Fire</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Shu-Stream (<font class="bold">Earth</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-River (<font class="bold">Metal</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  He-Sea (<font class="bold">Water</font>)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Liver
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv1 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv2 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv4 
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv8 (T)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Heart 
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H7 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H4
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H3
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Pericardium
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P7 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P5
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P3
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Spleen
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp2 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp3 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp5 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp9
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Lung
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L11
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L10
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L5 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Kidney
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K1 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K7 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K10 (H)
+                  </font>
+                 </td>
+                </tr>
+               </tbody></table>
+            </div>
+
+            <br><br>
+
+            <span style="text-decoration: underline; ">The Five Shu Points of Yang Channels:</span>
+
+            <br>
+
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="5" border="1">
+        
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  CHANNEL / POINT
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-Well (<font class="bold">Metal</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Rong-Spring (<font class="bold">Water</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Shu-Stream (<font class="bold">Wood</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-River (<font class="bold">Fire</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  He-Sea (<font class="bold">Earth</font>)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Large Intestine
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI1 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI2 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI5
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI11 (T)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Urinary Bladder
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB67 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB66 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB65 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB60
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB40
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Gall Bladder
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB44
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB43 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB41 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB38 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB34
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Small Intestine
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI3 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI5 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI8 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Triple-Warmer
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ3 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ6 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ10 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Stomach
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S45 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S44
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S43
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S41 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S36 (H)
+                  </font>
+                 </td>
+                </tr>
+               
+               </tbody></table>
+            </div>
+
+            <br><br>
+
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 16-July-2024</span>
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Channels</span>
+        <img src="DoctorGetWell_files/acup_chart.jpg" class="profile-img">
+        <span class="intro" >
+          According to Chinese medicine, the invisible Qi circulates along a system of conduits.
+          <br><br>
+          They form a complex network of main channels, minor capillaries, and collaterals.
+          <br><br>
+          There are 14 main interconnected pathways called "channels" through which this energy circulates. 
+          <br><br>
+          In total, 
+          there are about 400 acupuncture points. 
+          <br>
+          Each channel is intimately connected with one of 
+          the viscera of the body, and each manifests its own characteristics and bears the name of 
+          the organ related to it. 
+          <br>
+          For example, "liver channel", "heart channel", etc.
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(4)" id="display4">Read More</button>
+
+        <div style="display:none" id="block4"> 
+          <br>
+          <span class="block-info">More about Channels</span>
+          <br>
+          <span class="intro">
+            The classical Eastern explanation is that channels of energy
+            or "Qi" run in regular patterns through the body and over its surface.
+            These channels, called meridians, are like rivers flowing through the body
+            to irrigate and nourish the tissues. An obstruction in the movement of these
+            energy "river" is like a dam that backs up, creating imbalance and pain. 
+            <BR>
+            Needling the acupuncture points can influence the meridians;
+            the acupuncture needles unblock the obstructions at the dams, and reestablish
+            the regular flow through the meridians. <BR>
+            The points are selected to work synergistically to treat the
+            whole person, to assess a persons whole constitution (the health of their whole
+            body) and treat the root (or cause) of a health concern along with a branch (or
+            the symptoms) of a health concern. <BR><BR>
+            The system of channels and collaterals constitutes:
+            - Fourteen Regular Channels <BR>
+            - Eight Extra Channels <BR>
+            - Fifteen Collaterals <BR>
+            - Twelve Divergent Channels <BR>
+            - Twelve Muscle Regions of the Regular Channels <BR>
+            - Twelve Cutaneous Regions of the Regular Channels<BR>
+          </span>
+          <br><br>
+
+          <div class="flex-container" style="margin-left: auto; margin-right: auto;">
+            <div class="w3-card round" style="width: fit-content;float: left; height: fit-content; margin-top: auto; margin-bottom: auto; background-color: #D8D6BA; padding: 10px;">
+              <span id="channel_name" style="font-weight: bold; font-size: 225%; color:#013916;">I - Lungs</span><br>
+              <span id="yin_yang_type" style="font-weight: bold; font-size: 170%; color:#b9984d;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Greater Yin (陰)</span><br>
+              <span id="relation" style="font-weight: bold; font-size: 170%; color:#89dabd;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Related: Arm</span><br>
+              <span id="element" style="font-weight: bold; font-size: 170%; color:#fff200;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Element: Metal (金)</span><br>
+              <span id="part_type" style="font-weight: bold; font-size: 170%; color:#b9984d;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Ventral</span><br>
+              <span id="ac_des" style="font-weight: bold; font-size: 170%; color:#e6d373;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Descending</span><br>
+              <span id="points" style="font-weight: bold; font-size: 170%; color:#8ae3f3;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Acup Points: 11</span><br>
+            </div>
+            <img src="DoctorGetWell_files/1_lungs.gif" class="acup-diagram" id="image">
+          </div>
+          <br>
+          <div class="w3-large diagram-bar" >
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change1();">I - Lungs</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change2();">II - Large Intestine</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change3();">III - Stomach</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change4();">IV - Spleen & Pancreas</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change5();">V - Heart</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change6();">VI - Small Intestine</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change7();">VII - Urinary Bladder</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change8();">VIII - Kidney</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change9();">IX - Pericardium</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change10();">X - Triple Warmer</div>
+            <div class="w3-button w3-card round acup-diagram-buttons" onclick="change11();">XI - Gallibladder</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change12();">XII - Liver</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change13();">XIII - Du-Mai Governing Vessel</div>
+            <div class="w3-button w3-card round acup-diagram-buttons"  onclick="change14();">XIV - Ren Conventional Vessel</div>
+          </div>
+          <br><br>
+          <span style="color:#002C32; font-size: 90%; ">
+            <br>
+            <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 16-July-2024</span>
+            <br>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Points</span>
+        <img src="DoctorGetWell_files/med_14.png" class="profile-img">
+        <span class="intro" >
+          The 14 main meridians (channels), through which Qi circulates, emerge to the skin surface at the precise locations called acupuncture points. 
+          <br><br>
+          Local stimulation of different acupuncture points (needling etc) can influence the activity of corresponding meridian in specific and predictable manner.
+          <br><br>
+          361 Points on the meridians described in the classical ancient Chinese medical manuscripts. They are complimented by 171 Extra-Meridian Points with their specific features. Over the last fifty years, 110 "New" Points and 142 Auricular Points were discovered.
+          <br><br>
+          <br><br>
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(5)" id="display5" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">Read: The Five Shu (The Five Elements) Points</button>
+
+        <div style="display:none" id="block5"> 
+          <br>
+          <span class="block-info">The Five Shu (The Five Elements) Points</span>
+          <span class="intro">
+            <br>
+            The Five Shu Points are situated in the peripheral part of each meridian , below elbows and knees.
+            <br><br>
+            Traditionally , these points are the places where the Qi of channels is transferred and each of them corresponds to one of the five elements. In addition, one Shu point on each channel corresponds to the same element as the channel as a whole. This point is referred as the hourly (horary) point.
+            <br><br>
+            According to the relation of the Five Elements theory, each meridian has a "mother" point with reinforcing effect on the meridian (tonification point) and a "son" point with a reducing effect (sedative point).
+            <br><br>
+            *(H) = Hourly (Horary) Point
+            <br>
+            *(T) = Tonification Point
+            <br>
+            *(S) = Sedative Point
+            <br><br>
+
+            <span style="text-decoration: underline;">The Five Shu Points of Yin Channels:</span>
+
+            <br>
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="5" border="1">
+        
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  CHANNEL / POINT
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-Well (<font class="bold">Wood</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Rong-Spring (<font class="bold">Fire</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Shu-Stream (<font class="bold">Earth</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-River (<font class="bold">Metal</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  He-Sea (<font class="bold">Water</font>)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Liver
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv1 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv2 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv4 
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Liv8 (T)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Heart 
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H7 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H4
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    H3
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Pericardium
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P7 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P5
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    P3
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Spleen
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp2 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp3 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp5 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    Sp9
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Lung
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L11
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L10
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L9 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L8 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    L5 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Kidney
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K1 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K7 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    K10 (H)
+                  </font>
+                 </td>
+                </tr>
+               </tbody></table>
+            </div>
+
+            <br><br>
+
+            <span style="text-decoration: underline; ">The Five Shu Points of Yang Channels:</span>
+
+            <br>
+
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="5" border="1">
+        
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  CHANNEL / POINT
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-Well (<font class="bold">Metal</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Rong-Spring (<font class="bold">Water</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Shu-Stream (<font class="bold">Wood</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  Jing-River (<font class="bold">Fire</font>)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                  He-Sea (<font class="bold">Earth</font>)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Large Intestine
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI1 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI2 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI3
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI5
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    LI11 (T)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Urinary Bladder
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB67 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB66 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB65 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB60
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    UB40
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Gall Bladder
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB44
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB43 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB41 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB38 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    GB34
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Small Intestine
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI3 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI5 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SI8 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Triple-Warmer
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ1
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ2
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ3 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ6 (H)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    SJ10 (S)
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:bold; text-decoration:none; font-style:normal;">
+                    Stomach
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:#000000; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S45 (S)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:blue; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S44
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:green; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S43
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:red; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S41 (T)
+                  </font>
+                 </td><td align="CENTER">
+                  <font style="font-family:Arial; color:maroon; font-size:9pt; font-weight:normal; text-decoration:none; font-style:normal;">
+                    S36 (H)
+                  </font>
+                 </td>
+                </tr>
+               
+               </tbody></table>
+            </div>
+            <br><br>
+
+            The Five Shu Points of Yin and Yang Channels can be summarized in the table below. The channels (meridians) are presented in the consequent order.
+            
+            <br>
+
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tbody><tr>
+                  <td width="90" align="left"><br>
+                  </td>
+                  <td width="25" align="center"><font class="text_bold">Lu</font></td>
+                  <td width="25" align="center"><font class="text_bold">LI</font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold"><font style="color:green;">Wood</font></font></td>
+                  <td align="center"><font class="text">11</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">43</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">65</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">41</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                </tr>
+                <tr align="center">
+                  <td align="left"><font class="text_bold"><font style="color:red;">Fire</font></font></td>
+                  <td align="center"><font class="text">10</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">41</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">60</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                  <td align="center"><font class="text">38</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                </tr>
+                <tr align="center">
+                  <td align="left"><font class="text_bold"><font style="color:maroon;">Earth</font></font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">11</font></td>
+                  <td align="center"><font class="text">36</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">40</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">10</font></td>
+                  <td align="center"><font class="text">34</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                </tr>
+                <tr align="center">
+                  <td align="left"><font class="text_bold">Metal</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">45</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">67</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">44</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                </tr>
+                <tr align="center">
+                  <td align="left"><font class="text_bold"><font style="color:blue;">Water</font></font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">44</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">66</font></td>
+                  <td align="center"><font class="text">10</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">43</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 16-July-2024</span>
+              <br>
+            </span>
+          </span>
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(6)" id="display6" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Horary Points</button>
+
+        <div style="display:none" id="block6">
+          <br>
+          <span class="block-info">Horary Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tbody><tr>
+                  <td width="90" align="left"><font class="text_bold">&nbsp;</font></td>
+                  <td width="25" align="center"><font class="text_bold">Lu</font></td>
+                  <td width="25" align="center"><font class="text_bold">LI</font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Horary</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">36</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">66</font></td>
+                  <td align="center"><font class="text">10</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                  <td align="center"><font class="text">41</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span>
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(7)" id="display7" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Tonification / Sedation Points</button>
+
+        <div style="display:none" id="block7">
+          <br>
+          <span class="block-info">Tonification / Sedation Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tbody><tr>
+                  <td width="90" align="left">&nbsp;</td>
+                  <td width="25" align="center"><font class="text_bold">Lu</font></td>
+                  <td width="25" align="center"><font class="text_bold">LI</font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Tonification</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">11</font></td>
+                  <td align="center"><font class="text">41</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">67</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">43</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Sedation</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                  <td align="center"><font class="text">45</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">65</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">10</font></td>
+                  <td align="center"><font class="text">38</font></td>
+                  <td align="center"><font class="text">2</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span>
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(8)" id="display8" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Yuan-Source Points</button>
+
+        <div style="display:none" id="block8">
+          <br>
+          <span class="block-info">Yuan-Source Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+                <table border="1" cellpadding="3" cellspacing="0">
+                  <tbody><tr>
+                  <td width="90" align="left">&nbsp;</td>
+                  <td width="25" align="center"><font class="text_bold">Lu</font></td>
+                  <td width="25" align="center"><font class="text_bold">LI</font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Source</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">42</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">64</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">40</font></td>
+                  <td align="center"><font class="text">3</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+        
+        <button class="w3-margin button-info" onclick="block_display(9)" id="display9" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">Read: Yan-Source and Luo-Connecting Points</button>
+
+        <div style="display:none" id="block9">
+          <br>
+          <span class="block-info">Yan-Source and Luo-Connecting Points</span>
+          <br>
+          <span class="intro">
+            According to the traditional Chinese theory each Yang Meridian (Large Intestine, Stomach, Small Intestine, Urinary Bladder, Sanjiao, Gall Bladder) has a related Yin Meridian (Lung, Spleen, Heart, Kidney, Pericardium and Liver).
+            <br><br>
+            Yang Meridians are distributed externally while Yin Meridians are distributed internally. Thus there are six couples of Meridians which are spread in parallel (exteriorly - interiorly related Meridians).
+            <br><br>
+            The Luo point is located proximal to the Yuan point and it doesn't belong to the Five Shu Points, but is a special point category.
+            <br><br>
+            From there, starts the transverse Luo vessel which ends at the Yuan point of the coupled Meridian. The longitudinal Luo vessel starts from the Luo point and running parallel to the Meridian ends directly to the channel's internal Zang or Fu organ.
+            <br><br>
+            When a channel is distorted, we can stimulate the Yuan point of the affected Meridian and the Luo point of its exteriorly - interiorly related Meridian.
+            <br><br>
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="3" border="1" width="540">
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               MERIDIAN 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text_bold">
+               YUAN POINT 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text_bold">
+               LUO POINT 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Lung 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text_bold">
+               L9 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               LI6 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Large Intestine 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               LI4 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               L7 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Stomach 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               S42 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Sp4 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Spleen 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Sp3 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               S40 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Heart 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               H7 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               SI7 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Small Intestine 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               SI4 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               H5 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Urinary Bladder 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB64 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               K4 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Kidney 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               K3 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB58 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Pericardium 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               P7 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               SJ5 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Sanjiao 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               SJ4 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               P6 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Gall Bladder 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               GB40 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Liv5 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Liver 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Liv3 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               GB37 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Du Mai 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               -
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Du1 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Ren Mai 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               -
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren15 
+                  </font>
+                 </td>
+                </tr>
+               </tbody></table>
+            </div>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 16-July-2024</span>
+              <br>
+            </span>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(10)" id="display10" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Xi-Cleft Points</button>
+
+        <div style="display:none" id="block10">
+          <br>
+          <span class="block-info">Xi-Cleft Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="0" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td align="left">&nbsp;</td>
+                  <td align="center"><font class="text_bold">Lu</font></td>
+                  <td align="center"><font class="text_bold">LI</font></td>
+                  <td align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Xi-Cleft</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">34</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                  <td align="center"><font class="text">63</font></td>
+                  <td align="center"><font class="text">5</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">36</font></td>
+                  <td align="center"><font class="text">6</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+        
+        <button class="w3-margin button-info" onclick="block_display(11)" id="display11" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">Read: The Back-Shu Points and Front-Mu Points</button>
+
+        <div style="display:none" id="block11">
+          <br>
+          <span class="block-info">The Back-Shu Points and Front-Mu Points</span>
+          <br>
+          <span class="intro">
+            Back-Shu points are specific points , located on the back of the body, where the Qi of Zang-Fu organs is infused.
+            <br><br>
+            Front-Mu points are located at the chest and abdomen where the Qi of Zang-Fu organs is infused. When a Zang-Fu organ is diseased , there is an abnormal sensation (tenderness or a sensitive spot) in the corresponding Back-Shu and Front-Mu points. The Back-Shu and the Front-Mu points can be used indepedently or in combination. These points are named according to corresponding zang-fu organs.
+            <br><br>
+            <div style="overflow-x:auto;">
+              <table cellspacing="0" cellpadding="3" border="1" width="540">
+
+                <tbody><tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+                    ZANG-FU ORGAN 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text_bold">
+                    BACK-SHU POINT 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text_bold">
+                    FRONT-MU POINT 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Lung 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB13 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               L1 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Pericardium 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB14 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren17
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Heart 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB15 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren14 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Liver 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB18 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Liv14 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Gallbladder 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB19 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               GB24 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Spleen 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB20 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Liv13 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Stomach 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB21 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren12 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Triple Warmer 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB22 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren5 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Kidney 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB23 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               GB25 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Large Intestine 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB25 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               S25 
+                  </font>
+                 </td>
+                </tr>
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Small Intestine 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB27 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren4 
+                  </font>
+                 </td>
+                </tr>
+               
+               
+                <tr>
+                 <td align="LEFT">
+                  <font class="text_bold">
+               Urinary Bladder 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               UB28 
+                  </font>
+                 </td><td align="CENTER">
+                  <font class="text">
+               Ren3 
+                  </font>
+                 </td>
+                </tr>
+               </tbody></table>
+            </div>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 16-July-2024</span>
+              <br>
+            </span>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(12)" id="display12" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Eight Extra Meridian Points</button>
+
+        <div style="display:none" id="block12">
+          <br>
+          <span class="block-info">The Eight Extra Meridian Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">DU MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="50"><font class="text_bold">Master</font></td>
+                  <td align="center" width="50"><font class="text_bold">Couple</font></td>
+                  <td align="center" width="50"><font class="text_bold">Luo</font></td>
+                  <td align="center" width="50"><font class="text_bold">X-Cleft</font></td>
+                  <td align="left"><font class="text_bold">Points on Meridian</font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">SI-3</font></td>
+                  <td align="center"><font class="text">BL-62</font></td>
+                  <td align="center"><font class="text">DU-1</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                </tr>
+                
+                <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">REN MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">LU-7</font></td>
+                  <td align="center"><font class="text">KI-6</font></td>
+                  <td align="center"><font class="text">CV-15</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                </tr>
+              
+                <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">CHONG MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">SP-4</font></td>
+                  <td align="center"><font class="text">MH-6</font></td>
+                  <td align="center"><font class="text">CV-15</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="left"><font class="text">KI-21, CV-21, KI-11</font></td>
+                </tr>
+              
+                <tr>
+                    <td colspan="5" align="center"><font class="text_bold"><font class="high">DAI MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">GB-41</font></td>
+                  <td align="center"><font class="text">SJ-5</font></td>
+                  <td align="center"><font class="text">CV-15</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="left"><font class="text">GB-26, GB-27, GB-28</font></td>
+                </tr>
+              
+                <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">YIN QIAO MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">KI-6</font></td>
+                  <td align="center"><font class="text">LU-7</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">KI-8</font></td>
+                  <td align="left"><font class="text">KI-6, KI-8</font></td>
+                </tr>
+              
+                <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">YANG QIAO MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">BL-62</font></td>
+                  <td align="center"><font class="text">SI-3</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">BL-59</font></td>
+                  <td align="left"><font class="text">BL-1, BL-59, BL-62, GB-20, GB-29, SI-10, ST-4, ST-3, ST-1, LI-15, LI-16</font></td>
+                </tr>
+               
+                 <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">YIN WEI MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">MH-6</font></td>
+                  <td align="center"><font class="text">SP-4</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">KI-9</font></td>
+                  <td align="left"><font class="text">KI-9, SP-13, SP-15, SP-16, LR-14, CV-22, CV-23</font></td>
+                </tr>
+              
+                <tr>
+                  <td colspan="5" align="center"><font class="text_bold"><font class="high">YANG WEI MO</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font class="text">SJ-5</font></td>
+                  <td align="center"><font class="text">GB-41</font></td>
+                  <td align="center"><font class="text">&nbsp;</font></td>
+                  <td align="center"><font class="text">GB-35</font></td>
+                  <td align="left"><font class="text">BL-63, GB-35, GB-13 - 20, DU-15, DU-16, ST-8, SI-10, SI-15</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(13)" id="display13" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Group Luo Points</button>
+
+        <div style="display:none" id="block13">
+          <br>
+          <span class="block-info">Group Luo Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td><font class="text_bold">3 Arm Yang</font></td>
+                  <td><font class="text">SJ-8</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yang</font></td>
+                  <td><font class="text">GB-39</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Arm Yin</font></td>
+                  <td><font class="text">PC-5</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yin</font></td>
+                  <td><font class="text">SP-6</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(14)" id="display14" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Three Jiao Points</button>
+
+        <div style="display:none" id="block14">
+          <br>
+          <span class="block-info">The Three Jiao Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                <td align="center"><font class="text_bold">Upper Jiao</font></td>
+                <td align="center"><font class="text_bold">Middle Jiao</font></td>
+                <td align="center"><font class="text_bold">Lower Jiao</font></td>
+                </tr>
+                <tr>
+                <td align="center"><font class="text">CV-17</font></td>
+                <td align="center"><font class="text">CV-12</font></td>
+                <td align="center"><font class="text">CV-7</font></td>
+               </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(15)" id="display15" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Four Sea Points</button>
+
+        <div style="display:none" id="block15">
+          <br>
+          <span class="block-info">The Four Sea Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                <td width="142"><font class="text_bold">Sea of Blood</font></td>
+                <td><font class="text">BL-11, ST-37, ST-39</font></td>
+                </tr>
+                <tr>
+                <td width="142"><font class="text_bold">Sea of Qi</font></td>
+                <td><font class="text">CV-17, BL-10, ST-9</font></td>
+                </tr>
+                <tr>
+                <td width="142"><font class="text_bold">Sea of Marrow</font></td>
+                <td><font class="text">GV-15, GV-16, GV-19, GV-20</font></td>
+                </tr>
+                <tr>
+                <td width="142"><font class="text_bold">Sea of Nourishment</font></td>
+                <td><font class="text">ST-10, ST-36</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(16)" id="display16" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Seven Dragons Points</button>
+
+        <div style="display:none" id="block16">
+          <br>
+          <span class="block-info">The Seven Dragons Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td align="center" colspan="2"><font class="text_bold"><font class="high">"EXTERNAL DRAGONS"</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center" colspan="2"><font class="text">GV-20</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text_bold">Left</font></td>
+                  <td align="center" width="195"><font class="text_bold">Right</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text">BL-11</font></td>
+                  <td align="center" width="195"><font class="text">BL-11</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text">BL-23</font></td>
+                  <td align="center" width="195"><font class="text">BL-23</font></td>
+                </tr>
+                <tr>
+                    <td align="center" width="195"><font class="text">BL-61</font></td>
+                    <td align="center" width="195"><font class="text">BL-61</font></td>
+                </tr>
+              </tbody></table>
+
+              <br>
+
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td align="center" colspan="2"><font class="text_bold"><font class="high">"INTERNAL DRAGONS"</font></font></td>
+                </tr>
+                <tr>
+                  <td align="center" colspan="2"><font class="text">CV-15</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text_bold">Left</font></td>
+                  <td align="center" width="195"><font class="text_bold">Right</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text">ST-25</font></td>
+                  <td align="center" width="195"><font class="text">ST-25</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text">ST-32</font></td>
+                  <td align="center" width="195"><font class="text">ST-32</font></td>
+                </tr>
+                <tr>
+                  <td align="center" width="195"><font class="text">ST-41</font></td>
+                  <td align="center" width="195"><font class="text">ST-41</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(17)" id="display17" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Enry/Exit Points</button>
+
+        <div style="display:none" id="block17">
+          <br>
+          <span class="block-info">The Enry/Exit Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td width="61" align="left">&nbsp;</td>
+                  <td width="31" align="center"><font class="text_bold">Lu</font></td>
+                  <td width="29" align="center"><font class="text_bold">LI</font></td>
+                  <td width="29" align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td width="32" align="center"><font class="text_bold"><font style="color:maroon;">Sp</font></font></td>
+                  <td width="28" align="center"><font class="text_bold"><font style="color:red;">Ht</font></font></td>
+                  <td width="29" align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td width="29" align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td width="29" align="center"><font class="text_bold"><font style="color:blue;">K</font></font></td>
+                  <td width="25" align="center"><font class="text_bold"><font style="color:red;">P</font></font></td>
+                  <td width="34" align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td width="39" align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                  <td width="39" align="center"><font class="text_bold"><font style="color:green;">Liv</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold">Entry</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">4</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                  <td align="center"><font class="text">1</font></td>
+                </tr>
+                <tr align="center">
+                  <td align="left"><font class="text_bold">Exit</font></td>
+                  <td align="center"><font class="text">7</font></td>
+                  <td align="center"><font class="text">20</font></td>
+                  <td align="center"><font class="text">42</font></td>
+                  <td align="center"><font class="text">21</font></td>
+                  <td align="center"><font class="text">9</font></td>
+                  <td align="center"><font class="text">19</font></td>
+                  <td align="center"><font class="text">67</font></td>
+                  <td align="center"><font class="text">22</font></td>
+                  <td align="center"><font class="text">8</font></td>
+                  <td align="center"><font class="text">23</font></td>
+                  <td align="center"><font class="text">41</font></td>
+                  <td align="center"><font class="text">14</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(18)" id="display18" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: "Husband/Wife" Points</button>
+
+        <div style="display:none" id="block18">
+          <br>
+          <span class="block-info">"Husband/Wife" Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0">
+                <tbody><tr>
+                  <td><font class="text">BL-67</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">KI-7</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">KI-3</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">LR-4</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">SI-4</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">HT-7</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">KI-24</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(19)" id="display19" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Main Spirit Points</button>
+
+        <div style="display:none" id="block19">
+          <br>
+          <span class="block-info">Main Spirit Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td><font class="text_bold">Water</font></td>
+                  <td><font class="text">BL-44</font></td>
+                  <td><font class="text">KI-24</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Metal</font></td>
+                  <td><font class="text">LI-8</font></td>
+                  <td><font class="text">LU-3</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Earth</font></td>
+                  <td><font class="text">ST-9</font></td>
+                  <td><font class="text">SP-4</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Fire</font></td>
+                  <td><font class="text">HT-4</font></td>
+                  <td><font class="text">HT-7</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Wood</font></td>
+                  <td><font class="text">GB-24</font></td>
+                  <td><font class="text">LR-14</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(20)" id="display20" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Muscle Meridian Meeting Points</button>
+
+        <div style="display:none" id="block20">
+          <br>
+          <span class="block-info">Muscle Meridian Meeting Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td width="172"><font class="text_bold">3 Arm Yang</font></td>
+                  <td width="350"><font class="text">GB-13</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yang</font></td>
+                  <td><font class="text">SI-18 or ST-3</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Arm Yin</font></td>
+                  <td><font class="text">GB-22</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yin</font></td>
+                  <td><font class="text">CV-3</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(21)" id="display21" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Muscle Meridian Meeting Points</button>
+
+        <div style="display:none" id="block21">
+          <br>
+          <span class="block-info">Muscle Meridian Meeting Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td width="172"><font class="text_bold">3 Arm Yang</font></td>
+                  <td width="350"><font class="text">GB-13</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yang</font></td>
+                  <td><font class="text">SI-18 or ST-3</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Arm Yin</font></td>
+                  <td><font class="text">GB-22</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">3 Leg Yin</font></td>
+                  <td><font class="text">CV-3</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(22)" id="display22" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Upper Lower He-Sea Points</button>
+
+        <div style="display:none" id="block22">
+          <br>
+          <span class="block-info">Upper Lower He-Sea Points</span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="0" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td align="left">&nbsp;</td>
+                  <td align="center"><font class="text_bold">LI</font></td>
+                  <td align="center"><font class="text_bold"><font style="color:maroon;">St</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">SI</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:blue;">Bl</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:red;">TW</font></font></td>
+                  <td align="center"><font class="text_bold"><font style="color:green;">GB</font></font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold"><font class="dark">Lower</font> He-Sea</font></td>
+                  <td align="center"><font class="text">ST-37</font></td>
+                  <td align="center"><font class="text">ST-36</font></td>
+                  <td align="center"><font class="text">ST-39</font></td>
+                  <td align="center"><font class="text">BL-40</font></td>
+                  <td align="center"><font class="text">BL-39</font></td>
+                  <td align="center"><font class="text">GB-34</font></td>
+                </tr>
+                <tr>
+                  <td align="left"><font class="text_bold"><font class="high">Upper</font> He-Sea</font></td>
+                  <td align="center"><font class="text">LI-9</font></td>
+                  <td align="center"><font class="text">LI-10</font></td>
+                  <td align="center"><font class="text">LI-8</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(23)" id="display23" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: Window of Sky Points </button>
+
+        <div style="display:none" id="block23">
+          <br>
+          <span class="block-info">Window of Sky Points </span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td width="146"><font class="text">BL-10</font></td>
+                  <td width="376"><font class="text">MH-1</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">ST-9</font></td>
+                  <td><font class="text">CV-22</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">TH-16</font></td>
+                  <td><font class="text">GV-16</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">LI-8</font></td>
+                  <td><font class="text">SI-16</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text">LU-3</font></td>
+                  <td><font class="text">SI-17</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+
+        <button class="w3-margin button-info" onclick="block_display(24)" id="display24" style="background-color: #d8f0d7; box-shadow: 0 0 30px #eccc7f inset;">See: The Command Points </button>
+
+        <div style="display:none" id="block24">
+          <br>
+          <span class="block-info">The Command Points </span>
+          <br>
+          <span class="intro">
+            <div style="overflow-x:auto;">
+              <table border="1" cellpadding="3" cellspacing="0" width="540">
+                <tbody><tr>
+                  <td width="146"><font class="text_bold">Abdomen</font></td>
+                  <td width="376"><font class="text">St-36</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Head &amp; Neck</font></td>
+                  <td><font class="text">LU-7</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Back</font></td>
+                  <td><font class="text">BL-40</font></td>
+                </tr>
+                <tr>
+                  <td><font class="text_bold">Face &amp; Mouth</font></td>
+                  <td><font class="text">LI-4</font></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </span> 
+        </div>
+
+        <br>
+        
+        <button class="w3-margin button-info" onclick="block_display(25)" id="display25" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">Read: Martial Arts Points</button>
+
+        <div style="display:none" id="block25">
+          <br>
+          <span class="block-info">Martial Arts Points</span>
+          <br>
+          <span class="intro">
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/MartialArts_front.gif" class="flex-img">
+              <img src="DoctorGetWell_files/MartialArts_back.gif" class="flex-img">
+            </div>
+            <br>
+            <span style="text-decoration: underline; margin-bottom: 5px;">"Kiss of the Dragon" point:</span>
+            <br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/GV_15IN_sm_copy.jpg" class="flex-img">
+            </div>
+            <br>
+            <span style="text-decoration: underline; margin-bottom: 5px;">Quote from "On-line Questions and Answers":</span>
+            <br>
+          </span> 
+          <span class="mail-letter">
+            ""Date: 02/24/2003
+            <br>
+            From: Michael Kilby
+            <br>
+            Question:
+            <br>
+            I know this may seen like a retarded question, but last I saw the movie "Kiss of The Dragon" and Jet Lee in the movie had this wrist band with acupuncture needles on it and throughout the movie (to stop his enemies) he would take a needle and stick it on certain areas of the body IE: Neck & arms. This would basically paralyze them so they could not move. Well, he also used one on this guy and placed it on the upper part of his neck and it (of course) paralyzed him and sent the blood to his brain and he had blood pouring out his eyes. Pretty cool actually.
+            <br>
+            I think that part was Hollywood style, but I was just curious if you can paralyze someone by placing a needle on certain areas of the body? Didn't want to ruin the movie that's why I wanted it confidential.
+            <br>
+            Thanks, Michael K.
+            <br><br>
+            Answer:
+            <br>
+            Dear Michael,
+            <br>
+            Yes, it is a movie in Hollywood style. Nevertheless, your question is very interesting.
+            The "Kiss of the Dragon" point is actually point 15 of the Governing Vessel. It is a popular and widely used point for therapeutic purposes. Also known in Martial Art as a knock out point and even as a lethal point.
+            The therapeutic needling requires great caution as the incorrect angle of the needle insertion can (in theory) direct the needle into the cerebellum and even into the brain stem.
+            The effect may be very harmful (just another reason to make sure that your acupuncturist is qualified and experienced). However, in practice, no adverse effects associated with this point were reported, and to do harm by needling this point an acupuncturist must be extremely ignorant, arrogant and very creative at the same time. Or it would require a secret knowledge and special skill available only to select Hollywood stars.
+            Also, take a look at the chart of the Martial Arts Points on my web site. Go to Acupuncture - Traditional - Points - scroll down. I prepared the diagram for illustration.
+            Thank you for the remarkable question. With your okay, I will post your question on the web site. And, by the way, Jet Li in that movie was magnificent, I am his big fan.
+            <br><br>
+            Best regards,
+            <br>
+            Alex Tatevian, DA
+            <br>
+            __________________________
+            <br>
+            Date: 02/24/2003
+            <br>
+            From: Michael Kilby
+            <br><br>
+            Thank you for the response! It has opened my eyes alot. That would be great for you to post it. Thanks again and take care!
+            <br>
+            Mike_______________________""
+          </span>
+        </div>
+      </div>
       
       <div class="w3-card round card-att w3-margin card-settings">
         <span style="
@@ -949,7 +4629,7 @@ table, th, td {
             margin-bottom: 15px;
             color: gray;
         ">
-        This page last updated: 14-July-2024
+        This page last updated: 16-July-2024
       </span>
       </div>
       
