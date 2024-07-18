@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/menu_lo_res.gif" />
+<title>Modern</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body { margin: 0; padding: 0; font-family: Garamond,serif; 
+}
+.top{
+  top:0;
+  height: 200px;
+  position: fixed;
+}
+.round {
+  border-radius:10px
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title_color {
+  background-color: #002C32;
+  background: linear-gradient(90deg, #D8D6BA 50%, #002C32 50%);
+}
+.card-att {
+  background-color: #feffdf;
+  overflow: hidden;
+  display:inline-block;
+}
+.shadow_menu {
+  box-shadow: 0 10px 4px 0 rgba(0,0,0,.2);
+}
+.button-menu {
+  height: 0; 
+  padding-bottom: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #f1eece;
+  box-shadow: 0 0 15px #646464 inset;
+}
+.button-image {
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 85%;
+}
+.side-width {
+  width: 10%; 
+}
+.fit_button {
+  width: 100%;
+  border:none;
+  display:inline-block;
+  vertical-align:middle;
+  overflow: hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+}
+.card-settings {
+  width: 97.5%;
+}
+.global-header {
+  background-image: url("DoctorGetWell_files/modern_background_view.png");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%; 
+    background-size: 100% 100% ;
+}
+.button-image-rot {
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 75%;
+}
+.fit_button:hover {
+  background-color: #e7e184;
+  box-shadow: 0 0 15px #c06f2d inset;
+} 
+.fit_button:hover > .button-image {
+  display: none;
+}
+.fit_button:hover > .button-image-rot {
+  display:inline-block;
+  visibility: visible;
+  width: 80%;
+}
+.block-info {
+  display: block;
+  background-color: #EAEBCE;
+  width: 100%;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  margin-bottom: 10px;
+  font-weight: bold; font-size: 175%; color:#07543e;
+}
+.button-info {
+  background-color: #EAEBCE;
+  margin: 4px;
+  margin-bottom: 10px;
+  font-weight: bold; 
+  font-size: 175%; 
+  color:#07543e;
+}
+.button-info:hover {
+  background-color: gray
+}
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@keyframes fadeFromRight{
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromLeft{
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fade{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeFromRight-animation {
+  animation: 1.5s fadeFromRight;
+}
+.fadeFromLeft-animation {
+  animation: 1.5s fadeFromLeft;
+}
+.fade-animation {
+  animation: 2s fade;
+}
+.sidebar-custom{height: 100%;position:fixed!important;z-index:1; margin-top: 2%; margin-left: 2%; overflow-y: scroll;}
+.sidebar-custom::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+@media (min-width: 728px) {
+  .adjust {
+    margin-top:9%
+ }
+  .top_title {
+    height: 45%;
+    width: 45%;
+  }
+  .right_col {
+    width: 87.5%;
+    float: right;
+  }
+  .title-img {
+  float: right; width: 40%; margin: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.profile-img {
+  float: right; width: 20%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.flex-img {
+  width: 20%; 
+  margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 152.5%;
+  display: block;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  font-weight: bolder;
+  margin-left: 2.5px;
+  margin-right: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+.quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 15%,
+    #2c7648 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+}
+
+
+@media (min-width: 1px) and (max-width: 728px) {
+ /* enter small devices and phone style overrides here */
+ .adjust {
+  margin-top:23%
+ }
+  .top_title {
+    height: 100%;
+    width: 100%;
+  }
+  .right_col {
+    width: 100%;
+    float: left;
+  }
+  .menu-bar-hide {
+    display:none!important
+  }
+  .title-img {
+  width: 90%; padding: 30px;
+}
+.profile-img {
+  display: block;
+  margin: 3px auto;
+  width: 45%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.flex-img {
+  display: block;
+  margin: 3px auto;
+  width: 45%;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.intro {
+  font-size: 130.5%;
+  display: block;
+  margin-left: 0em;
+  padding-left: 0.5em;
+  font-weight: bolder;
+  margin-left: 2.5px;
+  margin-right: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+}
+.outer-wrapper {
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 10em;
+}
+.outer-wrapper::before {
+  content: "";
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;font-size: 0.9vw; color: #002C32;
+}
+</style>
+<script>
+  function block_display(num) {
+    document.getElementById("block" + num.toString()).style.display = "block"
+    document.getElementById("display" + num.toString()).style.display = "none"
+  }
+</script>
+</head>
+<body class="w3-theme-l5 global-header fade-animation">
+
+<!-- Navbar -->
+<!-- Navbar -->
+<div class="top">
+  <div class="w3-bar w3-large shadow_menu title_color fadeFromRight-animation">
+    <img src="./DoctorGetWell_files/doctor_getwell_title_hd.jpg" class="center top_title">
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-hide-large" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="Acupuncture.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+  </div>
+</div>
+  </div>
+  <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Home</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="Acupuncture.html" class="w3-bar-item w3-padding-large fit_button" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">
+        <img src="./DoctorGetWell_files/acup_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/acup_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Acupuncture</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/res_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/res_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">Resources</div></div>
+      </a>
+    </div>
+    <br>
+    
+    <div class="w3-card round w3-center button-menu">
+      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+        <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
+        <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
+        <br>
+        <div class="outer-wrapper"><div class="inner-wrapper">About Us</div></div>
+      </a>
+    </div>
+    <div style="height: 75%;"></div>
+    <br>
+    
+  <!-- End Left Column -->
+  </div>
+ </div>
+
+<!-- Page Container -->
+<div class=" w3-content adjust" style="max-width:100%">    
+  <!-- The Grid -->
+  <div>
+    <!-- Left space -->
+    <div class="side-width"></div>
+
+    
+    <!-- Middle Column -->
+    <div class="right_col">
+
+      <div class="w3-margin">
+        <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em;  color:#f8d687; font-weight: bold; text-shadow: -1px -1px 0 rgb(65, 73, 37), 1px -1px 0 rgb(65, 73, 37), -1px 1px 0 rgb(65, 73, 37), 1px 1px 0 rgb(65, 73, 37), rgb(186, 236, 86) 1px 0 10px ">Acupuncture History</span>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">"Acupoints"</span>
+        <img src="DoctorGetWell_files/acuppoints.jpg" class="profile-img">
+        <span class="intro" >
+          The discovery of distinct electrical properties of acupuncture points proved the actual material existence of acupoints and gave a reliable tool for point detection. Modern classification of acupoints includes:
+          <br><br>
+          - 361 Classical Chinese Points
+          <br>
+          - 171 Extra-Meridian Points
+          <br>
+          - 110 "New" Points
+          <br>
+          - 142 Auricular Points
+          <br><br>
+          Specific properties of Acupoints:
+          <br>
+          - Electrical<br>
+          - Biochemical<br>
+          - Histological<br>
+          - Anatomical<br>
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(1)" id="display1">Read More</button>
+
+        <div style="display:none" id="block1"> 
+          <span class="block-info">More about "Acupoints"</span>
+          <span class="intro">
+            <img src="DoctorGetWell_files/modell-hode.png" class="profile-img">
+            The properties of acupuncture points and meridians have been investigated extensively over the past 50 years. Research has shown the acupuncture points to exhibit unique electrical, thermal and chemical properties:
+            <br><br>
+            Electrical Properties of acupuncture points:
+            <br><br>
+            - High electric capacity (0.1-1 micro-farad).
+            <br><br>
+            - High electric potential (up to 350mV).
+            <br><br>
+            - Low electric resistance, explored either by DC or AC current (20 to 250 kilo-ohms). Acupuncture points have lower skin electrical resistance versus other sites on the body, that is, they conduct electrical current better.
+            <br><br>
+            - The resistance changes with disease states, sleep, meals, physical exercise, and changes in the external environment, temperature, season, time of day, etc.
+            <br><br>
+            - This lowered skin resistance is measurable EVEN AFTER DEATH AND EMBALMING, suggesting some intrinsic electrophysiologic quality to the tissue comprising acupoints.
+            <br><br>
+            Biochemical / Physiological Properties of acupuncture points:
+            <br><br>
+            - There are measurable changes in the sodium/potassium concentration in an acupoint, at a depth under the skin, as compared to the tissue around the point.
+            <br><br>
+            - Increased "cutaneous respiration" (great uptake of CO2 at the level of the points).
+            <br><br>
+            - High local temperature.
+            <br><br>
+            - Low threshold of painful sensitivity.
+            <br><br>
+            Histological Properties of acupuncture points:
+            <br><br>
+            On biopsies, there is a structure described as a "neurovascular hemolymphatic complex":
+            <br>
+            - a plexus of arteriovenous capillaries;
+            <br>
+            - a rich lymphatic drainage;
+            <br>
+            - cutaneous nerves (myelinated and unmyelinated) emerging from deep fascia, from bone foramina, and motor points of neuromuscular attachments.
+            <br><br>
+            - Acupuncture points are rich in Ab neural fibres (thick, medullated and fast) which are responsible for transmitting the touch and tactile signals.
+            <br><br>
+            - They are poor in Ad (medullated), and c (non medullated) neural fibres (thinner, slower), which are responsible for transmitting the sensation of pain.
+            <br><br>
+            Specifically, Ad fibres are responsible for acute localised pain, while c fibres transmit diffused blunt pain.
+            <br><br>
+            This explains why acupuncture is generally painless; inactive acupuncture points do not have many neural fibre endings that transmit pain signals.
+            <br><br>
+            Anatomical Properties of acupuncture points:
+            <br><br>
+            - The acupuncture points and meridians lie along the fascial planes, the cleavage or dividing planes between muscle groups and tissues.
+            <br><br>
+            - Point maps correspond to motor points, neurovascular points, and trigger points.
+            <br><br>
+            <span style="color:#002C32; font-size: 90%; ">
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">References:</span>
+              <br>
+              - Darren Starwynn; Electrophysiology And The Acupuncture Systems; Medical Acupuncture, Volume 13 / Number 1 
+              <br>
+              - Harry Lazoura, Irena Cosic; Low Level Laser Radiation as a Stimulant in Acupuncture; 2nd International Conference on Bioelectromagnetism. p171-172. 1998. 
+              <br>
+              - Thalia Kritidou; Modern Neurophysiological Theories on the Effects of Acupuncture for the Treatment of Dental Pain; The Web-Journal of Acupuncture 
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Meridian Theory</span>
+        <img src="DoctorGetWell_files/meridians.jpg" class="profile-img">
+        <span class="intro" >
+          Modern acupuncture respects the contemporary understanding of neuromuscular anatomy and pain physiology while embracing the classical Chinese perception of a subtle circulation network of a vivifying force called Qi. Although the notion of Qi appears too vague to the modern science, the meridian theory congregates more and more evidence and support from researchers.
+          <br><br>
+          We still use the term "meridians" which implies that they are "imaginary lines that connect acupuncture points", nevertheless the latest data reports in favor of material existence of conduits organized in an integrative system of a new kind. In the light of new publications the original term "channels" reacquires its meaning and importance.
+          <br><br>
+          In this sense, meridians do not connect acupoints but rather acupoints correspond to the most "condensed" segments of meridians (channels) where they emerge to the surface and where their activity can be influenced by local stimulation (needling etc).
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(2)" id="display2">Read More</button>
+
+        <div style="display:none" id="block2"> 
+          <span class="block-info">More about Meridian Theory [Comments by Doctor Tatevian]</span>
+          <span class="intro">
+          Since 1980, I have studied a wide range of the scientific literature as it relates to acupuncture retrospectively to the earliest medical texts. I also closely monitored new publications related to acupuncture.
+          <br><br>
+          Over the last 20 years, I witnessed the evolutions of the theoretical rationalization of acupuncture and how new studies often reversed or modified previous assumptions.
+          <br><br>
+          The first apprehensive attempts of the 1950s to scientifically explain acupuncture have developed into a wealth of scientific evidence that provides novel insights into the biological basis of Acupuncture and presents fragments of a new emerging scientific theory.
+          Along with my active professional experience and personal involvement in research, I am convinced of the validity of a new scientific paradigm that explicates the phenomenon of Acupuncture.
+          This is my attempt to bring a brief conceptual summary of the ideas that are now being expressed by scientists in the United States and worldwide.
+          <br><br>
+          The core of this new concept is the recognition of the material existence of an integrative system of a new kind that compliments and coexists with the nervous system, vascular system, lymphatic etc.
+          <br><br>
+          This new concept summarized in bullets presented below, is by no means a final product but rather my humble opinion and an invitation for discussion:
+          <br><br>
+          - Points and Meridians are components of an integrative system of a new kind.
+          <br><br>
+          - Its morphological substrate is connective tissue (dense and loose).
+          <br><br>
+          - The Meridian System is composed of piezoelectric material and has an electromagnetic nature.
+          <br><br>
+          - It facilitates organization and control within the organism
+          <br><br>
+          - This system is responsible for three-dimensional orientation during embriogenesis.
+          <br><br>
+          - It sustains structural integrity for the organs and the entire body.
+          <br><br>
+          - Evolutionarily it is the oldest integrative system of multicellular organisms.
+          <br><br>  
+          <span style="color:#002C32; font-size: 90%; ">
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">References:</span>
+              <br>
+              Charles Shang, MD.
+              <br>
+              <a rel="noopener noreferrer" target="_blank" href="https://med-vetacupuncture.org/english/merid.htm"  style="color: #405ca8;">The Meridian System And The Mechanism Of Acupuncture.</a>
+              <br><br> 
+              Charles Shang, MD.<br>
+              <a rel="noopener noreferrer" target="_blank" href="https://med-vetacupuncture.org/english/articles/mechan.html"  style="color: #405ca8;">Mechanism of acupuncture - Beyond neurohumoral theory.</a><br>
+              The Web-Journal of Acupuncture 
+              <br><br> 
+              Toshiyuki Maeda, MD.<br>
+              A Modern Engineering Study Demonstration Of The Existence Of A Control System In The Human Body Involving Traditional Chinese Medicine (TCM) Acupuncture Meridian Points.<br>
+              Medical Acupuncture Journal; 2001- Volume 13 / Number 3. 
+              <br><br> 
+              Helene M. Langevin, David L. Churchill, Junru Wu, Gary J. Badger, Jason A. Yandow, James R. Fox, and Martin H. Krag<br>
+              <a rel="noopener noreferrer" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/11967233/"  style="color: #405ca8;">Evidence of Connective Tissue Involvement in Acupuncture.</a><br>
+              The FASEB Journal Express Article 10.1096/fj.01-0925fje Published online April 10, 2002 
+              <br><br> 
+              Philip A.M. Rogers;<br>
+              <a rel="noopener noreferrer" target="_blank" href="https://med-vetacupuncture.org/english/hels/helsfram.html"  style="color: #405ca8;">ACUPUNCTURE AND HOMEOSTASIS OF BODY ADAPTIVE SYSTEMS; ACUPUNCTURE BIBLIOGRAPHY; RESEARCH ON THE CHANNELS AND VESSELS (1/2)</a><br>
+              The Web-Journal of Acupuncture; 
+              <br><br> 
+              Carlo Maria Giovanardi, Enrico Lonardo, Achille Abbati;<br>
+              <a rel="noopener noreferrer" target="_blank" href="https://www.agopuntura.org/webhtml/html/mandorla/rivista/numeri/Marzo_1998/TC99M.htm"  style="color: #405ca8;">STUDY OF THE DIFFUSION OF Tc 99m INJECTED INTO AN ACUPUNCTURE POINT ON THE BODY AND IN A POINT OUT OF ACUPUNCTURE MERIDIAN; Web. Publ.; 1998 </a><br>
+              <br><br> 
+              Philip A.M. Rogers;<br>
+              <a rel="noopener noreferrer" target="_blank" href="https://www.med-vetacupuncture.org/english/vet/ptsmer1.htm"  style="color: #405ca8;">THE STUDY OF ACUPUNCTURE: POINTS AND CHANNELS IN ANIMALS; The Medical Acupuncture Web Page; </a><br>
+              <br><br> 
+              Amelia Lynn Dolson, MD.<br>
+              Disease From A Pathologist Acupuncturist's Perspective: Linking Physical And Energetic To Spiritual.<br>
+              Medical Acupuncture Journal; 2000- Volume 12 / Number 1 
+              <br><br> 
+              Meng Jinbi, Tian Jiahe;
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Modern Innovations</span>
+        <img src="DoctorGetWell_files/electroacupuncture.jpg" class="profile-img">
+        <span class="intro" >
+          Acupuncture needles remain to be the traditional and the most routinely used tool, sort of a "trade-mark". 
+          <br><br>
+          However new technologies that have emerged over the last fifty years offer a wide spectrum of modalities and non-invasive techniques.
+          <br><br>
+          Among them to be mentioned are the methods that have earned credibility and recognition: electrical stimulation 
+          <br><br>
+          (electroacupuncture, electropuncture, Ryodoraku, TENS, etc.); 
+          <br><br>
+          electromagnetic radiation (infrared radiation, ultraviolet radiation, Laser, Microwave, etc.); magnets; 
+          <br><br>
+          ultrasound (phono-puncture) and other means of physical stimulation.
+          <br><br>
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(3)" id="display3">Read More</button>
+
+        <div style="display:none" id="block3"> 
+          <span class="block-info">More about Modern Innovations</span>
+          <span class="intro">
+            <i>"Acupuncture describes a family of procedures involving stimulation of anatomical locations on the skin by a variety of techniques."</i>
+            <br>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://chiro.org/acupuncture/FULL/Consensus_Development_Statement.html"  style="color: #405ca8;">Acupuncture. NIH Consensus Statement; 1997, Nov 3-5; 15(5):1-34.</a>
+            <br><br>
+            Acupuncture is a method of prevention, correction and treatment of a disease, illness, injury or pain by encouraging the body to promote natural healing and improve functioning.
+            <br>
+            This objective is implemented by stimulation of certain biologically active points on the surface of the body (acupuncture points).
+            <br>
+            These strategic points can be stimulated by the insertion of acupuncture needles or by non-invasive techniques and other means of physical stimulation.
+            <br>
+            A key feature of acupuncture as a kind of medical intervention is that there is no administration of any chemical substances in any form or delivery system.
+            <br><br>
+            Although the term "acupuncture" translates into English as "piercing the skin with a needle", and is habitually perceived in the US as an ancient art, this perception or perspective can be misleading. Acupuncture is a dynamic and developing field of medicine, which has earned worldwide recognition for its effectiveness.
+            <br><br>
+            Acupuncture needles remain the traditional and the most routinely used tool, but new technologies that have emerged over the last fifty years offer a wide spectrum of modalities.
+            <br><br>
+            The classification of techniques can be presented by the
+            modes of stimulation:
+            <br><br>
+            Needling:
+            <br>
+            - Needling (orthodox acupuncture)
+            <br>
+            - Lance needle blood-letting
+            <br>
+            - Press-tags
+            <br><br>
+            Mechanical stimulation:
+            <br>
+            - Press pellets
+            <br>
+            - Acupressure and Shiatsu
+            <br>
+            - Vibration; (vibro-massage)
+            <br>
+            - Cutaneous tapping (Plum-blossom needle, etc.)
+            <br>
+            - Vacuum (cupping)
+            <br><br>
+            Thermo-stimulation:
+            <br>
+            - Heat (moxa - moxibustion)
+            <br>
+            - Cold (cryogenic therapy)
+            <br>
+            - Contact diagnostic thermography
+            <br>
+            - Diagnostic Infrared Thermal Imaging
+            <br><br>
+            Electrical stimulation:
+            <br>
+            - Electroacupuncture
+            <br>
+            - Electropuncture
+            <br>
+            - Piezoelectric stimulation
+            <br>
+            - Ryodoraku
+            <br>
+            - TENS (Transcutaneous Electrical Nerves Stimulation)
+            <br>
+            - PENS (Percutaneous Electrical Nerves Stimulation)
+            <br><br>
+            Electromagnetic Stimulation:
+            <br>
+            - Electromagnetic stimulation
+            <br>
+            - Infrared radiation
+            <br>
+            - Ultraviolet radiation
+            <br>
+            - Colored Light radiation (color-puncture)
+            <br>
+            - Laser
+            <br>
+            - Microwave
+            <br><br>
+            Magnetic stimulation:
+            <br>
+            - Magnets
+            <br><br>
+            Ultrasound stimulation:
+            <br>
+            - phono-puncture
+            <br><br>
+            Other methotds of acupoint stimulation:
+            <br>
+            - Apipuncture
+            <br>
+            <span style="color:#002C32; font-size: 90%; ">
+              <br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Last updated: 18-July-2024</span>
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span class="block-info">Lasers in Acupuncture</span>
+        <img src="DoctorGetWell_files/laser.jpeg" class="profile-img">
+        <span class="intro" >
+          The latest contribution to acupuncture is the laser, the perfect example of the blend of state-of-the-art technology with ancient tradition. 
+          <br><br>
+          This technique uses low energy laser beam (so-called "Cold Laser") to substitute acupuncture needle. 
+          <br><br>
+          Lasers made for acupuncture are sophisticated and quite expensive devices that produce focused and coherent light beam of specific waive lengths of the spectrum.
+          <br><br>
+          The advantage is that this method is non-invasive, quick, absolutely painless, very safe, and provides fast clinical results.
+          <br><br>
+        </span>
+
+        <button class="w3-margin button-info" onclick="block_display(4)" id="display4">Read More</button>
+
+        <div style="display:none" id="block4"> 
+          <span class="block-info">More about "Acupoints"</span>
+          <span class="intro">
+            Lasers are used to stimulate acupuncture points using the same rules of point selection as needle acupuncture. Laser acupuncture may be used solely or in combination with needles for any given condition over a course of treatment.
+            <br><br>
+            ~ <a rel="noopener noreferrer" target="_blank" href="https://chiro.org/acupuncture/FULL/Position_Statement_on_Laser_Acupuncture.shtml"  style="color: #405ca8;">Position Statement On Laser Acupuncture; IAMA, Jan 2002</a>
+            <br><br>
+            What does the word LASER stand for?
+            <br><br>
+            Laser is an abbreviation for "Light Amplification by Stimulated Emission of Radiation".
+            <br><br>
+            Lasers are unique sources of light; they do not behave like conventional thermal light sources. Briefly, it is a form of electromagnetic radiation, in the visible or infrared region of the light spectrum, generated by stimulating a medium (working substance), which may be solid or gaseous, under special conditions.
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/Laser_re.jpg" class="flex-img">
+            </div>
+            <br><br>
+            The beam of light, produced by LASER possesses distinctive physical properties:
+            <br><br>
+            ï¿½ Monochromaticity
+            <br>
+            ï¿½ Coherence
+            <br>
+            ï¿½ Little divergence
+            <br>
+            ï¿½ High irradiance
+            <br><br>
+            Monochromism describes a radiation of a very specific wavelength which spectographically presented by only one line. lasers produce the purest (most MONOCHROMATIC) light available.
+            The color of the laser radiation is of such a purity that practically never occurs in nature. Every laser has its specific wavelength (color).
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/Laser_spectr_re.jpg" class="flex-img">
+            </div>
+            <br><br>
+            Coherence relates to an extremely high degree of order of radiated light. It implies that all the emitted photons bear a constant phase relationship with each other in both time and space.
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/Laser_Coherence_re.gif" class="flex-img">
+            </div>
+            <br><br>
+            Little divergence means that all photons travel in the same direction; Laser beam does not disperse and remains much focused even projected on long distances.
+            <br><br>
+            High irradiance: because all the light is concentrated into a narrow spatial band light possesses high radiant power per unit area (i.e. high irradiance).
+            <br><br>
+
+            [About Laser Acupuncture]
+            <br><br>
+            Low Level Laser (soft laser) has definite advantages over needling the acupuncture points or trigger point injection:
+            <br><br>
+            - It is aseptic, non-invasive, absolutely painless and, if used properly, has no reported side-effects.
+            <br><br>
+            - It is ideal for use on painful (Ah-Shi) points or in patients with needle-phobia. Children tolerate laser acupuncture very well.
+            <br><br>
+            - It is ideal for treatment of superficial acupuncture points, such as those on the ear.
+            <br><br>
+            - Infrared Laser is a perfect (if not the only) tool for a double blind study in acupuncture research.
+            <br><br>
+            Laser acupuncture may be used solely or in combination with needles.
+            Laser Acupuncture usually is given at intervals of 1-3 days in acute cases and 3-7 days in chronic cases.
+            The selection of the acupuncture points is the same as for classical acupuncture.
+            At each session, the laser is applied for 20-60 seconds per point.
+            Total treatment time per session depends on mean output power (MOP) and the point depth.
+            <br><br>
+            Laser acupuncture is very useful in veterinary acupuncture practice . It is well tolerated by cats and nervous or difficult animals. It may be used safely on dangerous points in large animals (such as points below the carpus and tarsus of cattle and horses).
+            <br><br>
+            Acupuncture Lasers.
+            <br><br>
+            The biological effects of Laser depend on power, wavelength, different pulse frequencies, different exposure dosage etc.
+            <br><br>
+            - Power.
+            <br><br>
+            Unlike high power surgical lasers that cause coagulation and "cut" tissues, acupuncture lasers produce laser beam of significantly lower intensity that cannot cause any structural damage to the tissues and operate in the safe range of power.
+            <br><br>
+            LLL (Low Level Laser, also called Low Energy Laser, or "cold" laser, or "soft" laser, or Low-Intensity laser) are laser devices in which power densities and energy densities of laser beam are lowered to a point where no photo thermal effects occur (the beam does not burn the tissues) but the photo-osmotic, photo-ionic and photo-enzymatic effects are still operative.
+            <br><br>
+            - Wavelength & penetration depth.
+            <br><br>
+            Laser light as it penetrates into the tissue, is reflected, absorbed and dispersed.
+            Penetration of laser into tissues falls off at an exponential fashion. Thus, increase of laser power does not result in a linear increase in the penetration into the tissues comprising acupuncture point and in a linear increase of biological effect.
+            The prime determinant of tissue penetration is the wavelength (color).
+            Every laser has its specific wavelength and penetrates accordingly.
+            <br><br>
+            <div class="flex-container" style="width: 100%; height: auto">
+              <img src="DoctorGetWell_files/Laserwavel.jpg" class="flex-img">
+            </div>
+            <br><br>
+            Infra red lasers that operate in the invisible part if the spectrum penetrate deeper and are used in stimulation of acupuncture points instead of needling.
+            <br>
+            Red lasers (and others in visible light), which penetrate less deeply, are less suitable for acupuncture point stimulation and are best known for wound healing stimulation and for skin problems.
+            <br>
+            Infrared lasers are 5-10 times more expensive than red lasers.
+            <br><br>
+            - Pulsed lasers.
+            <br><br>
+            Though laser light is emitted in a continuous wave beam, it can be interrupted (modulated) at variable frequencies and intervals by mechanical or electronic means. Interruption of the light beam at fixed intervals is called pulsing.
+            <br>
+            Pulsed lasers penetrate deeper in tissue than unpulsed lasers. Pulsed lasers are several times more expensive than unpulsed lasers.
+            <br><br>
+            What Lasers Can Do: 
+            <br><br>
+            -Stimulates vasodilation to increase blood flow and circulation to an area.
+            <br><br>
+            -Stimulates enkephalin and endorphins for pain control and nerve stimulation.
+            <br><br>
+            -Increases the accumulation of prostaglandins in wounds to promote healing.
+            <br><br>
+            -Promotes the formation of granulation tissue.
+            <br><br>
+            -Stimulates the production of cartilage; enhances fibroplosia and collagen synthesis.
+            <br><br>
+            -Stimulates RNA and DNA; increases ATP synthesis in the mitochondria by as much as 70%; influences the incorporation of labeled thymidine into DNA; increases autoradiographic uptake of labeled uridine.
+            <br><br>
+            - Supports immune system; increases the T & B-lymphocytes in people with a suppressed immune system; increases the ability and frequency to bind with bacteria.
+            <br>
+            (Source: Jennifer Blahnik; Laser Acupuncture in Clinical Practice; April 12, 1997.)
+            <span style="color:#002C32; font-size: 90%; ">
+              <br><br>
+              <span style="font-size: larger; margin-bottom: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">References:</span>
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://med-vetacupuncture.org/english/articles/laser.html"  style="color: #405ca8;">Low Level Laser Therapy [LLLT]: A Bibliography of recent Papers.</a> 
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=a563d4f4e873a6cde25c0c0dbf196cf9801265f2"  style="color: #405ca8;">Harry Lazoura, Irena Cosic; Low Level Laser Radiation as a Stimulant in Acupuncture; 2nd International Conference on Bioelectromagnetism. p171-172. 1998. </a>
+              <br>
+              - S. Nikolic, Z. Trojacanec, I.J. Milankovic; Low Energy Laser in the Treatment of Low Back Pain; ICMART '97 International Medical Acupuncture Symposium 
+              <br>
+              - Laser Acupuncture Works for Stubborn Carpal Tunnel. 
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://www.bu.edu/naeser/acupuncture/publications/NaeserCTS2002.pdf"  style="color: #405ca8;">Naeser MA, Hahn KA, Lieberman BE, Branco KF.; Carpal tunnel syndrome pain treated with low-level laser and microamperes transcutaneous electric nerve stimulation: A controlled study; Arch Phys Med Rehabil. 2002 Dec;83(12):1806; author reply 1806-7. </a>
+              <br>
+              - Low Energy Laser-Acupuncture: A Novel Model of Enegetic Interaction. 
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/12098499/"  style="color: #405ca8;">Christian M. Siedentopfa, Stefan M. Golaszewski, Felix M. Mottaghyc, Christian C. Ruffd, Stephan Felbera and Andreas Schlagere; Functional magnetic resonance imaging detects activation of the visual association cortex during laser acupuncture of the foot in humans; Neuroscience Letters, Volume 327, Issue 1 , 12 July 2002, Pages 53-56. </a>
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://med-vetacupuncture.org/english/vet/laser1.htm"  style="color: #405ca8;">Philip A.M. Rogers; Clinical Use Of Low Level Laser Therapy. </a>
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/1857083/"  style="color: #405ca8;">Effect Of Laser Acupuncture On The Pulmonary Vascular Resistance In Patients With Obstructive Chronic Lung Diseases. </a>
+              <br>
+              - <a rel="noopener noreferrer" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/11154059/"  style="color: #405ca8;">Laser Acupuncture for Adolescent Smokers - A Randomized Double-Blind Controlled Trial. </a>
+              <br>
+              - Malini Chaudhri Ph.D.; WALT 2002 Congress, Japan; LASER ACUPUNCTURE FOR INDIAN NATIONAL WOMENS GOLF 
+              <br>
+              - Laser Acupuncture In Competition Horses. 
+              <br>
+            </span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="w3-card round card-att w3-margin card-settings">
+        <span style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#013916;
+        ">Copyright Policy</span>
+        <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">
+        Please, feel free to copy and use this material with the proper reference. This courtesy is expected. Thank you.
+      </span>
+      <span style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-size: 152.5%;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+            color: gray;
+        ">
+        This page last updated: 18-July-2024
+      </span>
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <div style="position: relative; height: 200px;">
+      <div style="width: 150%; bottom: 0; z-index: -1; position: absolute;margin-left: -50%;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px;"></div>
+      </div>
+      <div style="width: 100%; bottom: 0;z-index: 0; position: absolute;">
+        <div style="background-color: #42606A; height: 50px;"></div>
+        <div style="background-color: #0E2B31; height: 103px; padding-left: 50px;">
+          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | getwell@doctor.comㅤㅤ</span>
+          <span style="font-size: 150%;text-align: right;color: white; float: right; padding-right: 4%; width:50%">141 Airport Road, Warwick, RI 02889</span>
+        </div>
+      </div>
+    </div>
+  <!-- End Grid --->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+</body>
+</html> 
