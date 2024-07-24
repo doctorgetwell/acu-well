@@ -52,9 +52,14 @@ function sendReply(k) {
   }, 1000)
 }
 
-function block_display(k) {
+function comment_display(k) {
   document.getElementById("contactForm_" + k).style.display = "block"
   document.getElementById("display_" + k).style.display = "none"
+}
+
+function block_display(num) {
+  document.getElementById("block" + num.toString()).style.display = "block"
+  document.getElementById("display" + num.toString()).style.display = "none"
 }
 
 firebase.database().ref("comments").on("value", (data) => {
@@ -74,7 +79,7 @@ firebase.database().ref("comments").on("value", (data) => {
         let li = document.createElement("li");
 
         let span = document.createElement("span");
-        span.style = "margin-top: -1em;"
+        span.style = "border-top: -1em;"
 
         span.innerHTML 
         =  "Comment from " +  Name + "  -  (" + Email + ")"
@@ -105,7 +110,7 @@ firebase.database().ref("comments").on("value", (data) => {
             let li = document.createElement("li");
   
             let span = document.createElement("span");
-            span.style = "margin-top: -1em;"
+            span.style = "border-top: -1em;"
   
             span.innerHTML 
             =  "Comment from " +  Name + "  -  (" + Email + ")"
@@ -132,7 +137,7 @@ firebase.database().ref("comments").on("value", (data) => {
         let btn = document.createElement("button");
         btn.id = "display_" + k
         btn.className = "w3-margin"
-        btn.onclick = function(){block_display(k)};
+        btn.onclick = function(){comment_display(k)};
         btn.innerHTML = "Reply"
         btn.style = "background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset; color: #07543e;"
         li.appendChild(btn);
