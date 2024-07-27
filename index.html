@@ -16,6 +16,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   top:0;
   height: 200px;
   position: fixed;
+  z-index: 1;
 }
 .round {
   border-radius:10px
@@ -133,6 +134,18 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+.quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 15%,
+    #2c7648 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+}
 @media (min-width: 728px) {
   .adjust {
     margin-top:9%
@@ -157,17 +170,33 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 .intro {
   font-size: 152.5%;
 }
-.quote{
-  text-align:center;
-  position: relative;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0) 0%,
-    #2c7648 15%,
-    #2c7648 85%,
-    rgba(255, 255, 255, 0) 100%
-  );
+
+/* Google Search */
+body .gsc-table-cell-snippet-close {
+  display: inline-block;
+  /* border: 2px solid white; */
+  font-weight: bolder;
+  width: 44%
 }
+
+.gs-image-box.gs-web-image-box.gs-web-image-box-landscape {
+  /* border: 2px solid white; */
+  float: right;
+  width: fit-content;
+  display: flex
+}
+body .gs-web-image-box, .gs-promotion-image-box {
+  padding: 0px;
+  text-align: right;
+}
+
+body .gs-web-image-box .gs-image, .gs-promotion-image-box .gs-promotion-image {
+  max-height: fit-content;
+  max-width: 100%;
+  margin-top: -40px;
+  border: none;
+}
+
 }
 
 
@@ -200,6 +229,30 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 .intro {
   font-size: 130.5%;
 }
+
+/* Google Search */
+body .gsc-table-cell-snippet-close {
+  display: inline-block;
+  /* border: 2px solid white; */
+  font-weight: bolder;
+  width: auto;
+}
+
+.gs-image-box.gs-web-image-box.gs-web-image-box-landscape {
+  /* border: 2px solid white; */
+  width: fit-content;
+}
+
+body .gs-web-image-box, .gs-promotion-image-box {
+  padding: 0px;
+  text-align: left;
+}
+
+body .gs-web-image-box .gs-image, .gs-promotion-image-box .gs-promotion-image {
+  max-height: fit-content;
+  max-width: 100%;
+  border: none;
+}
 }
 .outer-wrapper {
   overflow: hidden;
@@ -216,10 +269,77 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   white-space: nowrap;
   font-weight: bold;font-size: 0.9vw; color: #002C32;
 }
+
+ /* Google Search section */
+
+.gsc-above-wrapper-area {
+  display: none;
+}
+
+.gcsc-more-maybe-branding-root {
+  display: none;
+}
+
+.gsc-control-cse.gsc-control-cse-en {
+  background-color: #f1eece;
+  margin: -10px;
+}
+
+.gsc-expansionArea {
+  padding: 10px
+}
+body .gsc-webResult.gsc-result {
+    border: none;
+    font-weight: bold;
+    font-family: Garamond, serif;
+}
+
+.gsc-table-cell-thumbnail.gsc-thumbnail {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+body .gs-bidi-start-align.gs-snippet {
+  float: left
+}
+
+img.gs-image {
+  width: 80%;
+  display: inline-table
+}
+
+.gs-title {
+  width: 70%;
+  font-size: 152.5%;
+  font-family: Garamond, serif;
+}
+.gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
+  width: 70%;
+  font-size: 152.5%;
+  font-family: Garamond, serif;
+}
+
+.gsc-table-result {
+  width: 70%
+}
+
+.gsc-cursor {
+  font-size: 152.5%;
+}
+
+ /* */
+
 </style>
 </head>
 <body class="w3-theme-l5 global-header fade-animation">
-
+<script>
+  let url = window.location.href;    
+  if (url.slice(-1) == 'l'){ //if link ends with ".html"
+    url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
+    window.location.href = url;
+  } 
+</script>
 <!-- Navbar -->
 <!-- Navbar -->
 <div class="top">
@@ -352,6 +472,12 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
         ">
          “The natural healing force within each of us is the greatest force in getting well.” ~ Hippocrates.
       </span>
+      </div>
+
+      <div class="w3-card round card-att w3-margin card-settings">
+        <script async src="https://cse.google.com/cse.js?cx=255bf70401c9d4033">
+        </script>
+        <div class="gcse-searchresults-only"></div>
       </div>
       
       <div class="w3-card round card-att w3-margin card-settings">
