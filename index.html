@@ -192,8 +192,7 @@ body .gs-web-image-box, .gs-promotion-image-box {
 
 body .gs-web-image-box .gs-image, .gs-promotion-image-box .gs-promotion-image {
   max-height: fit-content;
-  max-width: 100%;
-  margin-top: -40px;
+  max-width: fit-content;
   border: none;
 }
 
@@ -281,12 +280,13 @@ body .gs-web-image-box .gs-image, .gs-promotion-image-box .gs-promotion-image {
 }
 
 .gsc-control-cse.gsc-control-cse-en {
-  background-color: #f1eece;
+  background-color: #feffdf;
   margin: -10px;
 }
 
 .gsc-expansionArea {
-  padding: 10px
+  padding: 10px;
+  padding-right: 0px;
 }
 body .gsc-webResult.gsc-result {
     border: none;
@@ -305,17 +305,21 @@ body .gs-bidi-start-align.gs-snippet {
 }
 
 img.gs-image {
-  width: 80%;
-  display: inline-table
+  width: 85%;
+  margin-bottom: 10px;
 }
 
-.gs-title {
+body a.gs-title {
   width: 70%;
-  font-size: 152.5%;
   font-family: Garamond, serif;
+  background-color: #feffdf;
+  text-decoration: underline;
 }
-.gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
-  width: 70%;
+body .gs-result .gs-title, .gs-result .gs-title {
+  text-decoration: underline;
+}
+body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
+  width: 90%;
   font-size: 152.5%;
   font-family: Garamond, serif;
 }
@@ -334,11 +338,22 @@ img.gs-image {
 </head>
 <body class="w3-theme-l5 global-header fade-animation">
 <script>
-  let url = window.location.href;    
-  if (url.slice(-1) == 'l'){ //if link ends with ".html"
-    url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
-    window.location.href = url;
-  } 
+  let url = window.location.href; 
+  if (url.slice(-1) != 'e'){ 
+      url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
+      window.location.href = url;
+  }    
+  setTimeout(() => {
+    if (url.slice(-1) != 'e'){ 
+      url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
+      window.location.href = url;
+    } else {
+      document.getElementById("loading").style.display = "none"
+    }
+    var now = new Date();
+    var datetime = now.toLocaleString();
+    document.getElementById("digesttoday").innerHTML += "  (" + datetime  + ")";
+  }, 500)
 </script>
 <!-- Navbar -->
 <!-- Navbar -->
@@ -475,9 +490,39 @@ img.gs-image {
       </div>
 
       <div class="w3-card round card-att w3-margin card-settings">
+        <span id="digesttoday" style="
+            display: block;
+            background-color: #EAEBCE;
+            width: 100%;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            margin-bottom: 10px;
+            font-weight: bold; font-size: 175%; color:#07543e;
+        ">Acupuncture Latest News </span>
+        <span class="intro" id="loading"  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        ">Loading...<br></span>
         <script async src="https://cse.google.com/cse.js?cx=255bf70401c9d4033">
         </script>
         <div class="gcse-searchresults-only"></div>
+        <span  style="
+            display: block;
+            margin-left: 0em;
+            padding-left: 0.5em;
+            font-weight: bolder;
+            margin-left: 2.5px;
+            margin-right: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 95%;
+        ">(This website does not endorse any commercial products that may be advertised on these sites.)</span>
       </div>
       
       <div class="w3-card round card-att w3-margin card-settings">
