@@ -354,6 +354,23 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
     var datetime = now.toLocaleString();
     document.getElementById("digesttoday").innerHTML += "  (" + datetime  + ")";
   }, 500)
+  
+  function GetData()  {
+    var XMLReq = new XMLHttpRequest();
+
+    XMLReq.open( "GET", "https://www.go-calendar.com/api/detail?date=2024-8-7")
+
+
+    XMLReq.onreadystatechange = function() {
+      if(XMLReq.readyState == 4 && XMLReq.status == 200) {
+        console.log(XMLReq.responseText);
+      }
+    }
+
+    XMLReq.send();
+  }
+
+  GetData()
 </script>
 <!-- Navbar -->
 <!-- Navbar -->
