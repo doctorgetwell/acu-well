@@ -4,6 +4,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/menu_lo_crest.gif" />
 <title>Home</title>
 <meta charset="UTF-8">
+<meta name="description" content="This is the official website for Doctorgetwell, dedicated to documenting resources for acupuncture knowledge.">
+<meta name="keywords" content="acupuncture, acupuncturist, Alex Tatevian, traditional Chinese, medicine, yin, yang, meridians, points, meridian, practitioner, practitioners, traditional medicine, oriental medicine, healing, Qi, five element, accupuncture, acupunture, TCM, regulation, alternative, health, moxa, moxibustion, needles, needle, chi, channels, asian healing, medical acupuncture, acupuncture clinic, clinic, society, journal, doctor, training, education, accreditation, scientific, professional, acupuncturist, research, alternative medicine, tuina, oriental, massage, guide to oriental medicine, certification, degree, diploma, cupping, guasha, acupunture, herbology, pratitioner referral, publications, books, therapy, associations, articles, acupuncture links, education, patients, needle, doctor, pain, RI, Rhode Island, health, Providence, Warwick, blue cross, blue shield">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -135,6 +137,19 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
     background: transparent; /* make scrollbar transparent */
 }
 .quote{
+  text-align:center;
+  position: relative;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    #2c7648 15%,
+    #2c7648 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+}
+
+.notif{
   text-align:center;
   position: relative;
   background: linear-gradient(
@@ -370,7 +385,76 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
   grid-area: 1/1
 }
 
- /* */
+/* Scroll text */
+
+@keyframes fade{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut{
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#scroll-text {
+  text-align: right;
+
+  /* animation properties */
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  
+  -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite, fadeOut 20s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
 
 </style>
 </head>
@@ -415,65 +499,113 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
         document.getElementById("element").src = "./clock_files/water.png"
         document.getElementById("time_description").innerHTML = "Hour of the Rat <br> 11pm - 1am  <br>"
         document.getElementById("animal").src ="./clock_files/rat.png"
+
+        document.getElementById("time_description").style.color = "#003cff"
+        document.getElementById("element_name").style.color = "#003cff"
+        document.getElementById("element_name").innerHTML = "Water"
       } else if (hours == 21 || hours == 22) { //Pig
         document.getElementById("element_base").src = "./clock_files/water_base.png"
         document.getElementById("element").src = "./clock_files/water.png"
         document.getElementById("time_description").innerHTML = "Hour of the Pig <br> 9pm - 11pm  <br>"
         document.getElementById("animal").src ="./clock_files/pig.png"
+
+        document.getElementById("time_description").style.color = "#003cff"
+        document.getElementById("element_name").style.color = "#003cff"
+        document.getElementById("element_name").innerHTML = "Water"
       } else if (hours == 19 || hours == 20) { //Dog
         document.getElementById("element_base").src = "./clock_files/earth_base.png"
         document.getElementById("element").src = "./clock_files/earth.png"
         document.getElementById("time_description").innerHTML = "Hour of the Dog <br> 7pm - 9pm  <br>"
         document.getElementById("animal").src ="./clock_files/dog.png"
+
+        document.getElementById("time_description").style.color = "#cf950c"
+        document.getElementById("element_name").style.color = "#cf950c"
+        document.getElementById("element_name").innerHTML = "Earth"
       } else if (hours == 17 || hours == 18) { //Chicken
         document.getElementById("element_base").src = "./clock_files/metal_base.png"
         document.getElementById("element").src = "./clock_files/metal.png"
         document.getElementById("time_description").innerHTML = "Hour of the Chicken <br> 5pm - 7pm  <br>"
         document.getElementById("animal").src ="./clock_files/chicken.png"
+
+        document.getElementById("time_description").style.color = "#edf515"
+        document.getElementById("element_name").style.color = "#edf515"
+        document.getElementById("element_name").innerHTML = "Metal"
       } else if (hours == 15 || hours == 16) { //Monkey
         document.getElementById("element_base").src = "./clock_files/metal_base.png"
         document.getElementById("element").src = "./clock_files/metal.png"
         document.getElementById("time_description").innerHTML = "Hour of the Monkey <br> 3pm - 5pm  <br>"
         document.getElementById("animal").src ="./clock_files/monkey.png"
+
+        document.getElementById("time_description").style.color = "#edf515"
+        document.getElementById("element_name").style.color = "#edf515"
+        document.getElementById("element_name").innerHTML = "Metal"
       } else if (hours == 13 || hours == 14) { //Goat
         document.getElementById("element_base").src = "./clock_files/earth_base.png"
         document.getElementById("element").src = "./clock_files/earth.png"
         document.getElementById("time_description").innerHTML = "Hour of the Goat <br> 1pm - 3pm  <br>"
         document.getElementById("animal").src ="./clock_files/goat.png"
+
+        document.getElementById("time_description").style.color = "#cf950c"
+        document.getElementById("element_name").style.color = "#cf950c"
+        document.getElementById("element_name").innerHTML = "Earth"
       } else if (hours == 11 || hours == 12) { //Horse
-        document.getElementById("element_base").src = "./clock_files/fire_base.png"
+        document.getElementById("element_base").src = "./clock_files/fire_base.png" 
         document.getElementById("element").src = "./clock_files/fire.png"
         document.getElementById("time_description").innerHTML = "Hour of the Horse <br> 11am - 1pm  <br>"
         document.getElementById("animal").src ="./clock_files/horse.png"
+
+        document.getElementById("time_description").style.color = "rgb(255, 0, 0)"
+        document.getElementById("element_name").style.color = "rgb(255, 0, 0)"
+        document.getElementById("element_name").innerHTML = "Fire" 
       } else if (hours == 9 || hours == 10) { //Snake
         document.getElementById("element_base").src = "./clock_files/fire_base.png"
         document.getElementById("element").src = "./clock_files/fire.png"
         document.getElementById("time_description").innerHTML = "Hour of the Snake <br> 9am - 11am  <br>"
         document.getElementById("animal").src ="./clock_files/snake.png"
+
+        document.getElementById("time_description").style.color = "rgb(255, 0, 0)"
+        document.getElementById("element_name").style.color = "rgb(255, 0, 0)"
+        document.getElementById("element_name").innerHTML = "Fire" 
       } else if (hours == 7 || hours == 8) { //Dragon
         document.getElementById("element_base").src = "./clock_files/earth_base.png"
         document.getElementById("element").src = "./clock_files/earth.png"
         document.getElementById("time_description").innerHTML = "Hour of the Dragon <br> 7am - 9am  <br>"
         document.getElementById("animal").src ="./clock_files/dragon.png"
+
+        document.getElementById("time_description").style.color = "#cf950c"
+        document.getElementById("element_name").style.color = "#cf950c"
+        document.getElementById("element_name").innerHTML = "Earth"
       } else if (hours == 5 || hours == 6) { //Rabbit
         document.getElementById("element_base").src = "./clock_files/wood_base.png"
         document.getElementById("element").src = "./clock_files/wood.png"
         document.getElementById("time_description").innerHTML = "Hour of the Rabbit <br> 5am - 7am  <br>"
         document.getElementById("animal").src ="./clock_files/rabbit.png"
+
+        document.getElementById("time_description").style.color = "#09c125"
+        document.getElementById("element_name").style.color = "#09c125"
+        document.getElementById("element_name").innerHTML = "Wood"
       } else if (hours == 3 || hours == 4) { //Tiger
         document.getElementById("element_base").src = "./clock_files/wood_base.png"
         document.getElementById("element").src = "./clock_files/wood.png"
         document.getElementById("time_description").innerHTML = "Hour of the Tiger <br> 3am - 5am  <br>"
         document.getElementById("animal").src ="./clock_files/tiger.png"
+
+        document.getElementById("time_description").style.color = "#09c125"
+        document.getElementById("element_name").style.color = "#09c125"
+        document.getElementById("element_name").innerHTML = "Wood"
       } else if (hours == 1 || hours == 2) { //Cow
         document.getElementById("element_base").src = "./clock_files/earth_base.png"
         document.getElementById("element").src = "./clock_files/earth.png"
         document.getElementById("time_description").innerHTML = "Hour of the Cow <br> 1am - 3am  <br>"
         document.getElementById("animal").src ="./clock_files/cow.png"
+
+        document.getElementById("time_description").style.color = "#cf950c"
+        document.getElementById("element_name").style.color = "#cf950c"
+        document.getElementById("element_name").innerHTML = "Earth"
       } 
 
 
-      //***//***//***//
+      // *** // *** // *** // 
 
       if (hours > 12) {
         hours -= 12
@@ -529,16 +661,16 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-hide-large" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="index.html?q=acupuncture%20site:www.healthcmi.com/acupuncture-continuing-education-news%20OR%20site:acupuncturetoday.com/issues/current-issue" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
     <a href="Acupuncture.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
     <a href="Resources.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
-    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+    <a href="About.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
   </div>
 </div>
   </div>
   <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
     <div class="w3-card round w3-center button-menu">
-      <a href="index.html" class="w3-bar-item w3-padding-large fit_button"  style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">
+      <a href="index.html?q=acupuncture%20site:www.healthcmi.com/acupuncture-continuing-education-news%20OR%20site:acupuncturetoday.com/issues/current-issue" class="w3-bar-item w3-padding-large fit_button"  style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">
         <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
         <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
         <br>
@@ -568,7 +700,7 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
     <br>
     
     <div class="w3-card round w3-center button-menu">
-      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+      <a href="About.html" class="w3-bar-item w3-padding-large fit_button">
         <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
         <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
         <br>
@@ -594,6 +726,23 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
     <div class="right_col">
     
       <div class="w3-margin">
+
+        <div class="w3-margin notif">
+          <span style="
+              display: block;
+              margin-left: 0em;
+              padding-left: 0.5em;
+              font-size: 200%;
+              font-weight: bolder;
+              margin-left: 2.5px;
+              margin-right: 16px;
+              text-align: center;
+              color: #e3ffee;
+          " id="scroll-text">
+           Please note that this is the new official website for Doctorgetwell. Please disregard its predecessor <span style="text-decoration: underline;">doctorgetwell.org</span>.
+          </span>
+        </div>
+
         <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em; color: #fefbd5; font-weight: bold; text-shadow: #FC0 1px 0 10px ;">Welcome! </span>
         <img src="DoctorGetWell_files/title-page-image.JPG" class="title-img">
         <div style="margin-left: 25px; margin-bottom: 20px;">
@@ -613,7 +762,7 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
             margin-bottom: 10px;
             font-weight: bold; font-size: 175%; color:#07543e;
         ">Greetings from the Editor</span>
-        <img src="DoctorGetWell_files/alex3.png" class="profile-img">
+        <img src="DoctorGetWell_files/alex_greeting.png" class="profile-img">
         <span class="intro"  style="
             display: block;
             margin-left: 0em;
@@ -627,7 +776,7 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
           Hello, <br>
           I am Dr. <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/alex-tatevian-da-2803b87/" style="color: #405ca8;">Alex Tatevian</a>. I am lucky. I like what I do.  <br>
           Acupuncture is my profession, specialty and life-long passion. 
-          I have practiced acupuncture for more than 40 years and I am still challenged by it. 
+          I have practiced acupuncture for more than 30 years and I am still challenged by it. 
           Acupuncture is much more complex than needles.
           Acupuncture blends ancient wisdom with new
           scientific paradigms, leading to a more complete knowledge base. 
@@ -655,10 +804,10 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
       </div>
 
       <div class="flex-container" style="margin-left: auto; margin-right: auto; margin-top: 0; display: none;" id="flex-info">
-        <div class="w3-card card-att card-settings" style="margin-left: 4%; width: fit-content;float: left; height: fit-content; margin-top: auto; margin-bottom: auto; padding: 20px; border-radius: 10px; background-color: rgba(254, 255, 191, 0.646)">
+        <div class="w3-card card-att card-settings" style="margin-left: 4%; width: fit-content;float: left; height: fit-content; margin-top: auto; margin-bottom: auto; padding: 20px; border-radius: 10px; background-color: rgba(254, 255, 191, 0.646); text-shadow: 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0)">
           <span id="time_description" style="font-weight: bold; font-size: 235%; color:#003cff;">Hour of the Rat <br> 11pm - 1am  <br></span>
-          <span style="font-weight: bold; font-size: 180%; color:#616161;">Element:</span>
-          <span id="element_name" style="font-weight: bold; font-size: 180%; color:#003cff;  text-shadow: 1px -1px 0 rgb(234, 227, 227), -1px 1px 0 rgb(234, 227, 227), 1px 1px 0 rgb(234, 227, 227) ;">Water</span><br>
+          <span style="font-weight: bold; font-size: 180%; color:#616161;">Element: </span>
+          <span id="element_name" style="font-weight: bold; font-size: 180%; color:#003cff;  text-shadow: 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0) ;">Water</span><br>
         </div>
         <img class="flex-img" id="animal" onload="animal_load()">
       </div>
@@ -678,7 +827,7 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
             color: #e3ffee;
         ">
          “The natural healing force within each of us is the greatest force in getting well.” ~ Hippocrates.
-      </span>
+        </span>
       </div>
 
       <div class="w3-card round card-att w3-margin card-settings">
@@ -767,7 +916,7 @@ body .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
       <div style="width: 100%; bottom: 0;z-index: 0; position: absolute;">
         <div style="background-color: #42606A; height: 50px;"></div>
         <div style="background-color: #0E2B31; height: 103px; padding-left: 50px;">
-          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | getwell@doctor.comㅤㅤ</span>
+          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | <a href= "mailto: getwell@doctor.com" style="color: #8da4e3;"> getwell@doctor.com </a>ㅤㅤ</span>
           <span style="font-size: 150%;text-align: right;color: white; float: right; padding-right: 4%; width:50%">141 Airport Road, Warwick, RI 02889</span>
         </div>
       </div>

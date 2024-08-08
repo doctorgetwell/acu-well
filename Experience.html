@@ -4,6 +4,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="DoctorGetWell_files/ying_and_yang.png" />
 <title>The Experience</title>
 <meta charset="UTF-8">
+<meta name="description" content="This is the official website for Doctorgetwell, dedicated to documenting resources for acupuncture knowledge.">
+<meta name="keywords" content="acupuncture, acupuncturist, Alex Tatevian, traditional Chinese, medicine, yin, yang, meridians, points, meridian, practitioner, practitioners, traditional medicine, oriental medicine, healing, Qi, five element, accupuncture, acupunture, TCM, regulation, alternative, health, moxa, moxibustion, needles, needle, chi, channels, asian healing, medical acupuncture, acupuncture clinic, clinic, society, journal, doctor, training, education, accreditation, scientific, professional, acupuncturist, research, alternative medicine, tuina, oriental, massage, guide to oriental medicine, certification, degree, diploma, cupping, guasha, acupunture, herbology, pratitioner referral, publications, books, therapy, associations, articles, acupuncture links, education, patients, needle, doctor, pain, RI, Rhode Island, health, Providence, Warwick, blue cross, blue shield">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -157,6 +159,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 .fade-animation {
   animation: 2s fade;
 }
+
 .sidebar-custom{height: 100%;position:fixed!important;z-index:1; margin-top: 2%; margin-left: 2%; overflow-y: scroll;}
 .sidebar-custom::-webkit-scrollbar {
     width: 0px;
@@ -187,7 +190,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 }
 .flex-img {
-  width: 20%; 
+  width: 33%; 
   margin-right: 15px; margin-bottom: 15px; margin-left: 25px; 
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 }
@@ -212,15 +215,11 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0) 0%,
-    #2c7648 15%,
-    #2c7648 85%,
+    #8f742e 15%,
+    #8f742e 85%,
     rgba(255, 255, 255, 0) 100%
   );
   z-index: -1;
-}
-.slideshow:hover{
-  transform: scale(1.25); 
-  animation: 1s fade;
 }
 @media (min-width: 1px) and (max-width: 728px) {
  /* enter small devices and phone style overrides here */
@@ -257,7 +256,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 .flex-img {
   display: block;
   margin: 3px auto;
-  width: 45%;
+  width: 65%;
   margin-bottom: 15px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 }
@@ -308,14 +307,14 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
 }
 </style>
 <script>
-  var imageOrder = ["session_back.jpg", "session_consult.jpg", "session_nidling_feet.jpg", "session_nidling_knees.jpg", "session_nidling1.jpg", "session001.jpg", "session002.jpg", "session003.jpg", "session004.jpg"]
-  var index = 5
+  var imageOrder = ["session_back.jpg", "session_nidling_feet.jpg", "session_nidling_knees.jpg", "session_nidling1.jpg", "session001.jpg", "session002.jpg", "session003.jpg", "session004.jpg"]
+  var index = 4
 
   function prevImage() {
     if (index == 0) {
-      index = 8
+      index = 7
     } else {
-      index -=1
+      index -= 1
     }
     var el = document.getElementById("slideshow");
     el.src = "./DoctorGetWell_files/" + imageOrder[index]
@@ -323,7 +322,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
   }
 
   function aftImage() {
-    if (index == 8) {
+    if (index == 7) {
       index = 0
     } else {
       index += 1
@@ -359,16 +358,16 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-hide-large" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="index.html" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
+    <a href="index.html?q=acupuncture%20site:www.healthcmi.com/acupuncture-continuing-education-news%20OR%20site:acupuncturetoday.com/issues/current-issue" class="w3-bar-item w3-button" style="width:25%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">HOME</a>
     <a href="Acupuncture.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ACUPUNCTURE</a>
     <a href="Resources.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">RESOURCES</a>
-    <a href="index.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
+    <a href="About.html" class="w3-bar-item w3-button" style="width:25%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">ABOUT US</a>
   </div>
 </div>
   </div>
   <div class="sidebar-custom side-width menu-bar-hide fadeFromLeft-animation">
     <div class="w3-card round w3-center button-menu">
-      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+      <a href="index.html?q=acupuncture%20site:www.healthcmi.com/acupuncture-continuing-education-news%20OR%20site:acupuncturetoday.com/issues/current-issue" class="w3-bar-item w3-padding-large fit_button">
         <img src="./DoctorGetWell_files/home_logo.png" class="button-image">
         <img src="./DoctorGetWell_files/home_logo.gif" class="button-image-rot">
         <br>
@@ -398,7 +397,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
     <br>
     
     <div class="w3-card round w3-center button-menu">
-      <a href="index.html" class="w3-bar-item w3-padding-large fit_button">
+      <a href="About.html" class="w3-bar-item w3-padding-large fit_button">
         <img src="./DoctorGetWell_files/about_logo.png" class="button-image">
         <img src="./DoctorGetWell_files/about_logo.gif" class="button-image-rot">
         <br>
@@ -448,20 +447,17 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
                 margin-bottom: 15px;
                 color: #e3ffee;
             ">
-             Most people find the experience extremely relaxing and uplifting.
+             Most people find the experience very relaxing and uplifting.
             </span>
           </div>
 
-          <br><br>
-
           <div style="max-width: fit-content; margin-left: auto; margin-right: auto; " class="fade-animation">
-            <button class="buttons"  style="font-size: 155%;font-weight: bold; background: transparent; border-radius: 90%; margin-top: 7.5em; margin-bottom: 7.5em;" onclick="prevImage()">⬅️</button>
+            <button class="buttons"  style="font-size: 155%;font-weight: bold; background: transparent; border-radius: 90%; margin-top: 7.5em; margin-bottom: 7.5em; color: rgb(0, 157, 255)" onclick="prevImage()">←</button>
             <img src="DoctorGetWell_files/session001.jpg" style="width: 65%;" class="slideshow" id="slideshow">
-            <button class="buttons" style="font-size: 155%;font-weight: bold; background: transparent;border-radius: 90%; margin-top: 7.5em; margin-bottom: 7.5em; margin-left: 30px" onclick="aftImage()">➡️</button>
+            <button class="buttons" style="font-size: 155%;font-weight: bold; background: transparent;border-radius: 90%; margin-top: 7.5em; margin-bottom: 7.5em; margin-left: 30px; color: rgb(0, 157, 255)" onclick="aftImage()">→</button>
           </div>
 
           <span style="color:#dce1ed;font-size: 2.05em; font-weight: bold; text-shadow:-1px -1px 0 rgb(26, 22, 39), 1px -1px 0 rgb(26, 22, 39), -1px 1px 0 rgb(26, 22, 39), 1px 1px 0 rgb(26, 22, 39); margin-bottom: 35px; ">
-            <br>
             We always tell patients to let us know immediately if they feel any sort of discomfort. If there are any sensations that can be interpreted as pain - please do not exercise your patience and courage, tell us right away: we can use different points, different needles, different techniques, different positions to make it comfortable.
             <br><br>
             <span class="hl">Acupuncture needles are 25-50 times thinner than a hypodermic needle. Insertions of these hair-thin needles are not painful at all! We use new needles with each treatment.</span>
@@ -521,6 +517,12 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
             Every next treatment session starts with a short questioning so the acupuncturist can interact with the state of the complaints at the very moment of the treatment.
           </span>
 
+          <br><br><br>
+
+          <div class="flex-container" style="width: 100%; height: auto">
+            <img src="https://media2.giphy.com/media/3o6MbsTFe4yPVSGSis/giphy.gif?cid=6c09b952d2a696bldd6tjw4e4l8vs25w5m7uf7l7uef8fkev&ep=v1_gifs_search&rid=giphy.gif&ct=g" class="flex-img">
+          </div>
+
         </div>
 
         <div style="margin-left: 0.2em; font-size: 2.05em;font-weight: bold; " class="w3-margin">
@@ -577,7 +579,7 @@ body { margin: 0; padding: 0; font-family: Garamond,serif;
       <div style="width: 100%; bottom: 0;z-index: 0; position: absolute;">
         <div style="background-color: #42606A; height: 50px;"></div>
         <div style="background-color: #0E2B31; height: 103px; padding-left: 50px;">
-          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | getwell@doctor.comㅤㅤ</span>
+          <span style="font-size: 150%;text-align: justify;color: white; float: left; width:50%; ">Tel: (401)-738-9355 | <a href= "mailto: getwell@doctor.com" style="color: #8da4e3;"> getwell@doctor.com </a>ㅤㅤ</span>
           <span style="font-size: 150%;text-align: right;color: white; float: right; padding-right: 4%; width:50%">141 Airport Road, Warwick, RI 02889</span>
         </div>
       </div>
