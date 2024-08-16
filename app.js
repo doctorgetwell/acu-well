@@ -1,3 +1,23 @@
+let url = window.location.href; 
+  if (url.slice(-1) != 'e'){ 
+      url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
+      window.location.href = url;
+  }    
+  setTimeout(() => {
+    if (url.slice(-1) != 'e'){ 
+      url += '?q=acupuncture site:www.healthcmi.com/acupuncture-continuing-education-news OR site:acupuncturetoday.com/issues/current-issue'
+      window.location.href = url;
+    } else {
+      document.getElementById("loading").style.display = "none"
+    }
+    var now = new Date();
+    var datetime = now.toLocaleString();
+    document.getElementById("digesttoday").innerHTML += "ㅤ(" + datetime.slice(0, -3)  + ")";
+    // clock 
+
+    
+  }, 500)
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyCUhZStuBYBoYzinB9P1Q1idE8Dg7WSj20",
