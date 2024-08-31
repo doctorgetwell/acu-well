@@ -12,7 +12,7 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; font-size: 0.3cm;
+body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; font-size: 0.25cm;
 }
 .top{
   top:0;
@@ -180,7 +180,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
     float: right;
   }
   .title-img {
-  float: right; width: 28%; margin: 20px;
+  float: right; width: 20%; margin: 20px;
   margin-right: 50px;
   margin-top: 50px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
@@ -245,7 +245,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
     display:none!important
   }
   .title-img {
-  width: 90%; padding: 30px;
+  width: 80%; padding: 30px;
 }
 .profile-img {
   display: block;
@@ -257,7 +257,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
 .flex-img {
   display: block;
   margin: 3px auto;
-  width: 45%;
+  width: 100%;
   margin-bottom: 15px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 }
@@ -332,7 +332,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
 }
 </style>
 <script>
-  var imageOrder = ["acuwell_building.jpg", "session_consult.jpg", "office_1.jpg", "session_nidling_knees.jpg", "session_nidling1.jpg", "session001.jpg", "session002.jpg", "office2.jpg", "office3.jpg", "office4.jpg"]
+  var imageOrder = ["acuwell_building.jpg", "session_consult.jpg", "office_1.jpg", "session_nidling_knees.jpg", "session_nidling1.jpg", "session001.jpg", "session002.jpg", "office2.jpg", "office3.jpg"]
   var index = 5
 
   var imageOrder_2 = ["alex0.png", "alex1.png", "alex2.png", "alex3.png", "alex4.png", "alex5.png", "alex6.png", "alex7.png", "alex8.png"]
@@ -343,7 +343,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
 
   function prevImage() {
     if (index == 0) {
-      index = 9
+      index = 8
     } else {
       index -= 1
     }
@@ -353,7 +353,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
   }
 
   function aftImage() {
-    if (index == 9) {
+    if (index == 8) {
       index = 0
     } else {
       index += 1
@@ -589,7 +589,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
         </div>
 
         <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em;  color:#ffffff; font-weight: bold; text-shadow: -1px -1px 0 rgb(65, 73, 37), 1px -1px 0 rgb(65, 73, 37), -1px 1px 0 rgb(65, 73, 37), 1px 1px 0 rgb(65, 73, 37), rgb(86, 183, 236) 1px 0 10px ">About The Doctor</span>
-        <img src="DoctorGetWell_files/alex0.png" class="title-img" >
+        <img src="DoctorGetWell_files/Alex_Tatevian_2004.jpg" class="title-img" >
         <div style="margin-left: 25px; margin-bottom: 20px; margin-right: 30px;">
           <span  style="font-weight: bold; font-size: 2em;  font-weight: bold; ">
             <span style="color:#776d00; text-shadow:-1px -1px 0 rgb(211, 224, 159), 1px -1px 0 rgb(224, 209, 159), -1px 1px 0 rgb(211, 224, 159), 1px 1px 0 rgb(211, 224, 159), #9f9e9d 0px 4px 10px;; font-weight: bold; font-size: 110%; margin-bottom: 0px;">
@@ -616,81 +616,154 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
           <br><br>
 
           <span class="hl"  style="color:#ffffff; text-shadow:-1px -1px 0 rgb(26, 22, 39), 1px -1px 0 rgb(26, 22, 39), -1px 1px 0 rgb(26, 22, 39), 1px 1px 0 rgb(26, 22, 39); margin-bottom: 35px; font-size: 90%;">
-            Dr. Alex Tatevian is a Board Certified Diplomate in Acupuncture and Chinese Herbology (NCCAOM) and a licensed Doctor of Acupuncture in the State of Rhode Island. Dr. Tatevian has extensive training in Western medicine. He received his MD degree from <a rel="noopener noreferrer" target="_blank" href="https://www.russiansmu.com/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">the Russian State Medical University</a> (formerly the 2nd Moscow State Medical Institute) and completed his training in cardiology, acupuncture, and manual therapy. Fully certified in Rehabilitation and Sports Medicine, he was a physician for the Russian National Olympic Teams.
+            Dr. Alex Tatevian is a National Board Certified Diplomate in Acupuncture, Oriental Medicine
+            and Chinese Herbology (NCCAOM) and a licensed Doctor of Acupuncture in the State of
+            Rhode Island ( Lic. # DACM 00004).
             <br>
           </span>
 
+        </div>
+
+        <div class="flex-container" style="width: 100%; height: auto">
+          <img src="DoctorGetWell_files/nccaom.png" class="flex-img">
         </div>
 
         <br><br>
 
         <div style="font-weight: bold; font-size: 2em;  font-weight: bold; margin-left: 25px; margin-bottom: 20px; margin-right: 30px;">
           <span style="color:#ffffff; text-shadow:-1px -1px 0 rgb(26, 22, 39), 1px -1px 0 rgb(26, 22, 39), -1px 1px 0 rgb(26, 22, 39), 1px 1px 0 rgb(26, 22, 39); margin-bottom: 35px; font-size: 90%;">
-            Alex Tatevian was a primary care physician with <a rel="noopener noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Soviet_Antarctic_Expedition"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">the Soviet Scientific Expeditions in Antarctica</a>, where he provided total health care utilizing conventional medicine and acupuncture for the expedition participants. He was a co-founder of a medical center for Integrative Medicine providing conventional and alternative medical practices in Moscow.
+            He practices at at ACU WELL Acupuncture Integrative Medicine in Warwick, Rhode Island,
+            which he established in 2000, and excels in expert treatment for back pain, headaches,
+            neuromuscular and musculo-skeleton disorders which reflect his field of expertise and
+            professional interest. ACU WELL Acupuncture Integrative Medicine has received Best of
+            Warwick ACUPUNCTURE NATUROPATHIC PRACTITIONERS Award Issued by Us
+            Commerce Association 8 consecutive years.
             <br><br>
-            He has practiced acupuncture for 36 years.
+            At this juncture of his professional journey Dr. Alex Tatevian does not accept BCBS
+            insurance.
             <br><br>
-            Dr. Tatevian is President and the founder of the Foundation for Research in Acupuncture and Integrative Medicine (<a rel="noopener noreferrer" target="_blank" href="http://fraim.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">F.R.A.I.M.</a>) and a member of <a rel="noopener noreferrer" target="_blank" href="https://www.clinicalscience.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">the Association of Clinical Scientists</a>. He is the former president of <a rel="noopener noreferrer" target="_blank" href="https://www.risacu.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">the Rhode Island Society of Acupuncture and Oriental Medicine</a> and a Board Member of the <a rel="noopener noreferrer" target="_blank" href="https://integrativemedalliance.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">Integrative Medicine Alliance</a>.
+            Alex Tatevian is President and the founder of the Foundation for Research in Acupuncture
+            and Integrative Medicine <a rel="noopener noreferrer" target="_blank" href="fraim.org"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">(F.R.A.I.M.)</a> and a member (FACSc,) of the Association of Clinical
+            Scientists . He has served as President of the Rhode Island Society of Acupuncture. Dr.
+            Tatevian became the first acupuncturist on staff at the Women and Infants Hospital of Rhode
+            Island, with clinical privileges and full appointment granted.
             <br><br>
-            He is a participating provider for BCBS and other medical insurance companies.
-            <br>
-            Dr. Alex Tatevian is an acupuncturist on staff at the <a rel="noopener noreferrer" target="_blank" href="https://www.womenandinfants.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">Women & Infants Hospital of Rhode Island</a> with clinical privileges and full appointment granted.
+            As a result of his outstanding performance in the field of acupuncture, in 2015, The
+            International Association of HealthCare Professionals (IAHCP) has selected Alex Tatevian
+            DA, MD, FACSc, to be featured in the premier publication of The Worldwide Leaders in
+            Healthcare with the Worldwide Leader in HealthCare Top Acupuncture in Rhode Island
+            Award. and was featured in FindaTopDoc in 2018
+
+            (See news release at <a rel="noopener noreferrer" target="_blank" href="https://pressrelease.healthcare/esteemed-acupuncturist-alex-tatevian-da-md-facsc-will-be-featured-in-the-find-a-top-doc.html"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">Health News Today Esteemed Acupuncturist, Alex Tatevian, DA, MD, FACSc
+              will be Featured in FindaTopDoc - Health News Today</a>)
+          </span>
+        </div>
+
+        <div class="flex-container" style="width: 100%; height: auto">
+          <img src="DoctorGetWell_files/wlh.png" class="flex-img">
+        </div>
+
+        <div style="font-weight: bold; font-size: 2em;  font-weight: bold; margin-left: 25px; margin-bottom: 20px; margin-right: 30px;">
+          <span style="color:#ffffff; text-shadow:-1px -1px 0 rgb(26, 22, 39), 1px -1px 0 rgb(26, 22, 39), -1px 1px 0 rgb(26, 22, 39), 1px 1px 0 rgb(26, 22, 39); margin-bottom: 35px; font-size: 90%;">
+            Alex Tatevian DA, MD, FACSc, is a well-versed doctor of acupuncture who diagnoses and treats patients at
+            ACU WELL Acupuncture Integrative Medicine in Warwick, Rhode Island, which he established in 2000.
             <br><br>
-            Dr. Tatevian is a regular contributor to the Southern New England Health Care Review and has maintained a monthly column in the health section of the Federal Hill Gazette since 1999.
+            He has an impressive professional journey that spans thirty-six years and his areas of expertise cover
+            integrative medicine, combining acupuncture, manual therapy and state of the art treatments including
+            laser acupuncture. He provides expert treatment for back pain, headaches, neuromuscular and
+            musculoskeletal disorders. Prior to his current endeavors, Dr. Tatevian has served as a physician for the
+            Russian National Olympic Teams, and scientific Antarctic Expeditions. He practiced acupuncture in medical
+            setting at North Main Primary Care Inc. in Providence, Rhode Island, and became the first acupuncturist on
+            staff at the <a rel="noopener noreferrer" target="_blank" href="https://www.womenandinfants.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">Women and Infants Hospital of Rhode Island</a>, with clinical privileges and full appointment
+            granted. He has conducted extensive research on the effectiveness of alternative medical therapies,
+            herbology formulations, and laser in conjunction with acupuncture medicine. He was a principal researcher
+            conducting a clinical crossover trial at the Women’s Oncology Program. Moreover, he has served as
+            President of the Rhode Island Society of Acupuncture and Oriental Medicine. Dr. Tatevian is also President
+            and Founder of the Foundation for Research in Acupuncture and Integrative Medicine (FRAIM) and is
+            credited for methodical work on refining definition of acupuncture. For more information about Alex Tatevian
+            DA, MD, FACSc, please visit  http://acu-well.com/aboutus.asp. 
             <br><br>
-            Dr. Tatevian has conducted extensive formal research on the effectiveness of alternative medical therapies and their effect on body systems and the adaptation to extreme conditions. He has researched herbology formulations and their application to training regimens for athletes. Dr Tatevian has also researched the applications of emerging technologies such as laser in conjunction with acupuncture medicine.
+            Alex Tatevian DA, MD, FACSc, attended
+            Pirogov Russian National Research Medical University (RNRMU) in Moscow, Russia, and was awarded his
+            Doctor of Medicine degree in 1978. He also holds a Doctor of Acupuncture degree from the Institute for
+            Advanced Postgraduate Medical Education (1982). Dr. Tatevian received board certification in acupuncture,
+            oriental medicine, and Chinese herbology from the National Certification Commission for Acupuncture and
+            Oriental Medicine and remains at the forefront of his challenging specialty via memberships and affiliations
+            with prestigious professional societies and associations. 
             <br><br>
-            At the present time, Dr. Tatevian is a principal researcher conducting a clinical crossover trial at the Women's Oncology Program, Women & Infant's Hospital of Rhode Island, investigating the efficacy of acupuncture as an adjunct for alleviating the side-effects associated with chemotherapy.
-            <br><br>
+            Moreover, he attained fellowship of the Fellow of
+            <a rel="noopener noreferrer" target="_blank" href="https://www.clinicalscience.org/"  style="color: #223b81; text-shadow:-1px -1px 0 rgb(131, 189, 183), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">Association of Clinical Scientists</a>
+            . As a result of his outstanding performance in the field of acupuncture,
+            The International Association of HealthCare Professionals (IAHCP) has selected Alex Tatevian DA, MD,
+            FACSc, to be featured in the premier publication of The Worldwide Leaders in Healthcare. He dedicates his
+            spare time to spending time with his family and friends and being outdoors and feels that his success is
+            primarily attributable to making his patients healthier, serving their needs, and delivering clinical results. 
+            friends and being outdoors and feels that his success is primarily attributable to making his patients
+            healthier, serving their needs, and delivering clinical results. For more information about Alex Tatevian DA,
+            MD, FACSc, please visit <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/alex-tatevian-da-2803b87/"  style="color: #405ca8; text-shadow:-1px -1px 0 rgb(159, 224, 218), 1px -1px 0 rgb(159, 224, 218), -1px 1px 0 rgb(159, 224, 218), 1px 1px 0 rgb(159, 224, 218), #9f9e9d 0px 4px 10px;">https://www.linkedin.com/in/alex-tatevian-da-2803b87/</a>.
           </span>
         </div>
 
         <div class="w3-card round card-att w3-margin card-settings">
           <span class="block-info">Alex Tatevian, D.A.</span>
 
-            <button class="w3-margin button-info" onclick="block_display(1)" id="display1" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">Acupuncture-related Research Projects and Publications (Curriculum Vitae)</button>
+            <button class="w3-margin button-info" onclick="block_display(1)" id="display1" style="background-color: #e7e184; box-shadow: 0 0 30px #b9984d inset;">ACUPUNCTURE RELATED RESEARCH PROJECTS</button>
   
             <div style="display:none" id="block1"> 
-              <span class="block-info">Acupuncture-related Research Projects and Publications (Curriculum Vitae)</span>
+              <span class="block-info">ACUPUNCTURE RELATED RESEARCH PROJECTS</span>
               <span class="intro">
                 <ul>
                   <li>
-                  Kalons as inhibitors of cell proliferation, 1977.
+                    Kalons as inhibitors of cell proliferation, 1976-78.
                   </li><li>
-                  Effect of Autohemotherapy protocols on performance for Biathlon; 1982.
+                    Effect of Autohemotherapy protocols on performance for Biathlon; 1982.
                   </li><li>
-                  Effect of Acupuncture on cardio-sympathetic innervation for treatment of spinal-related arythmia; 1983.
+                    Effect of Acupuncture on cardio-sympathetic innervation for treatment of spinal-related
+                    arythmia; 1982-83.
                   </li><li>
-                  Applications of acupuncture on Antarctic polar stations Bellinsghausen (1983-84) and Drugnaya-2 (1984-85): statistical analysis; 1985.
+                    Applications of acupuncture on Antarctic polar stations Bellinsghausen (1983-84) and
+                    Drugnaya-2 (1984-85): statistical analysis; 1985.
                   </li><li>
-                  Acupuncture for non-specific stimulation of immune system and incidence of bacterial and viral infection diseases upon exposure to urban environment among long term Antarctic expedition participants: 1985.
+                    Acupuncture for non-specific stimulation of immune system and incidence of bacterial
+                    and viral infection diseases upon exposure to urban environment among long term
+                    Antarctic expedition participants: 1985.
                   </li><li>
-                  Comprehensive program for behavior modification and rehabilitation of children with asthma; 1986.
+                    Comprehensive program for behavior modification and rehabilitation of children with
+                    asthma; 1985-87.
                   </li><li>
-                  Design and clinical trial of new patented device for electropuncture "Elite -010" /with Research Institute for Space Radio Communication "NIIDAR"/; 1985-87.
+                    Design and clinical trial of new patented device for electropuncture &quot;Elite -010&quot; /with
+                    Research Institute for Space Radio Communication &quot;NIIDAR&quot;/; 1985-87.
+                    Clinical trial of low energy laser device for applications in acupuncture practice, 1987-90.
+                    Electropuncture diagnostic system &quot;Ryodoraku&quot;: the application for training monitoring
+                    in professional sport; 1987-90.
                   </li><li>
-                  Clinical trial of low energy laser device for applications in acupuncture practice, 1987-90.
+                    Chinese Herbology formulas for professional athletes (bicycle and rowing); 1987-89.
+                    Electrical properties of acupuncture points: condenser vs. active resister, technical
+                    approach for instrumental measurement; 1988.
                   </li><li>
-                  Electropuncture diagnostic system "Ryodoraku": the application for training monitoring in professional sport; 1988.
-                </li><li>
-                  Chinese Herbology formulas for professional athletes (bicycle and rowing); 1987.
-                </li><li>
-                  Electrical properties of acupuncture points: condenser vs. active resister, technical approach for instrumental measurement; 1988.
-                </li><li>
-                  Electropuncture diagnostic system for "Ryodoraku" measurement with computer analysis and automatic calibration; 1990.
-                </li><li>
-                  Calibration of multi-channel device for synchronized "Ryodoraku" measurement; 1987.
-                </li><li>
-                  Infrared images of "active" acupuncture points for diagnostic purposes; 1988.
-                </li><li>
-                  Investigation of influence of embryonic tissue extracts on tumor growth; 1988-1991.
-                </li><li>
-                  Acupuncture devices for Double Blind Study Protocols in a randomized clinical trail, 1995-present.
-                </li><li>
-                  Efficacy of acupuncture as an adjunct for alleviating nausea and vomiting associated with chemotherapy, 2000-present.
-                </li><li>
-                  Biomorphological rationale for laser stimulation of myofascial trigger points and acupuncture points, 2003-2004;
-                  2004 Annual Meeting of Association of Clinical Scientists; Session C: Frontiers of Clinical Science; The University of Texas, Houston, Texas
+                    Electropuncture diagnostic system for &quot;Ryodoraku&quot; measurement with computer analysis
+                    and automatic calibration; 1989-1991.
+                  </li><li>
+                    Calibration of multi-channel device for synchronized &quot;Ryodoraku&quot; measurement; 1987.
+                    Infrared images of &quot;active&quot; acupuncture points for diagnostic purposes; 1988.
+                    Investigation of influence of embryonic tissue extracts on tumor growth; 1988-1991.
+                    Acupuncture devices for Double Blind Study Protocols in a randomized clinical trail,
+                    1995-present.
+                  </li><li>
+                    Efficacy of acupuncture as an adjunct for alleviating nausea and vomiting associated
+                    with chemotherapy, 2000-2003.
+                  </li><li>              
+                    Biomorphological rationale for laser stimulation of myofascial trigger points and
+                    acupuncture points, 2003-2004;
+                    Reported on 2004 Annual Conference of The Association of Clinical Scientists; Session
+                    C: Frontiers of Clinical Science; The University of Texas, Houston, Texas
+                    Published in Annals of Clinical and Laboratory Science; 2004; Vol.34, #3, p.360
+                    Instrumental Modalities for Utilization of “Biologically Active Points”.
+                  </li><li>
+                    Presented at 138th Meeting of the Association of Clinical Scientists Houston, TX,
+                    May 16-19, 2018
+                    Published in Annals of Clinical &amp; Laboratory Science, Volume 48, Number 3; May
+                    – June 2018; ISSN 0091-7370.
                 </li>
                 </ul>
                 <span style="color:#002C32; font-size: 90%; ">

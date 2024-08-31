@@ -12,7 +12,7 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; font-size: 0.3cm;
+body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: 50; font-size: 0.3cm;
 }
 .top{
   top:0;
@@ -66,17 +66,9 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
   text-align:center;
   cursor:pointer;
 }
-.option_button-1 {
-    text-decoration: none; 
-    background-color: #89dabd;
-} 
 .option_button-1:hover {
   background-color: rgb(205, 231, 202);
 }
-.option_button-2 {
-    text-decoration: none; 
-    background-color: #e7e184;
-} 
 .option_button-2:hover {
   background-color: #EAEBCE;
 }
@@ -143,10 +135,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.diagram-bar::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+
 .flex-container {
     height: 100%;
     padding: 0;
@@ -156,6 +145,14 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
     justify-content: center;
 }
 @media (min-width: 728px) {
+  .option_button-1 {
+    text-decoration: none; 
+    background-color: #89dabd;
+  } 
+  .option_button-2 {
+      text-decoration: none; 
+      background-color: #e7e184;
+  } 
   .diagram-bar {
   display: block; 
   overflow: auto;
@@ -165,7 +162,13 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
   margin-right: auto;
 }
   .global-header {
-  background-image: url("DoctorGetWell_files/acup_background_view.png");
+    background: linear-gradient(
+    to left,
+    #440f0f 0%,
+    #211a09 30%,
+    #342d1e 70%,
+    #240606 100%
+  );
   background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 0% 50%; 
@@ -187,10 +190,12 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
   }
 }
 .acup-option {
-  height: 420px; 
-  width: 300px;
+  height: 30%; 
+  width: 20%;
   overflow: hidden;
   margin: 40px;
+  padding-top: 2%;
+  padding-bottom: 2%;
   box-shadow: 0 0 15px #646464 inset;
   display: flex;
   justify-content: center;
@@ -199,6 +204,18 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
 
 @media (min-width: 1px) and (max-width: 728px) {
  /* enter small devices and phone style overrides here */
+ .option_button-1 {
+    text-decoration: none; 
+    background-color: #89dabd;
+    width: 70%;
+  } 
+  .option_button-2 {
+      text-decoration: none; 
+      background-color: #e7e184;
+      width: 70%;
+  } 
+
+
  .diagram-bar {
   display: block; 
   overflow: auto;
@@ -587,13 +604,22 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
     
       <div class="w3-margin">
         <span style="margin-top:1em; margin-left: 0.2em; font-size: 3.25em;  color:#ffeb85; font-weight: bold; text-decoration: underline; text-shadow: -1px -1px 0 rgb(65, 73, 37), 1px -1px 0 rgb(65, 73, 37), -1px 1px 0 rgb(65, 73, 37), 1px 1px 0 rgb(65, 73, 37), #FC0 1px 0 10px "><a href="https://www.merriam-webster.com/dictionary/acupuncture" rel="noopener noreferrer" target="_blank">Acupuncture</a></span>
+        <br>
+        <span style="margin-left: 0.35em; font-weight: bold; font-size: 2.5em; color:#f8e2b7; text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54); text-decoration: underline;">Definition:</span>
         <div style="margin-left: 25px; margin-bottom: 20px; margin-right: 30px;">
-          <span style="font-weight: bold; font-size: 2.5em; color:#edce8f;  text-shadow: 1px -1px 0 rgb(89, 54, 54), -1px 1px 0 rgb(89, 54, 54), 1px 1px 0 rgb(89, 54, 54) ;">Definition:</span>
-            <br>
             <span style="font-weight:bold; font-size: 1.5em; color: #f1eb8c; text-align: justify;  text-shadow:-1px -1px 0 rgb(125, 125, 125)">
-            <div style="color:#fff67a">Acupuncture is a method of prevention, correction and treatment of a disease, illness, injury or pain by encouraging the body to promote natural healing and improve functioning. This objective is implemented by the stimulation of certain biologically active points on the surface of the body (acupuncture points).</div>
+            <div style="color:#fff67a">Acupuncture is defined as the system of procedures for utilization of Acupuncture Points (AP)
+              (aka “Biologically Active Points” BAP) by non-chemical means and non-pharmaceutical
+              methods of therapy.
+              <br><br>
+              Acupuncture Points (AP) are defined as specific focal areas on the body identified by their
+              distinctive properties (electrical, thermal, biochemical, physiological, anatomical, etc.).
+              <br><br>
+              Practice of acupuncture is defined as proprietary use of acupuncture procedures for medicinal
+              purposes by licenced acupuncturist or certified professional.</div>
             <br><br>
-            These strategic points can be stimulated by the insertion of acupuncture needles or by non-invasive techniques and other means of physical stimulation. A key feature of acupuncture as a kind of medical intervention is that there is no administration of any chemical substances in any form or delivery system.
+            <i>A key feature of acupuncture as a kind of medical intervention is that there is no administration
+              of any chemical substances in any form or delivery system.</i>
         </span> 
         <br>
       </div>
@@ -604,7 +630,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
       <div class="flex-container" style="width: 100%;">
         <a href="History.html" class="w3-card round acup-option option_button-1">
                 <img src="DoctorGetWell_files/acup_hist.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
-                <span style="font-weight:bold; font-size: 1.75em; color: #e7e184; text-shadow:1px 1px 0 rgb(89, 54, 54); margin:auto; margin-top: 0px;">History</span>
+                <span style="font-weight:bold; font-size: 1.75em; color: #e7e184; text-shadow:1px 1px 0 rgb(89, 54, 54); text-align: center; margin:auto; margin-top: 0px;">History</span>
         </a>
         <a href="Traditional.html" class="w3-card round acup-option option_button-2">
             <img src="DoctorGetWell_files/acup_trad.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
@@ -612,7 +638,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
         </a>
         <a href="Modern.html" class="w3-card round acup-option option_button-1">
             <img src="DoctorGetWell_files/acup_modern.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
-            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184; text-shadow:1px 1px 0 rgb(89, 54, 54); margin:auto; margin-top: 0px;">Modern Acupuncture</span>
+            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184; text-shadow:1px 1px 0 rgb(89, 54, 54); text-align: center; margin:auto; margin-top: 0px;">Modern Acupuncture</span>
         </a>
         <a href="Modalities.html" class="w3-card round acup-option option_button-2">
             <img src="DoctorGetWell_files/acup_modal.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
@@ -620,7 +646,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
         </a>
         <a href="Experience.html" class="w3-card round acup-option option_button-1">
             <img src="DoctorGetWell_files/acup_session.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
-            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184;  text-shadow:1px 1px 0 rgb(89, 54, 54); margin:auto; margin-top: 0px;">The Experience!</span>
+            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184;  text-shadow:1px 1px 0 rgb(89, 54, 54); text-align: center; margin:auto; margin-top: 0px;">The Experience!</span>
         </a>
         <a href="Benefits.html" class="w3-card round acup-option option_button-2">
             <img src="DoctorGetWell_files/acup_indic.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
@@ -628,7 +654,7 @@ body { margin: 0; padding: 0; font-family: Arial,serif; font-weight: lighter; fo
         </a>
         <a href="SideEffects.html" class="w3-card round acup-option option_button-1">
             <img src="DoctorGetWell_files/acup_side.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
-            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184;  text-shadow:1px 1px 0 rgb(89, 54, 54); margin:auto; margin-top: 0px;">Side Effects</span>
+            <span style="font-weight:bold; font-size: 1.75em; color: #e7e184;  text-shadow:1px 1px 0 rgb(89, 54, 54); text-align: center; margin:auto; margin-top: 0px;">Side Effects</span>
         </a>
         <a href="New_Discoveries.html" class="w3-card round acup-option option_button-2">
             <img src="DoctorGetWell_files/acup_new.png" style="width: 70%; height: 70%; margin:auto; margin-bottom: 0px;" class="round">
